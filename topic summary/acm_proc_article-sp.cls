@@ -45,10 +45,12 @@
 \def\fileversion{V3.2SP}         % for ACM's tracking purposes
 \def\filedate{April 22, 2009}    % Gerry Murray's tracking data
 \def\docdate {Wednesday 22nd. April 2009} % Gerry Murray (with deltas to doc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
 \usepackage{epsfig}
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage{amsfonts}
+%\usepackage{amsfonts}
 % Need this for accents in Arial/Helvetica
 %\usepackage[T1]{fontenc}  % Gerry March 12, 2007 - causes Type 3 problems (body text)
 %\usepackage{textcomp}
