@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  7 FEB 2012 05:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  7 FEB 2012 05:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**sigproc-sp.tex
-(./sigproc-sp.tex
+**thesis-summary.tex
+(./thesis-summary.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -206,8 +206,9 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-))) (./sigproc-sp.aux)
-\openout1 = `sigproc-sp.aux'.
+)))
+(./thesis-summary.aux)
+\openout1 = `thesis-summary.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
@@ -221,46 +222,40 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for U+msa on input line 100.
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
+
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 100.
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 100.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 101.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 113.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 114.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 156.
+(./thesis-summary.bbl [1
 
 
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 171.
+]) [2
 
-No file sigproc-sp.bbl.
-[1
-
-
-] (./sigproc-sp.aux) ) 
+] (./thesis-summary.aux) ) 
 Here is how much of TeX's memory you used:
- 2199 strings out of 493634
- 25286 string characters out of 3143401
+ 2203 strings out of 493634
+ 25392 string characters out of 3143401
  85115 words of memory out of 3000000
- 5473 multiletter control sequences out of 15000+200000
+ 5475 multiletter control sequences out of 15000+200000
  44954 words of font info for 56 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 39i,12n,26p,298b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,26p,302b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sigproc-sp.dvi (1 page, 7224 bytes).
+Output written on thesis-summary.dvi (2 pages, 7748 bytes).

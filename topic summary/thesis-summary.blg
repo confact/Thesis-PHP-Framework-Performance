@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis-summary.aux
+The style file: unsrt.bst
+Illegal, another \bibstyle command---line 7 of file thesis-summary.aux
+ : \bibstyle
+ :          {abbrv}
+I'm skipping whatever remains of this command
+Database file #1: sigproc.bib
+You've used 2 entries,
+            1791 wiz_defined-function locations,
+            459 strings with 3814 characters,
+and the built_in function-call counts, 384 in all, are:
+= -- 33
+> -- 8
+< -- 0
++ -- 4
+- -- 2
+* -- 24
+:= -- 66
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 19
+empty$ -- 44
+format.name$ -- 2
+if$ -- 85
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 3
+newline$ -- 13
+num.names$ -- 2
+pop$ -- 7
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 5
+stack$ -- 0
+substring$ -- 21
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 3
+width$ -- 3
+write$ -- 24
+(There was 1 error message)

@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{braams:babel}
+Johannes Braams.
+\newblock Babel, a multilingual style-option system for use with latex's
+  standard document styles.
+\newblock {\em TUGboat}, 12(2):291--301, June 1991.
+
+\bibitem{Lamport:LaTeX}
+Leslie Lamport.
+\newblock {\em LaTeX User's Guide and Document Reference Manual}.
+\newblock Addison-Wesley Publishing Company, Reading, Massachusetts, 1986.
+
+\end{thebibliography}
