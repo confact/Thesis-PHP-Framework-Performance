@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  7 FEB 2012 01:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  7 FEB 2012 05:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -235,7 +235,7 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 100.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 129.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 113.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ae/t1aett.fd
@@ -243,101 +243,24 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 
 LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 185.
+ne 156.
 
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 171.
+
+No file sigproc-sp.bbl.
 [1
 
 
-]
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 200.
-
-
-LaTeX Warning: Citation `bowman:reasoning' on page \thepage  undefined on input
- line 226.
-
-
-LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 2
-26.
-
-
-LaTeX Warning: Citation `braams:babel' on page \thepage  undefined on input lin
-e 226.
-
-
-LaTeX Warning: Citation `herlihy:methodology' on page \thepage  undefined on in
-put line 226.
-
-
-LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 2
-28.
-
-
-LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
-ine 228.
-
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 228.
-
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 234.
-
-
-LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
-ne 245.
-
-File: fly.eps Graphic file (type eps)
-<fly.eps>
-File: fly.eps Graphic file (type eps)
- <fly.eps>
-
-LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 328.
-
-[2]
-\c@theorem=\count109
-
-Underfull \hbox (badness 1783) in paragraph at lines 352--356
-[]\T1/aer/m/n/9 This uses the \T1/aer/bx/n/9 the-o-rem \T1/aer/m/n/9 en-vi-ron-
-ment, cre-a-ted by the
- []
-
-\c@definition=\count110
-File: flies.eps Graphic file (type eps)
-<flies.eps>
-Overfull \hbox (15.60826pt too wide) detected at line 401
-\OML/cmm/m/it/9 l \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm
-/m/it/9 x\OT1/cmr/m/n/9 ) = [] [] = [] \OML/cmm/m/it/9 g\OT1/cmr/m/n/9 (\OML/cm
-m/m/it/9 x\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9 ^^A [] [] \OT1/cmr/m/n/9 = 0 \OMS/cm
-sy/m/n/9 ^^A \OML/cmm/m/it/9 L \OT1/cmr/m/n/9 = 0\OML/cmm/m/it/9 ;
- []
-
-
-LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
-ine 411.
-
-No file sigproc-sp.bbl.
-[3]
-Overfull \vbox (151.6775pt too high) has occurred while \output is active []
-
-
-[4
-
-] (./sigproc-sp.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
+] (./sigproc-sp.aux) ) 
 Here is how much of TeX's memory you used:
- 2234 strings out of 493634
- 25694 string characters out of 3143401
- 88115 words of memory out of 3000000
- 5504 multiletter control sequences out of 15000+200000
- 46614 words of font info for 57 fonts, out of 3000000 for 9000
+ 2199 strings out of 493634
+ 25286 string characters out of 3143401
+ 85115 words of memory out of 3000000
+ 5473 multiletter control sequences out of 15000+200000
+ 44954 words of font info for 56 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  39i,12n,26p,298b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sigproc-sp.dvi (4 pages, 23812 bytes).
+Output written on sigproc-sp.dvi (1 page, 7224 bytes).

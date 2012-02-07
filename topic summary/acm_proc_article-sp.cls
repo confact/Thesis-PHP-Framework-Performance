@@ -43,8 +43,8 @@
 % ---- End of 'updates' ----
 %
 \def\fileversion{V3.2SP}         % for ACM's tracking purposes
-\def\filedate{April 22, 2009}    % Gerry Murray's tracking data
-\def\docdate {Wednesday 22nd. April 2009} % Gerry Murray (with deltas to doc}
+\def\filedate{February 7, 2012}    % Gerry Murray's tracking data
+\def\docdate {Tuesday 7th. February 2012} % Gerry Murray (with deltas to doc}
 \usepackage[T1]{fontenc}
 \usepackage[swedish]{babel}
 \usepackage{epsfig}
