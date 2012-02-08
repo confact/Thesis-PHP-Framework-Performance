@@ -31,7 +31,7 @@
 \begin{document}
 \bibliographystyle{unsrt}
 
-\title{{\ttlit Platform} Performance for Web Development in the Cloud}
+\title{{\ttlit Platform} Performance for Web Development}
 \subtitle{Topic Summary}
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -107,88 +107,27 @@ Sundström. Robert\\
 
 %\terms{Theory}
 
-\section{The Background of the {\secit Topic}}
-Typically, the body of a paper is organized
-into a hierarchical structure, with numbered or unnumbered
-headings for sections, subsections, sub-subsections, and even
-smaller sections.  The command \texttt{{\char'134}section} that
-precedes this paragraph is part of such a
-hierarchy.\cite{braams:babel}\footnote{This is the second footnote.  It
-starts a series of three footnotes that add nothing
-informational, but just give an idea of how footnotes work
-and look. It is a wordy one, just so you see
-how a longish one plays out.} \LaTeX\ handles the numbering
-and placement of these headings for you, when you use
-the appropriate heading commands around the titles
-of the headings.  If you want a sub-subsection or
-smaller part to be unnumbered in your output, simply append an
-asterisk to the command name.  Examples of both
-numbered and unnumbered headings will appear throughout the
-balance of this sample document.
+\section{The Background of the {\secit Idea}}
+The whole idea started as a discussion about which programming language is better on different tasks. The whole thing grow to a discuss and wonder about which platform is better on having high traffics and which is more trustworthy in performance as a visitor to the site.
+
+We found similar work such as \cite{ieee:javaphp}. These are old, take up techniques that is old and isn't testing .NET, as we will do. We See this as a important thing to test due many people, both academical and in business as a close mind while choosing a programming language.
+
+We will test performance and high traffic on the three biggest programming language for web development. PHP, Java and .NET. This will be tested in Unix except .NET due to requirement of using it on Windows.
 
 Because the entire article is contained in
 the \textbf{document} environment, you can indicate the
 start of a new paragraph with a blank line in your
 input file; that is why this sentence forms a separate paragraph.
 
-\subsection{Type Changes and {\subsecit Special} Characters}
-We have already seen several typeface changes in this sample.  You
-can indicate italicized words or phrases in your text with
-the command \texttt{{\char'134}textit}; emboldening with the
-command \texttt{{\char'134}textbf}
-and typewriter-style (for instance, for computer code) with
-\texttt{{\char'134}texttt}.  But remember, you do not
-have to indicate typestyle changes when such changes are
-part of the \textit{structural} elements of your
-article; for instance, the heading of this subsection will
-be in a sans serif\footnote{A third footnote, here.
-Let's make this a rather short one to
-see how it looks.} typeface, but that is handled by the
-document class file. Take care with the use
-of\footnote{A fourth, and last, footnote.}
-the curly braces in typeface changes; they mark
-the beginning and end of
-the text that is to be in the different typeface.
+\subsection{Focus Areas}
+We will focus on performance and will also fake a high traffic to see how different platforms will handle it. This is a important test to see how a platform can be used in different business and in different websites sizes.
 
-You can use whatever symbols, accented characters, or
-non-English characters you need anywhere in your document;
-you can find a complete list of what is
-available in the \textit{\LaTeX\
-User's Guide}\cite{Lamport:LaTeX}.
+performance can be different things. But we will focus mostly on page loads and how cpu and memory is being used. 
 
-\subsection{Math Equations}
-You may want to display math equations in three distinct styles:
-inline, numbered or non-numbered display.  Each of
-the three are discussed in the next sections.
+This focus areas is important to see how a platform can be used in different business and in different websites sizes.
 
-\subsubsection{Inline (In-text) Equations}
-A formula that appears in the running text is called an
-inline or in-text formula.  It is produced by the
-\textbf{math} environment, which can be
-invoked with the usual \texttt{{\char'134}begin. . .{\char'134}end}
-construction or with the short form \texttt{\$. . .\$}. You
-can use any of the symbols and structures,
-from $\alpha$ to $\omega$, available in
-\LaTeX\cite{Lamport:LaTeX}; this section will simply show a
-few examples of in-text equations in context. Notice how
-this equation: \begin{math}\lim_{n\rightarrow \infty}x=0\end{math},
-set here in in-line math style, looks slightly different when
-set in display style.  (See next section).
-
-\subsubsection{Display Equations}
-A numbered display equation -- one set off by vertical space
-from the text and centered horizontally -- is produced
-by the \textbf{equation} environment. An unnumbered display
-equation is produced by the \textbf{displaymath} environment.
-
-Again, in either environment, you can use any of the symbols
-and structures available in \LaTeX; this section will just
-give a couple of examples of display equations in context.
-First, consider the equation, shown as an inline equation above:
-\begin{equation}\lim_{n\rightarrow \infty}x=0\end{equation}
-Notice how it is formatted somewhat differently in
-the \textbf{displaymath}
-environment.
+\subsection{Goals}
+How goals is to know which platform is good in different ways. Like high traffic, cpu and memory usage.
 
 %
 % The following two commands are all you need in the
