@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis-summary-javaphp.aux
+The style file: abbrv.bst
+Database file #1: sigproc.bib
+Too many commas in name 1 of "Toyotaro Suzumura, Scott Trent, Michiaki Tatsubori, Akihiko Tozawa and Tamiya Onodera" for entry IEEE:javaphp
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Toyotaro Suzumura, Scott Trent, Michiaki Tatsubori, Akihiko Tozawa and Tamiya Onodera" for entry IEEE:javaphp
+while executing---line 1090 of file abbrv.bst
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            505 strings with 3996 characters,
+and the built_in function-call counts, 436 in all, are:
+= -- 44
+> -- 13
+< -- 1
++ -- 5
+- -- 4
+* -- 26
+:= -- 69
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 20
+empty$ -- 33
+format.name$ -- 4
+if$ -- 98
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 5
+preamble$ -- 1
+purify$ -- 4
+quote$ -- 0
+skip$ -- 20
+stack$ -- 0
+substring$ -- 33
+swap$ -- 10
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 4
+width$ -- 2
+write$ -- 13
+(There were 2 error messages)
