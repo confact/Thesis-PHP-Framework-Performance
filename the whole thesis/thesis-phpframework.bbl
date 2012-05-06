@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{MVC:phpTeam}
+S.~Abeysinghe.
+\newblock {\em PHP Team Development}.
+\newblock Packt Publishing, 2009.
+
+\bibitem{MVC:codeigniter}
+G.~Da-gang.
+\newblock Analysis of model-based mvc framework for php development
+  codeigniter.
+\newblock May 2009.
+
+\bibitem{EC2:Amazon}
+A.~W.~S. LLC.
+\newblock Ec2 faq: What is a ec2 compute unit, April 2012.
+\newblock \texttt{http://aws.amazon.com/ec2/faqs/}.
+
+\bibitem{performance:Understanding}
+P.~Sevcik and J.~Bartlett.
+\newblock Understanding web performance.
+\newblock {\em Business Communications Review}, 31(10):28, October 2001.
+
+\bibitem{performance:dynweb}
+L.~Titchkosky, M.~Arlitt, and C.~Williamson.
+\newblock A performance comparison of dynamic web technologies.
+\newblock {\em ACM SIGMETRICS}, 31(3):2--11, December 2003.
+
+\bibitem{MVC:cakephp}
+S.~Widjaja.
+\newblock Web-based ide to create model and controller components for mvc-based
+  web applications on cakephp.
+\newblock December 2010.
+
+\end{thebibliography}

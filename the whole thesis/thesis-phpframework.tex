@@ -1,0 +1,183 @@
+\documentclass{llncs}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+\begin{document}
+
+\title{PHP Framework Performance for Web Development}
+\titlerunning{PHP Framework Performance}  
+% abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Håkan Nylén}
+%
+\authorrunning{Håkan Nylén}   % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{Håkan Nylén}
+%
+\institute{Blekinge Institute of Technology, Karlskrona, Sweden,\\
+\email{hakan@dun.se}}
+
+\date{21 March, 2012}
+
+\maketitle
+% A category with the (minimum) three required fields
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+%\terms{Theory}
+\section{Intro}
+Evaluation is something that can be used both for a user, developer and a tester. That is something that have been missing in the web development until 2000, more or less. What have been more and more important is that it should go fast for the visitor and we do now have CDN, that is speeding up the time for static content because of spreading to different server over all the world. But haven't been such thinkable is the new Frameworks in MVC have make the process from database to html faster or slower in this new thinking of fast, structural web world. This is what the thesis will try to accomplished to break new data in this new area of PHP Framework Performance.
+
+
+
+\section{The Background}
+Evaluation is all about the performance. Performance in this paper is about load, but it can be hardware, network and so on. Evaluation in general is how you can test the performance and in which way. This is very important in the choice of products nowadays.
+
+\subsection{MVC}
+Model View Controller is a framework-think to have 3 different types of classes, typing of what they will do. \cite{MVC:phpTeam} Model will handle data, like database. View is the one that handle how the data should be shown. Controller is the middle, getting data from model and fixing the data  and sending it on to the View. This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}, that is MVC frameworks in PHP.
+
+\subsection{Client-side}
+Client-side is meaning, in this thesis, the browser and the scripts and other rendering happening by the visitor on the site. This does have a big impact in the in performance for a server. \cite{performance:Understanding} If using many images, the browser first loads the page and then send request for the image and scripts on the page, adding more load to the server, because of more request which load the network for the server. \cite{performance:dynweb}
+
+\subsection{Server-side}
+Server-side is the server, of course. Here can the network, CPU and RAM be a impact in the performance for the visitor of the site. \cite{performance:dynweb} Often is the network that is stopping more load to the server, because the optimized server program such as Apache don't use so much of the CPU and RAM, making  the CPU and RAM the less problem. Of course can that be the issue, but not so often.
+
+\subsection{Performance}
+What performance can be different, in this paper I mean it as fast request, so network is very important. It can also have big impact how the servers is, Like a big server park in a datacenter. But I don't have time or money to try that. That's why I will only test this on cloud with one server and see how the framework is changing the ms of a request.
+
+\section{Research}
+I searched more or less on different types of strings like ``web development evaluation'' and ``Web development performance'' i got 300 papers, and i got 8 relevant because of the other was talking about the evaluation in general, not about the web development. 
+\subsection{Research Questions}
+\begin{description}
+  \item[RQ1:] What web performance evaluation exist and how were they performed?
+  \item[RQ2:] What factors impact web performance?
+  \item[RQ3:] To what extent are open source php frameworks evaluated?
+  \item[RQ4:] What are performance different between most commonly used open source php frameworks and how can it be evaluated?
+\end{description}
+
+
+\subsection{Research Methodology}
+  \begin{tabular}{ l  r }
+     
+    Research Question & Methodology \\ 
+    \hline
+    RQ1 & Literature \\ 
+    RQ2 & Literature \\
+    RQ3 & Literature \\
+    RQ4 & Data from RQ1, RQ2 and RQ3 to design experiment \\
+  \end{tabular}
+\newpage
+\subsection{Literature Survey}
+The literature is found in different stages. And i used this Sources.
+\begin{description}
+  \item Google Scholar
+  \item IEEE
+  \item Google
+  \item 
+\end{description}
+
+This strings was used, seeing in Figure \ref{fig:literaturesearchstrings}.
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ p{6cm}}
+  Strings\\
+  \hline
+  Web development Evaluation \\
+  Web development Performance \\
+  PHP Framework evaluation \\
+  PHP Framework performance \\
+  PHP Evaluation \\
+  PHP Performance \\
+  Website Performance \\
+  Website evaluation \\
+\end{tabular}
+\caption{The strings for searching literature}
+\label{fig:literaturesearchstrings}
+\end{figure}
+
+The selection wasn't so hard, i was looking for some data that was doing something with evaluation in this area, and it is a few. I was looking for good howto, how they made the research to find out the information in the data. Often it was over 300 results in the search, but only 1-3 relevant pages, in every string, and the papers was often in many of the strings.
+
+
+\subsection{Research Design}
+I will take the literature found for RQ1, RQ2 and RQ3 to design a experiment to answer RQ4. 
+
+\subsubsection{RQ4}
+The simplest is to design a experiment with a server with same specification for both CodeIgniter and CakePHP. the server will use Apache 5.*, probably 5.3.10 if the 5.4 isn't reliable. using any benchmark that will simulate hightraffic to the server. I will use OpenLoad for that.i will then run 3-5 phases 15 times. depending how big a company is, the amount of visitors at the same time will visit the site, so i will simulate that as well. The simulate will be randomly. i will then collect the data and will then see the one with best load and request handled. It will not be any difference in the server for each framework or sizes.
+\newpage
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ p{4cm}	 p{4cm} }
+  System & Version/size \\
+  \hline
+  Apache & 2.2 \\
+  PHP & 5.3.10 \\
+  CPU & 1 EC2 Compute Unit \\
+  RAM & 1.7 GB \\
+  HDD & 160 GB \\
+  bits & 64 bit
+\end{tabular}
+\caption{The server where the test will be done on's specification}
+\label{fig:serverSpecification}
+\end{figure}
+
+One EC2 Compute Unit provides the equivalent CPU capacity of a 1.0-1.2 GHz 2007 Opteron or 2007 Xeon processor. \cite{EC2:Amazon}
+Then this is how the test should be proceed, as Figure \ref{fig:tests}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ p{3cm} p{3cm} p{4cm} }
+  Testphase & Size & Amount of request \\
+  \hline
+  CodeIgniter & individual & 5000 up to max 15,000 on the last test \\
+  Codeigniter & Medium Company & 15,000 up to max 40,000 on the last test \\
+  CodeIgniter & Big Company & 30,000 up to max 90,000 on the last test \\
+  \hline
+  CakePHP & individual & 5000 up to max 15,000 on the last test \\
+  CakePHP & Medium Company & 15,000 up to max 40,000 on the last test \\
+  CakePHP & Big Company & 30,000 up to max 90,000 on the last test \\
+\end{tabular}
+\caption{How the test will be done.}
+\label{fig:tests}
+\end{figure}
+
+All the tests will be done 3 times on each amount and then in 3 scales to the max amount, the tests is about request/visitors that is on the site on the same time. This is more or less how DDOS is handled, but in bigger scale.
+
+\section{Literature review Results}
+
+\subsection{The Papers}
+The information what the papers is and what they have in common.
+\subsubsection{PHP Team Development}
+is about how the MVC idea and technique make a difference in the development. This is a book about how the development in PHP is and what they do, as MVC is a big part of it. This book is from 2009.
+
+\subsubsection{Analysis of model-based mvc framework for php development CodeIgniter}
+is analysing how the mvc based framework Codeigniter is doing in the development in performance and in userability for developers. this is a analysing paper from May 2009, it has kinda much in common with PHP Team Development, the book which have a chapter about MVC. 
+
+\subsubsection{Ec2 faq: What is a ec2 compute unit}
+shows what EC2 is about and what a compute unit is, to how something to reference to for the server specification in the tests. This is a website FAQ, which was last visited april 2012.
+
+\subsubsection{Understanding web performance}
+presents how performance can be used and it's importance in the web business, it also bring up how performance can be tested and what can be a impact for the tests. It's a paper presented in a Business Communication Review October 2001. 
+
+\subsubsection{A performance comparison of dynamic web technologies}
+describe the different impact in performance when they do a comparison in different performance types and how that can be done. Presented in ACM Sigmetrics December 2003.
+
+\subsubsection{Web-based ide to create model and controller components for mvc-based web applications on cakephp}
+writes how the CakePHP is build and how to code in it and talk a little about how MVC is about. A normal paper from December 2010. Has much in common with the other MVC framework Codeigniter and the book PHP Team Development.
+
+\subsection{The Approach}
+I searched by the string presented in Figure \ref{fig:literaturesearchstrings}, found some hundreds of papers. This comes to the approach that i tried to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area so was it hard to even find this. I took all I could found in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evalution types and hows. I have big experience in php development so the php framework was easy to find the little papers i could found. The rest was must in how my interest in performance and knowing to found something about impact that was the biggest.
+
+\subsection{The Findings}
+The biggest literature finding was A performance comparison of dynamic web technologies \cite{performance:dynweb}, writing much about the impact and the difference in performance and how the test is made, and a little about how a big data center could make a difference. Answering two of my questions, but I needed more sources, and i found Understanding web performance \cite{performance:Understanding}. It was about how images on the site could be be a impact on the amount of request to the server and therefore the performance.
+
+The book PHP Team Development is answering RQ3, the only one of the 3 RQ that is based on literature that losing sources to reference to. It is about how MVC makes a imapct in development and talk a bit on performance, meaning that they don't so much evaluate PHP Frameworks, something that the papers about CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp} also saying.
+
+
+\renewcommand\refname{References}
+\bibliographystyle{abbrv}
+\bibliography{sigproc} 
+
+\end{document}

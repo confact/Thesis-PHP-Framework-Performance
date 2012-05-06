@@ -1,0 +1,17 @@
+\select@language {swedish}
+\contentsline {title}{PHP Framework Performance for Web Development}{1}
+\authcount {1}
+\contentsline {author}{Håkan Nylén}{1}
+\contentsline {section}{\numberline {1}Intro}{3}
+\contentsline {section}{\numberline {2}The Background}{3}
+\contentsline {subsection}{\numberline {2.1}MVC}{3}
+\contentsline {subsection}{\numberline {2.2}Client-side}{3}
+\contentsline {subsection}{\numberline {2.3}Server-side}{3}
+\contentsline {subsection}{\numberline {2.4}Performance}{4}
+\contentsline {subsection}{\numberline {2.5}PHP Framework}{4}
+\contentsline {section}{\numberline {3}Research}{4}
+\contentsline {subsection}{\numberline {3.1}Research Questions}{4}
+\contentsline {subsection}{\numberline {3.2}Research Methodology}{4}
+\contentsline {subsection}{\numberline {3.3}Research Design}{4}
+\contentsline {subsubsection}{RQ4}{4}
+\contentsline {subsection}{\numberline {3.4}Literature review}{5}

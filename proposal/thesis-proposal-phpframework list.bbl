@@ -1,0 +1,44 @@
+\begin{thebibliography}{1}
+
+\bibitem{evaluation:trendsapproch}
+A.~F. M.~A. AL-Juboori, D.~Y. Na, and D.~P.~F. Ko.
+\newblock Web site evaluation: Trends and existing approaches.
+\newblock {\em Networked Computing The 7th International Conference}, pages 155
+  -- 160, September 2011.
+
+\bibitem{Cecchet:2003:PCM:1515915.1515933}
+E.~Cecchet, A.~Chanda, S.~Elnikety, J.~Marguerite, and W.~Zwaenepoel.
+\newblock Performance comparison of middleware architectures for generating
+  dynamic web content.
+\newblock In {\em Proceedings of the ACM/IFIP/USENIX 2003 International
+  Conference on Middleware}, Middleware '03, pages 242--261, New York, NY, USA,
+  2003. Springer-Verlag New York, Inc.
+
+\bibitem{springerlink:10.1007/s11219-008-9066-3}
+S.~Jeary, K.~Phalp, and J.~Vincent.
+\newblock An evaluation of the utility of web development methods.
+\newblock {\em Software Quality Journal}, 17:125--150, 2009.
+\newblock 10.1007/s11219-008-9066-3.
+
+\bibitem{performance:benchmarking}
+K.~Johnson and M.~Misic.
+\newblock Benchmarking: a tool for web site evaluation and improvement.
+\newblock {\em Internet Research}, 9(5):383--392, 1999.
+
+\bibitem{performance:lamp}
+U.~Ramana and T.~Prabhakar.
+\newblock Some experiments with the performance of lamp architecture.
+\newblock {\em Computer and Information Technology, 2005. CIT 2005.}, pages
+  916--920, September 2005.
+
+\bibitem{performance:understanding}
+P.~Sevcik and J.~Bartlett.
+\newblock Understanding web performance.
+\newblock {\em Business Communications Review}, 31(10):28, October 2001.
+
+\bibitem{performance:dynweb}
+L.~Titchkosky, M.~Arlitt, and C.~Williamson.
+\newblock A performance comparison of dynamic web technologies.
+\newblock {\em ACM SIGMETRICS}, 31(3):2--11, December 2003.
+
+\end{thebibliography}

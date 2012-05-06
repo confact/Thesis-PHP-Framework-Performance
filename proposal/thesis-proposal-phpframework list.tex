@@ -1,0 +1,156 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+\documentclass{acm_proc_article-sp}
+
+\begin{document}
+
+\title{{\ttlit PHP Framework} Performance for Web Development}
+\subtitle{Literature Review}
+%\subtitle{Topic Summary}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{1} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Nylén. Håkan\\
+       \affaddr{Blekinge Institute of Technology}\\
+       \affaddr{Valhallavägen 1}\\
+       \affaddr{Karlskrona, Sweden}\\
+       \email{hakan@dun.se}
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+
+\date{11 March, 2012}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+
+% A category with the (minimum) three required fields
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+%\terms{Theory}
+
+\section{Summary}
+I found some good papers about how to evaluate webpages, both client-side and server-side. The other good stuff is how different they evalute the performance, they do count the load in ms but make the diagram in different types, such as how the load become bigger the more visitors on the same time visit the site. other just bomb the server with requests and see how the server is handling it.
+So the performance evaluation is different on client-side and server-side. The server-side, that i am after, is about counting loads per ms per count of visitors.
+what aspects impact performance, is hard to figure in this papers. It maybe is in this papers. i had problems to found it though.
+
+It was problem to found papers that actually was about php, web development and evaluation. I found 3-4 pappers that was quite good and exactly, the rest is on the client-side, how less images will reduce calls to server and fix better performance. But this is not what I am after, I want to know how server-side programming can help the performance. This seems really hard to found.
+I couldn't found what a good architecture for performance is. This seems to be totally upon the developer of the tests for data collections.
+
+I think I need help to found papers about the right topic. I could book help at the library to get expert help but want also know from Nina how and where I can get help.
+
+\section{Found papers}
+Here is the found papers, the detail information will you found in the references, the number for the reference do you found after the abstract for each paper.
+
+\subsection{An evaluation of the utility of web development methods}
+Although many web development methods exist, they are rarely used by practitioners. The work reported here, seeks to explain why this might be so, and suggests that, for many, the perceived benefits may be outweighed by the difficulty or effort required to learn the method. In attempting to gauge the utility of methods the authors undertook a 2-year study of 23 small web development projects, attempting to use a range of published (academic) methods. Of the 23 projects we found only one case where the developer continued to use an academic web development method throughout the lifecycle. The ability to understand a method and/or its techniques was repeatedly cited as the reason for its abandonment. Our findings also indicate a number of key areas, relating to terminology, completeness, and guidance, where existing methods may be failing their intended users. In attempting to further our understanding of web development methods we completed a comprehensive survey of web development methods; covering 52 web development methods, encompassing a range of different research communities, and drawing upon 63 different sources. Our findings here shed some light upon the confusion of methods for the would-be user. In summary, the findings are that, although there is much of value in a variety of methods, method choice is somewhat bewildering for the newcomer to the field, and many methods are incomplete in some dimension. By providing this work we hope to go some way towards supporting the software engineering community, in both academia and industry, in their understanding of the quality issues that exist with the take up and use of web development methods. \cite{springerlink:10.1007/s11219-008-9066-3}
+
+\subsection{A performance comparison of dynamic Web technologies}
+Today, many Web sites dynamically generate responses ''on the fly'' when user requests are received. In this paper, we experimentally evaluate the impact of three different dynamic content technologies (Perl, PHP, and Java) on Web server per- formance. We quantify achievable performance first for static content serving, and then for dynamic content generation, considering cases both with and without database access. The results show that the overheads of dynamic content generation reduce the peak request rate supported by a Web server up to a factor of 8, depending on the workload characteristics and the technologies used. In general, our results show that Java server technologies typically outperform both Perl and PHP for dynamic content generation, though performance under overload conditions can be erratic for some implementations. \cite{performance:dynweb} 
+
+\subsection{Some Experiments with the Performance of LAMP Architecture}
+Measurements are very useful to gauge the actual performance of various architectures and their components. In this paper we investigate the performance of the LAMP(Linux, Apache, MySQL, PHP) architecture and MySQL and PHP components. We build a web-site using LAMP and measure the application level performance. We use ?measurements as a means? to improve the performance of the website. We then investigate the performance of the application when ported to Windows with running IIS and Apache with MySQL and PHP. \cite{performance:lamp} 
+
+\subsection{Benchmarking: a tool for Web site evaluation and improvement}
+Although benchmarking has touched many areas of an organization, including information systems, very few examples are available on how this powerful methodology can be used to specifically address one of the fastest growing elements within information systems ± the World Wide Web. This paper presents a case study on how benchmarking was used to determine how one organiza- tion's Web site compared to Web sites of related schools and professional organizations. The results of the bench- marking study provided a measure of how our Web site compares to the sites of related organizations, ideas on how we may further enhance our site, and also a way to regularly evaluate our site. \cite{performance:benchmarking} 
+
+\subsection{Understanding web Performance}
+There are two views as to whether there is an Internet performance problem. The conventional wisdom held by Net insiders is that things are just fine. They point to the massive investment in bandwidth that has eliminated many congestion problems, and to the performance of the Keynote Business-40 Index, which has fallen from more than 12 seconds to less than 3 seconds in only four years. The other view is held by the vast majority of Internet users, who complain that the Web is an awfully slow way to do anything useful. Furthermore, most real users and network shoppers do not visit the Keynote Business-40 sites. Instead, they visit sites like MSN, AOL, Amazon, ICQ, ESPN and Disney, which are designed to be interesting and cool rather than optimized for performance; these sites are slow by design. In short, geography, demographics and interest all play important roles in determining what the Internet experience will be like. \cite{performance:understanding}
+
+\subsection{Web Site Evaluation: Trends and Existing Approaches}
+During the recent years, the World Wide Web is one of the main sources of information for everyone (Academic Institutions, Industry and Business, individuals ... etc.). This paper presents a general survey of the current Web Site Measurement Approaches of some famous web site evaluation systems and tools world wide and focuses on web site evaluation by using structural evaluation and scope of business based content comparison. Firstly, web site measurement techniques and evaluation methods are reviewed. Then a structural evaluation and content comparison method introduced. Keywords: Web site evaluation, Web site measurement, structural evaluation, content comparison, automated evaluation. \cite{evaluation:trendsapproch}
+
+\subsection{Performance Comparison of Middleware Architectures for Generating Dynamic Web Content}
+On-line services are making increasing use of dynamically generated Web content. Serving dynamic content is more complex than serving static con- tent. Besides a Web server, it typically involves a server-side application and a database to generate and store the dynamic content. A number of standard mechanisms have evolved to generate dynamic content. We evaluate three spe- cific mechanisms in common use: PHP, Java servlets, and Enterprise Java Beans (EJB). These mechanisms represent three different architectures for gen- erating dynamic content. PHP scripts are tied to the Web server and require writing explicit database queries. Java servlets execute in a different process from the Web server, allowing them to be located on a separate machine for better load balancing. The database queries are written explicitly, as in PHP, but in certain circumstances the Java synchronization primitives can be used to per- form locking, reducing database lock contention and the amount of communica- tion between servlets and the database. Enterprise Java Beans (EJB) provide several services and facilities. In particular, many of the database queries can be generated automatically.
+
+We measure the performance of these three architectures using two application benchmarks: an online bookstore and an auction site. These benchmarks repre- sent common applications for dynamic content and stress different parts of a dynamic content Web server. The auction site stresses the server front-end, while the online bookstore stresses the server back-end. For all measurements, we use widely available open-source software (the Apache Web server, Tomcat servlet engine, JOnAS EJB server, and MySQL relational database). While Java servlets are less efficient than PHP, their ability to execute on a different ma- chine from the Web server and their ability to perform synchronization leads to better performance when the front-end is the bottleneck or when there is data- base lock contention. EJB facilities and services come at the cost of lower per- formance than both PHP and Java servlets. \cite{Cecchet:2003:PCM:1515915.1515933}
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+
+% That's all folks!
+\end{document}
