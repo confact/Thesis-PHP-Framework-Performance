@@ -213,29 +213,43 @@ the following variables are controlled
 The tests is as you can see in the list below, all 3 tests will be run for database and without database, for each framework. Making it 6 tests total for a framework, with and without database.
 \begin{description}
   \item[Test 1] 5, 20,000
-  \item[Test 2] 5, 20,000
-  \item[Test 3] 5, 20,000
-\end{description}
-
-I choice 5 for the concurrency level, meaning to send 5 request each time. This to help to count the response time more exactly. 
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{l l l l l l}
+&\multicolumn{2}{l}{Codeigniter}&\multicolumn{2}{l}{CakePHP}\\
+\cline{2-5}
+ &Concurrency&Requests&Concurrency&Requests\\
+ Test 1 & 5 & 20,000 & 5 & 20,000 & with database\\
+ Test 2 & 5 & 20,000 & 5 & 20,000 & with database\\
+ Test 3 & 5 & 20,000 & 5 & 20,000 & with database\\
+ \hline
+ Test 1 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
+ Test 2 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
+ Test 3 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
+\end{tabular}
+\caption{How the tests will make for the frameworks.}
+\label{fig:testsforframework}
+\end{figure}
+I choice 5 for the concurrency level, meaning to send 5 request each time. This to help to count the response time more exactly. You can see how the tests will be done in figure \ref{fig:testsforframework}.
 
 The total amount of request of 20,000 is to get okay amount of request to get average time from, not too much and not too less. It doesn\'{}t need to be much more because the average will be the same $\pm$ 2 ms. That make it not necessary to have more. But i took as much as 20,000 because it make it more sure to be right numbers in the results.
 
-\newpage
 A good thing to know is how the server will be setup, here is the table of the specification of the server I will use for the experiment, on the Amazon cloud.
 \begin{figure}[htbp]
 \centering
 \begin{tabular}{ p{4cm}	 p{4cm} }
   System & Version/size \\
   \hline
+  OS & Ubuntu 10.04 \\
   Apache & 2.2.14 \\
+  MySQL & 5.4 \\
   PHP & 5.3.2 \\
   CPU & 1 EC2 Compute Unit\footnotemark[3] \\
   RAM & 1.7 GB \\
   HDD & 160 GB \\
   bits & 64 bit
 \end{tabular}
-\caption{The server where the test will be done on\'{}s specification}
+\caption{The server specification where the test will be done on.}
 \label{fig:serverSpecification}
 \end{figure}
 This is how the Framework classes will be used in the experiment.
@@ -266,7 +280,7 @@ Response Type is the only thing i will change. It is the support of the database
 \subsubsection{Experiment Artifact}
 \begin{description}
   \item[blog] the blog will have normal features, or more likely very simple. It will have a normal list with pagination on the startpage, every post will have its own page.
-  \item[apache benchmark] will use Apache\'{}s own benchmark to simulate server load. 
+  \item[apache benchmark] will use Apaches own benchmark to simulate server load. 
   \item[Environment] the server is mostly already set, see figure \ref{fig:serverSpecification}.
 \end{description}
 
@@ -296,32 +310,20 @@ The variables controlled was response size, amount of request and currency of re
 \end{figure}
 \footnotetext[5]{with db i mean database, so it is the framework with the database, the database was used with models for posts, without db it was just plain html in view with controller used.}
 \footnotetext[6]{ResponseSize is total bytes of html sent from the server in one test, on every interval.}
-
+\newpage
 \subsection{The results}
 The experiment was made randomly on a night in different times, picked randomly. there was 3 tests on each framework on 20,000 request total, 5 request per time when sending to the server.
 
 The result can you see in figure \ref{fig:experimentwithdb}. It was almost same results on both, but a small gap between the two framework on just a few Millie seconds, to be exact, it was a gap on 5,34 ms in a average.
-\begin{figure}[htbp]
-\centering
-\begin{tabular}{ p{2cm} p{2cm}  p{2cm}  p{2cm}  p{2cm} }
-  Framework & Test 1 & Test 2 & Test 3 & Total Average \\
-  \hline 
-  CakePHP & 218 & 211 & 206 & 211,66 \\
-  Codeigniter & 227 & 215 & 209 & 217 \\
-\end{tabular}
+\begin{figure}[h]
+\includegraphics[scale=0.55]{charts-tests-database.png}
 \caption{The tests with database average request/connection times in ms.}
 \label{fig:experimentwithdb}
 \end{figure}
-
+\newpage
 This was with database, with show that if we will focus to the ms total average, is CakePHP faster. This need to be tested without a database too, You can see the result in figure \ref{fig:experimentwithoutdb}.
-\begin{figure}[htbp]
-\centering
-\begin{tabular}{ p{2cm} p{2cm}  p{2cm}  p{2cm}  p{2cm} }
-  Framework & Test 1 & Test 2 & Test 3 & Total Average \\
-  \hline
-  CakePHP & 233 & 229 & 226 & 229,33 \\
-  Codeigniter & 233 & 230 & 229 & 230,66 \\
-\end{tabular}
+\begin{figure}[h]
+\includegraphics[scale=0.55]{charts-tests.png}
 \caption{The tests without database average request/connection times in ms.}
 \label{fig:experimentwithoutdb}
 \end{figure}
