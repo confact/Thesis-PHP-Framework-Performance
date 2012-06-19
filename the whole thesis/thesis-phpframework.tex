@@ -2,8 +2,26 @@
 \usepackage[T1]{fontenc}
 \usepackage[swedish]{babel}
 \usepackage{graphicx}
+\usepackage{pdfpages} 
+\usepackage[pdftex,bookmarks=true]{hyperref}
 \begin{document}
-
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat?s bookmarks
+    pdftoolbar=true,        % show Acrobat?s toolbar?
+    pdfmenubar=true,        % show Acrobat?s menu?
+    pdfnewwindow=true,      % links in new window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\renewcommand\figurename{Figure}
+\renewcommand\tablename{Table}
+\renewcommand\listfigurename{Figures}
+\renewcommand\listtablename{Tables}
+\pagenumbering{arabic}
 \title{PHP Framework Performance for Web Development}
 \titlerunning{PHP Framework Performance}  
 % abbreviated title (for running head)
@@ -15,7 +33,7 @@
 \authorrunning{Håkan Nylén}   % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
-\tocauthor{Håkan Nylén}
+%\tocauthor{Håkan Nylén}
 %
 \institute{Blekinge Institute of Technology, Karlskrona, Sweden,\\
 \email{hakan@dun.se}}
@@ -29,6 +47,13 @@
 %\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
 
 %\terms{Theory}
+\renewcommand{\abstractname}{Abstract.}
+\setcounter{tocdepth}{2}
+\setcounter{page}{1}
+\pagestyle {plain}
+\begin{abstract}
+Your abstract goes here...
+\end{abstract}
 \section{Intro}
 PHP Framework is a new thinking, making it faster to build a website. You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? We talk all the time about fast development, but performance is under the hood very important. People seems to forget the importance, except from few systems and new ideas, like CDN\footnote{CDN is Content Delivery Network, a network of servers, where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} makes it faster wherever you are in the world. But how is the performance in PHP framework? is it as fast as how fast it is to develop in it?
 
@@ -80,8 +105,8 @@ The literature is found in different stages. And I used this Sources.
   \item 
 \end{description}
 
-This strings was used, seeing in Figure \ref{fig:literaturesearchstrings}.
-\begin{figure}[htbp]
+This strings was used, seeing in Figure \ref{table:literaturesearchstrings}.
+\begin{table}[htbp]
 \centering
 \begin{tabular}{ p{6cm}}
   Strings\\
@@ -95,9 +120,9 @@ This strings was used, seeing in Figure \ref{fig:literaturesearchstrings}.
   Website Performance \\
   Website evaluation \\
 \end{tabular}
-\caption{The strings for searching literature}
-\label{fig:literaturesearchstrings}
-\end{figure}
+\caption[The strings for searching literature]{The strings for searching literature}
+\label{table:literaturesearchstrings}
+\end{table}
 
 The selection was not so hard, I was looking for some data that was doing something with evaluation in this area, and it is a few. I was looking for good howto, how they made the research to find out the information in the data. Often it was over 300 results in the search, but only 1-3 relevant pages, in every string, and the papers was often in many of the strings.
 
@@ -129,8 +154,8 @@ writes how the CakePHP is build and how to code in it and talk a little about ho
 \section{Literature Results}
 
 \subsection{RQ1: What web performance evaluation exist and how were they performed?}
-Evaluation in web is mostly done in loads and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. This can be seen in Figure \ref{fig:rq1evaluation}.
-\begin{figure}[htbp]
+Evaluation in web is mostly done in loads and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. This can be seen in Figure \ref{table:rq1evaluation}.
+\begin{table}[htbp]
 \centering
 \begin{tabular}{ p{4cm} p{3cm} p{2cm} }
   Evaluation topic & How & year\\
@@ -139,9 +164,9 @@ Evaluation in web is mostly done in loads and counted in ms, but also in how to 
   	server/cpu & Experiment & 2003 \cite{performance:dynweb} \\
   	on-page optimization & Experiment & 2003\cite{performance:dynweb}\\
 \end{tabular}
-\caption{Different types of evaluation of a web performance}
-\label{fig:rq1evaluation}
-\end{figure}
+\caption[Different types of evaluation of a web performance]{Different types of evaluation of a web performance}
+\label{table:rq1evaluation}
+\end{table}
 
 {\bf request/ms} is the most used to evaluate performance of web applications. i got two different pappers talking about two different things, \emph{Understanding Performance} adds this comment:
 \begin{quote}
@@ -162,8 +187,8 @@ Making it important for cpu to work, but that does not mean that Apache itself m
 {\bf On-page optimization} is about how to create less request to the server by removing or group images to one, because browsers loads the html first and then sending more request to get the images. This does also have a thing with the size of the images as well, Bigger images make it longer time to download it. \emph{A Performance Comparison of Dynamic Web Technologies} is testing with static content \cite{performance:dynweb} that can be images or normal html files. Showing it goes faster then dynamic content, but it is a request.
 
 \subsection{RQ2: What factors impact web performance?}
-There are things that can be a impact of the performance while testing. The impact i could see is listed in figure \ref{fig:rq2evaluation}.
-\begin{figure}[htbp]
+There are things that can be a impact of the performance while testing. The impact i could see is listed in figure \ref{table:rq2evaluation}.
+\begin{table}[htbp]
 \centering
 \begin{tabular}{ p{2cm} p{3cm} p{7cm} }
   Factor & How it impact & comment\\
@@ -175,8 +200,8 @@ There are things that can be a impact of the performance while testing. The impa
   	Wrong config & slowness, bad performance & wrong config on the server can make it extra slow, but i will not think about that. I will only use the default settings. This is not a optimization paper.
 \end{tabular}
 \caption{Different types of evaluation of a web performance}
-\label{fig:rq2evaluation}
-\end{figure}
+\label{table:rq2evaluation}
+\end{table}
 
 {\bf The server} can have big impact of the performance because the cpu and RAM can be to less to handle the big amount of request tested. Small CPU and RAM can make it to overload in power and deny new request. Making it impossible to connect when that amount of request is full.
 
@@ -197,22 +222,22 @@ Which of the following php framework provide better performance measured in term
 
 \subsubsection{Controlled Variables}
 the following variables are controlled
-\begin{figure}[htbp]
+\begin{table}[htbp]
 \centering
 \begin{tabular}{ p{3cm} p{7cm} }
   	Variable & Description\\
   	\hline
   	Request size & constant\\
   	Server & see figure \ref{fig:serverSpecification}\\
-  	Framework & Compatible API, look at figure \ref{fig:classes} for info about the classes to use.\\
+  	Framework & Compatible API, look at figure \ref{table:classes} for info about the classes to use.\\
   	Response size & constant
 \end{tabular}
-\caption{Controlled variables in Experiment}
-\label{fig:controlledvariables}
-\end{figure}
+\caption[Controlled variables in Experiment]{Controlled variables in Experiment}
+\label{table:controlledvariables}
+\end{table}
 
 The tests is as you can see in the list below, all 3 tests will be run for database and without database, for each framework. Making it 6 tests total for a framework, with and without database.
-\begin{figure}[htbp]
+\begin{table}[htbp]
 \centering
 \begin{tabular}{l l l l l l}
 &\multicolumn{2}{l}{Codeigniter}&\multicolumn{2}{l}{CakePHP}\\
@@ -227,14 +252,14 @@ The tests is as you can see in the list below, all 3 tests will be run for datab
  Test 3 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
 \end{tabular}
 \caption{How the tests will make for the frameworks.}
-\label{fig:testsforframework}
-\end{figure}
-I choice 5 for the concurrency level, meaning to send 5 request each time. This to help to count the response time more exactly. You can see how the tests will be done in figure \ref{fig:testsforframework}.
+\label{table:testsforframework}
+\end{table}
+I choice 5 for the concurrency level, meaning to send 5 request each time. This to help to count the response time more exactly. You can see how the tests will be done in figure \ref{table:testsforframework}.
 
 The total amount of request of 20,000 is to get okay amount of request to get average time from, not too much and not too less. It does not need to be much more because the average will be the same $\pm$ 2 ms. That make it not necessary to have more. But it took as much as 20,000 because it make it more secure to be right numbers in the results.
 
 A good thing to know is how the server will be setup, here is the table of the specification of the server I will use for the experiment, on the Amazon cloud.
-\begin{figure}[htbp]
+\begin{table}[htbp]
 \centering
 \begin{tabular}{ p{4cm}	 p{4cm} }
   System & Version/size \\
@@ -249,11 +274,11 @@ A good thing to know is how the server will be setup, here is the table of the s
   bits & 64 bit
 \end{tabular}
 \caption{The server specification where the test will be done on.}
-\label{fig:serverSpecification}
-\end{figure}
+\label{table:serverSpecification}
+\end{table}
 This is how the Framework classes will be used in the experiment.
 \footnotetext[3]{One EC2 Compute Unit provides the equivalent CPU capacity of a 1.0-1.2 GHz 2007 Opteron or 2007 Xeon processor. \cite{EC2:Amazon}}
-\begin{figure}[htbp]
+\begin{table}[htbp]
 \centering
 \begin{tabular}{ p{3cm} p{3cm} p{3cm} }
   Type & Codeigniter class & CakePHP class\\
@@ -264,8 +289,8 @@ This is how the Framework classes will be used in the experiment.
 	Form helper & form & Form\\
 \end{tabular}
 \caption{The different classes to use in the frameworks while coding a blog.}
-\label{fig:classes}
-\end{figure}
+\label{table:classes}
+\end{table}
 \subsubsection{Manipulated variables}
 Server load measured in terms of amount of request.
 
@@ -280,7 +305,7 @@ Response Type is the only thing i will change. It is the support of the database
 \begin{description}
   \item[blog] the blog will have normal features, or more likely very simple. It will have a normal list with pagination on the startpage, every post will have its own page.
   \item[apache benchmark] will use Apaches own benchmark to simulate server load. 
-  \item[Environment] the server is mostly already set, see figure \ref{fig:serverSpecification}.
+  \item[Environment] the server is mostly already set, see figure \ref{table:serverSpecification}.
 \end{description}
 
 {\bf Blog} is first a simple blog, with posts list on the startpage and with a own page for single post. The most important with the blog is the index page in this experiment because it is there i will send the requests. So i focused to make a decent list of posts with title, body and created date. Both frameworks use same database making it simple and less chance for the database to make a bad impact in the performance.
@@ -294,8 +319,8 @@ I used Apache benchmark to send request on 20,000 request on a currency on 5 req
 
 I used ab -wn 20000 -c 5 http://11.11.11.11\footnote[4]{the ip is typed as 11.11.11.11 to make it clear that the server is not up no more}/framework to send the load request, randomly from my own computer to the test server, on the Amazon cloud on Ireland.
 
-The variables controlled was response size, amount of request and currency of requests. see the data for the variables in figure \ref{fig:thedatafortests}.
-\begin{figure}[htbp]
+The variables controlled was response size, amount of request and currency of requests. see the data for the variables in figure \ref{table:thedatafortests}.
+\begin{table}[htbp]
 \centering
 \begin{tabular}{ p{2cm} p{2,5cm}  p{2,5cm}  p{2,5cm}  p{2,5cm} }
   Variable & Codeigniter db\footnotemark[5] & Codeigniter & cakephp db\footnotemark[5] & cakephp \\
@@ -305,8 +330,8 @@ The variables controlled was response size, amount of request and currency of re
   Currency & 5 & 5 & 5 & 5 \\
 \end{tabular}
 \caption{The tests with database average request/connection times in ms.}
-\label{fig:thedatafortests}
-\end{figure}
+\label{table:thedatafortests}
+\end{table}
 \footnotetext[5]{with db i mean database, so it is the framework with the database, the database was used with models for posts, without db it was just plain html in view with controller used.}
 \footnotetext[6]{ResponseSize is total bytes of html sent from the server in one test, on every interval.}
 \newpage
@@ -359,4 +384,11 @@ Let the war begin between the php frameworks in performance.
 \bibliographystyle{abbrv}
 \bibliography{sigproc} 
 
+\listoffigures
+\listoftables
+\newpage
+\section{Appendix}
+\includepdf[pages=-]{../experiment/tests.pdf} 
+\newpage
+\includepdf[pages=-]{../experiment/testswithoutdb.pdf}
 \end{document}
