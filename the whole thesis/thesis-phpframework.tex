@@ -73,7 +73,7 @@ showstringspaces=false}
 \setcounter{page}{1}
 \pagestyle {plain}
 \begin{abstract}
-{\bf [Context]} .... {\bf [Problem]} .... {\bf [Contribution]} ....
+{\bf [Context]} .... {\bf [Problem]} .... {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks. It can help to push people to right decision in future work in PHP Framework Performance. The lack of data in this area is one of the decision to make this paper.
 \end{abstract}
 \section{Intro}
 PHP Framework is a new thinking, making it faster to build a website. You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? We talk all the time about fast development, but performance is under the hood very important. People seems to forget the importance, except from few systems and new ideas, like CDN\footnote{CDN is Content Delivery Network, a network of servers, where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} makes it faster wherever you are in the world. But how is the performance in PHP framework? is it as fast as how fast it is to develop in it?
@@ -330,7 +330,7 @@ Response Type is the only thing that will be changed. It is the support of the d
 
 \subsubsection{Experiment Artifact}
 \begin{description}
-  \item[blog] the blog will have normal features, or more likely very simple. It will have a normal list with pagination on the startpage, every post will have its own page.
+  \item[blog] the blog will have normal features, or more likely very simple. It will have a normal list with pagination on the startpage, every post will have its own page. See the appendix to see the code for the blog.
   \item[apache benchmark] will use Apaches own benchmark to simulate server load. 
   \item[Environment] the server is mostly already set, see table \ref{table:serverSpecification}.
 \end{description}
@@ -394,6 +394,16 @@ The difference in the size is because the use of the default in CakePHP and Code
 This seems as no problem, used the default tools in both framework to make a very simple blog webpage. The size should in other word be different, it would be weird if it was not. But the thought that the size can make a difference is of course in the mind. It is request time in ms, and it does have a very big impact by the size.
 
 Would love to see any {\bf future work} on different sizes for the PHP framework, which tests how the size does matter of the performance, with same size of both.
+
+\subsection{Validity Threats}
+\subsubsection{Tests are not isolated}
+making the tests to be disturb by something from outside, can be the traffic of the line on Amazon cloud or something else that can make the response time longer or not trusted. This was tried to be reduced by been testing in the night. But you can see in the tests without, that was made more on the morning that the response time is already higher. This should not change the gap between the frameworks because all the tests was tested in the same time, making it having all around same response time in general. 
+
+\subsubsection{Concurrency level}
+
+
+\subsubsection{Client's impact}
+could be a problem, The tests was running Apache benchmark, but Apache benchmark is ignoring stylesheet and pictures (The blog in the test did not have pictures). It is just getting the generated html page, after php have generated it with the use of the code of PHP Framework. making the impact smaller then a normal browser, that is getting the stylesheet and pictures too.
 
 \section{Conclusion}
 The frameworks performance has big difference, but mostly just if in used of database, the classes fro using database can in other words be more effective. CakePHP was fastest in both tests, with and without a database. But the size was different on 80,000 bytes. This could be something that could make CakePHP a winner. But my conclusion is that used default template, very simple html page. So it does not have a big impact.
