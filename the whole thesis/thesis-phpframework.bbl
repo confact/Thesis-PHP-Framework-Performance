@@ -11,10 +11,26 @@ G.~Da-gang.
   codeigniter.
 \newblock May 2009.
 
+\bibitem{php:cakephp}
+C.~S. Foundation.
+\newblock Intro to cakephp, what is cakephp.
+\newblock \url{http://book.cakephp.org/1.1/view/307/Introduction-to-CakePHP},
+  June 2012.
+
+\bibitem{php:faq}
+T.~P. Group.
+\newblock Php faq what is php and what does it stand for.
+\newblock \url{http://php.net/manual/en/faq.general.php}, June 2012.
+
 \bibitem{EC2:Amazon}
 A.~W.~S. LLC.
 \newblock Ec2 faq: What is a ec2 compute unit, April 2012.
 \newblock \texttt{http://aws.amazon.com/ec2/faqs/}.
+
+\bibitem{php:codeigniter}
+E.~LLC.
+\newblock Codeigniter changelog and releasedates.
+\newblock \url{http://codeigniter.com/user_guide/changelog.html}, June 2012.
 
 \bibitem{performance:Understanding}
 P.~Sevcik and J.~Bartlett.
