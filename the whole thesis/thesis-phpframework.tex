@@ -73,7 +73,7 @@ showstringspaces=false}
 \setcounter{page}{1}
 \pagestyle {plain}
 \begin{abstract}
-{\bf [Context]} .... {\bf [Problem]} .... {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks. It can help to push people to right decision in future work in PHP Framework Performance. The lack of data in this area is one of the decision to make this paper.
+{\bf [Context]} The new PHP Frameworks ideas has become popular for developers. It is important also to know how big impact they have on performance. Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its ground.  {\bf [Problem]} .... {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks. It can help to push people to right decision in future work in PHP Framework Performance. The lack of data in this area is one of the decision to make this paper.
 \end{abstract}
 \section{Intro}
 PHP Framework is a new thinking, making it faster to build a website. You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? We talk all the time about fast development, but performance is under the hood very important. People seems to forget the importance, except from few systems and new ideas, like CDN\footnote{CDN is Content Delivery Network, a network of servers, where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} makes it faster wherever you are in the world. But how is the performance in PHP framework? is it as fast as how fast it is to develop in it?
@@ -81,17 +81,17 @@ PHP Framework is a new thinking, making it faster to build a website. You can ha
 \section{The Background}
 Evaluation is all about the performance. Performance in this paper is about load\footnote{loads means how long a request take, in milliseconds.}, but it can be hardware, network and so on. Evaluation in general is how you can test the performance and in which way. This is very important in the choice of products nowadays.
 
-The history starts when the PHP, PHP: Hypertext Preprocessor (recursive acronym), got born in 1995, Which only was a start. Now is PHP bigger and mainly a own programming language, more called a script language \cite{php:faq}, for websites, inspired by java, C and PERL. \cite{php:faq} Developers using PHP has issues making good websites fast, so some people started to developed PHP Framework to help to create better website faster. There is two frameworks that has biggest users, one is CodeIgniter \cite{MVC:codeigniter}, that was first released 28 February 2006 \cite{php:codeigniter}. It is focused to great clean, fast framework for developers. The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
+The history starts when the PHP, PHP: Hypertext Preprocessor (recursive acronym), got born in 1995, Which only was a start. Now is PHP bigger and mainly a own "programming language", more called a script language \cite{php:faq}, for websites, inspired by java, C and PERL. \cite{php:faq} Developers using PHP has issues making good websites fast, so some people started to developed PHP Framework to help to create better website faster. There is two frameworks that has biggest users, one is CodeIgniter \cite{MVC:codeigniter}, that was first released 28 February 2006 \cite{php:codeigniter}. It is focused to great clean, fast framework for developers. The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
 
 \subsection{MVC}
 Model View Controller is a structure-think to have 3 different types of classes, typing of what they will do. \cite{MVC:phpTeam} Model will handle datahandling, like data from databases. View is the one that handle how the data should be shown for the client. Controller is the middle, collect data from model and making the data readable  and sending it to the view. This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}, these are MVC frameworks in PHP.
 
 \subsection{PHP Framework}
-PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. The Frameworks are built on MVC-thinking with addons, like form-helpers and database-controller, in various languages, like PHP, which we use in this paper. Frameworks are built to make it even more faster to develop a website. The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
+PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. The Frameworks are built on MVC-thinking with add-ons, like form-helpers and database-controller, in various languages, like PHP, which is used in this paper. Frameworks are built to make it even more faster to develop a website. The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
 
-Codeigniter and CakePHP has many lbiraries to help the developer. Codeigniter has no official inspiration but its goal is to make it faster for the developer to create good websites faster then creating them from scratch. CakePHP is inspired by Ruby on Rails and you can see that on the structure of how you calls the functions in a library in CakePHP. Codeigniter strongest ability is its openness where developer is publishing libraries and plugins to Codeigniter. CakePHP has this ability too, but it is not as many contributors as Codeigniter. 
+Codeigniter and CakePHP has many libraries to help the developer. Codeigniter has no official inspiration but its goal is to make it faster for the developer to create good websites then creating them from scratch in raw PHP. CakePHP is inspired by Ruby on Rails and you can see that on the structure of how you calls the functions in a library in CakePHP. Codeigniter strongest ability is its openness where developer is publishing libraries and plugins to Codeigniter. CakePHP has this ability too, but doesn't have as many contributors as Codeigniter. 
 
-The Difference is the structure but in the base is the same, they are based on MVC-thinking but over that, they both has difference structures and thinking about the libraries for databases and controllers, as example. The biggest difference was the handling the model. In CakePHP you only type in the variables the model should handle from the database, normally. In Codeigniter you build the whole model with variables and own function to get the data with the database. You can do that with CakePHP but then use the already implemented function to get, update, add and remove data from the table in the database.
+The Difference is the structure but in the base is the same, they are based on MVC-thinking but over that, they both has difference structures and thinking about the libraries for databases and controllers, as example. The biggest difference was the handling the model. In CakePHP you only type in the variables the model should handle from the database, normally. In Codeigniter you build the whole model with variables and own function to get the data from the database. You can do that with CakePHP but then use the already implemented function to get, update, add and remove data from the table in the database.
 
 \subsection{Client-side}
 Client-side is meaning, in this thesis, the browser and the scripts and other rendering happening by the visitor on the site. This does have a big impact in the in performance for a server. \cite{performance:Understanding} If using many images, the browser first loads the page and then send request for the image and scripts on the page, adding more load to the server, because of more request which load the network for the server. \cite{performance:dynweb}
@@ -123,8 +123,9 @@ Searched more or less on different types of strings like ``web development evalu
     RQ3 & Literature \\
     RQ4 & Data from RQ1, RQ2 and RQ3 to design experiment \\
   \end{tabular}
+\newpage
 \subsection{Literature Survey}
-The literature is found in different stages. And this sources was used.
+The literature is found in different stages. And these sources was used.
 \begin{description}
   \item Google Scholar
   \item IEEE
@@ -155,7 +156,7 @@ The selection was not so hard, Searched for some data that was doing something w
 
 \section{Literature review}
 \subsection{The Approach}
-The search was by the string presented in Figure \ref{fig:literaturesearchstrings}, found some hundreds of papers. This comes to the approach to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area so was it hard to even find this. Took everything of value in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evalution types and hows. The author have big experience in php development so the php framework was easy to find the little papers the author could found. The rest was must in how the authors interest in performance and knowing to found something about impact that was the biggest.
+The search was by the string presented in Table \ref{table:literaturesearchstrings}, found some hundreds of papers. This comes to the approach to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area so was it hard to even find this. Took everything of value in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evalution types and hows. The author have big experience in php development so the php framework was easy to find the little papers the author could found. The rest of the finding approach was depending on the authors knowing, to find something that has a impact or anything that can be a important thing to bring up in this paper.
 
 \subsection{The Papers}
 The information what the papers is and what they have in common.
@@ -179,6 +180,8 @@ writes how the CakePHP is build and how to code in it and talk a little about ho
 
 
 \section{Literature Results}
+\subsection{Old Papers}
+The results are based on old papers. These papers are based on the general web performance and the web performance has not changed much in 10 years. The papers about web performance that is not 10 years old was very hard to find. They were mostly about java, a other programming language, that is not build up in the same way as php. Making them more or less useless. The found papers is taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
 
 \subsection{RQ1: What web performance evaluation exist and how were they performed?}
 Evaluation in web is mostly done in loads and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. This can be seen in table \ref{table:rq1evaluation}.
@@ -255,7 +258,7 @@ the following variables are controlled
   	Variable & Description\\
   	\hline
   	Request size & constant\\
-  	Server & see figure \ref{fig:serverSpecification}\\
+  	Server & see table \ref{table:serverSpecification}\\
   	Framework & Compatible API, look at table \ref{table:classes} for info about the classes to use.\\
   	Response size & constant
 \end{tabular}
@@ -330,14 +333,14 @@ Response Type is the only thing that will be changed. It is the support of the d
 
 \subsubsection{Experiment Artifact}
 \begin{description}
-  \item[blog] the blog will have normal features, or more likely very simple. It will have a normal list with pagination on the startpage, every post will have its own page. See the appendix to see the code for the blog.
+  \item[blog] the blog will have normal features, or more likely very simple. It will have a normal list with pagination on the startpage, every post will have its own page. You can see the code in Appendix A1 and A3.
   \item[apache benchmark] will use Apaches own benchmark to simulate server load. 
   \item[Environment] the server is mostly already set, see table \ref{table:serverSpecification}.
 \end{description}
 
-{\bf Blog} is first a simple blog, with posts list on the startpage and with a own page for single post. The most important with the blog is the index page in the experiment, because it is there the requests will be send. Focusing to make a decent list of posts with title, body and created date at the blog. Both frameworks use same database making it simple and less chance for the database to make a bad impact in the performance.
+{\bf Blog} is first a simple blog, with posts list on the startpage and with a own page for single post. The most important with the blog is the index page in the experiment, because it is there the requests will be send. Focusing to make a decent list of posts with title, body and created date at the blog. Both frameworks use same database making it simple and less chance for the database to make a bad impact in the performance. You can see the code in Appendix A1 and A2.
 
-{\bf Apache benchmark} is picked because it seem it was the most workable tool to test performance for the web. All tools for performance for a web application is doing it it almost the same, it is same idea, to send a amount of request to the server and count how long it took to get a response back. Apache benchmark is the one that is been in while and has a reputation to do fair tests.
+{\bf Apache benchmark} is doing as All tools for performance for a web application is doing. It is same idea, to send a amount of request to the server and count how long it took to get a response back. Apache benchmark is the one that is been in while and has a reputation to do fair tests.
 
 \section{Experiment}
 \subsection{How it was made}
@@ -363,7 +366,7 @@ The variables controlled was response size, amount of request and currency of re
 \footnotetext[6]{ResponseSize is total bytes of html sent from the server in one test, on every interval.}
 \newpage
 \subsection{The results}
-The experiment was made randomly on a night in different times, picked randomly. there was 3 tests on each framework on 20,000 request total, 5 request per time when sending to the server.
+The experiment was made randomly on a night in different times, picked randomly. there was 3 tests on each framework on 20,000 request total, 5 request per time when sending to the server. The results can you see in Appendix A3.
 
 The result can you see in figure \ref{fig:experimentwithdb}. It was almost same results on both, but a small gap between the two framework on just a few Millie seconds, to be exact, it was a gap on 5,34 ms in a average.
 \begin{figure}[h]
@@ -403,7 +406,7 @@ making the tests to be disturb by something from outside, can be the traffic of 
 
 
 \subsubsection{Client's impact}
-could be a problem, The tests was running Apache benchmark, but Apache benchmark is ignoring stylesheet and pictures (The blog in the test did not have pictures). It is just getting the generated html page, after php have generated it with the use of the code of PHP Framework. making the impact smaller then a normal browser, that is getting the stylesheet and pictures too.
+could be a problem. The tests was running Apache benchmark, but Apache benchmark is ignoring stylesheet and pictures (The blog in the test did not have pictures). It is just getting the generated html page, after php have generated it with the use of the code of PHP Framework. making the impact smaller then a normal browser, that is getting the stylesheet and pictures too.
 
 \section{Conclusion}
 The frameworks performance has big difference, but mostly just if in used of database, the classes fro using database can in other words be more effective. CakePHP was fastest in both tests, with and without a database. But the size was different on 80,000 bytes. This could be something that could make CakePHP a winner. But my conclusion is that used default template, very simple html page. So it does not have a big impact.
