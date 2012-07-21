@@ -6,6 +6,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{textcomp}
+\usepackage{verbatim} 
 \usepackage{minted}
 \definecolor{javared}{rgb}{0.6,0,0} % for strings
 \definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
@@ -73,35 +74,40 @@ showstringspaces=false}
 \setcounter{page}{1}
 \pagestyle {plain}
 \begin{abstract}
-{\bf [Context]} The new PHP Frameworks ideas has become popular for developers. It is important also to know how big impact they have on performance. Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its ground.  {\bf [Problem]} .... {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks. It can help to push people to right decision in future work in PHP Framework Performance. The lack of data in this area is one of the decision to make this paper.
+{\bf [Context]} The new PHP Frameworks ideas has become popular for developers. It is important also to know how big impact they have on the performance. Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its grounds.  {\bf [Problem]} .... {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks. It can help to push people to the right decisions in future work in PHP Framework Performance. The lack of data in this area is also one of the decision to make this paper as well.
 \end{abstract}
 \section{Intro}
 PHP Framework is a new thinking, making it faster to build a website. You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? We talk all the time about fast development, but performance is under the hood very important. People seems to forget the importance, except from few systems and new ideas, like CDN\footnote{CDN is Content Delivery Network, a network of servers, where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} makes it faster wherever you are in the world. But how is the performance in PHP framework? is it as fast as how fast it is to develop in it?
 
 \section{The Background}
-Evaluation is all about the performance. Performance in this paper is about load\footnote{loads means how long a request take, in milliseconds.}, but it can be hardware, network and so on. Evaluation in general is how you can test the performance and in which way. This is very important in the choice of products nowadays.
+Evaluation is all about the performance. Performance in this paper is about load\footnote{loads means how long a request take, in milliseconds.}, but it can be hardware, network and more. Evaluation in general is how you can test the performance and in which way. This is very important in the choice of products nowadays.
 
-The history starts when the PHP, PHP: Hypertext Preprocessor (recursive acronym), got born in 1995, Which only was a start. Now is PHP bigger and mainly a own ``programming language'', more called a script language \cite{php:faq}, for websites, inspired by java, C and PERL. \cite{php:faq} Developers using PHP has issues making good websites fast, so some people started to developed PHP Framework to help to create better website faster. There is two frameworks that has biggest users, one is CodeIgniter \cite{MVC:codeigniter}, that was first released 28 February 2006 \cite{php:codeigniter}. It is focused to great clean, fast framework for developers. The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
+The history starts when the PHP, PHP: Hypertext Preprocessor (recursive acronym), got born in 1995, Which only was a start. Now is PHP bigger and mainly a own ``programming language'', more called a script language \cite{php:faq}, for websites, inspired by java, C and PERL. \cite{php:faq} Developers using PHP has issues making good websites fast, so some developers started to developed PHP Framework to help to create better website faster. There are two frameworks that has biggest users, one is CodeIgniter \cite{MVC:codeigniter}, that was first released 28 February 2006 \cite{php:codeigniter}. It is focused to great clean, fast framework for developers. The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
 
 \subsection{MVC}
-Model View Controller is a structure-think to have 3 different types of classes, typing of what they will do. \cite{MVC:phpTeam} Model will handle datahandling, like data from databases. View is the one that handle how the data should be shown for the client. Controller is the middle, collect data from model and making the data readable  and sending it to the view. This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}, these are MVC frameworks in PHP.
+Model View Controller is a structure-think to have 3 different types of classes, types of what they will do. \cite{MVC:phpTeam} Model will handle datahandling, like data from databases. View is the one that handle how the data should be shown for the client. Controller is the middle, collect data from model and making the data readable  and sending it to the view. This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}, these are MVC frameworks in PHP.
 
 \subsection{PHP Framework}
-PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. The Frameworks are built on MVC-thinking with add-ons, like form-helpers and database-controller, in various languages, like PHP, which is used in this paper. Frameworks are built to make it even more faster to develop a website. The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
+PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. The Frameworks are built on MVC-thinking with add-ons, like form-helpers and database-controllers, in various languages, like PHP. Frameworks are built to make it even more faster to develop a website. The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
 
-Codeigniter and CakePHP has many libraries to help the developer. Codeigniter has no official inspiration but its goal is to make it faster for the developer to create good websites then creating them from scratch in raw PHP. CakePHP is inspired by Ruby on Rails and you can see that on the structure of how you calls the functions in a library in CakePHP. Codeigniter strongest ability is its openness where developer is publishing libraries and plugins to Codeigniter. CakePHP has this ability too, but doesn't have as many followers making requests for changes in the code as Codeigniter.\footnote{This can been shown on their git repositories on Github, \cite{github:codeigniter} and \cite{github:cakephp}. Seeing followers of the repository and how many pull requests each project has.}
+Codeigniter and CakePHP has many libraries to help the developer. Codeigniter has no official inspiration but its goal is to make it faster for the developer to create good websites then creating them from scratch in raw PHP. CakePHP is inspired by Ruby on Rails and you can see that on the structure of how you call the functions in a library in CakePHP. Codeigniter strongest ability is the openness where the developers are publishing libraries and plugins to Codeigniter. CakePHP has this ability too, but doesn't have as many followers making requests for changes in the code as Codeigniter.\footnote{This can been shown on their git repositories on Github, \cite{github:codeigniter} and \cite{github:cakephp}. Seeing followers of the repository and how many pull requests each project has.}
 
-The Difference is the structure but in the base is the same, they are based on MVC-thinking but over that, they both has difference structures and thinking about the libraries for databases and controllers, as example. The biggest difference was the handling the model. In CakePHP you only type in the variables the model should handle from the database, normally. In Codeigniter you build the whole model with variables and own function to get the data from the database. You can do that with CakePHP but then use the already implemented function to get, update, add and remove data from the table in the database.
+The Difference is the structure but in the ground are both the same, they are based on MVC-thinking but over that, they both has difference structures and difference thinking how the libraries for databases and controllers, should behave and been called. The biggest difference was the handling the model. In CakePHP you only type the variables, which the model should handle from the database, normally. In Codeigniter you build the whole model with variables and own functions to get the data from the database. You can do that with CakePHP but by using the already implemented function to get, update, add and remove data from the table in the database.
 
 \subsection{Client-side}
-Client-side is meaning, in this thesis, the browser and the scripts and other rendering happening by the visitor on the site. This does have a big impact in the in performance for a server. \cite{performance:Understanding} If using many images, the browser first loads the page and then send request for the image and scripts on the page, adding more load to the server, because of more request which load the network for the server. \cite{performance:dynweb}
+Client-side means the browser and the scripts and other rendering happening by the visitor on the site. This does have a big impact in the performance on a server. \cite{performance:Understanding} If using many images, the browser first loads the page and then send request to get the image and scripts on the page, adding more load to the server, because it generates more requests making the server handle more load. \cite{performance:dynweb}
 
 \subsection{Server-side}
-Server-side is the server, of course. Here can the network, CPU and RAM be a impact in the performance for the visitor of the site. \cite{performance:dynweb} Often is the network that is stopping more load to the server, because the optimized server program such as Apache don not use so much of the CPU and RAM, making  the CPU and RAM the less problem. Of course can that be the issue, but not so often.
+Server-side is the server. Here can the network, CPU and RAM be a impact in the performance for the visitor on the site. \cite{performance:dynweb} When Apache, the server software for web is getting many requests on the same time, more CPU and RAM will be used, making it to not handle all the requests when all RAM or CPU is used. Making the feeling of the website as slow. Often is the network that is stopping more load to the server, because the optimized server program such as Apache don not use so much of the CPU and RAM, making the CPU and RAM the less problem. Of course can that be the issue, but not so often.
 
 \subsection{Performance}
-What performance can be different, to make it easy this paper will be about fast request, so network is very important. It can also have big impact how the servers is, Like a big server park in a datacenter. But that cost much money, which is a problem when doing this paper. That is why it will only test this on cloud with one server and see how the framework is changing the ms of a request.
+What performance can be different, to make it easy this paper will be about fast request, so network is very important. It can also have big impact how the servers is, Like a big server park in a datacenter. But that cost much money, which is a problem when doing this paper. That is why it will only test this on cloud with one server and see how the framework is changing the ms of a request. This Server is running on Amazon EC2, a isolated server environment on the cloud. A good thing with this setup is that it is more or less this real website is set-up nowadays, making it more trustworthy in the data. The server specification can be seen on table \ref{table:serverSpecification}.
 
+\begin{comment}
+Been checked the text to hear. Need to check and add more text if needed for all text under here.
+\end{comment}
+
+\newpage
 \section{Research}
 \subsection{Research Questions}
 \begin{description}
@@ -123,7 +129,6 @@ Searched more or less on different types of strings like ``web development evalu
     RQ3 & Literature \\
     RQ4 & Data from RQ1, RQ2 and RQ3 to design experiment \\
   \end{tabular}
-\newpage
 \subsection{Literature Survey}
 The literature is found in different stages. And these sources was used.
 \begin{description}
@@ -241,7 +246,7 @@ There are things that can be a impact of the performance while testing. The impa
 
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
 It was nothing about how performance in php framework what could be found, this is one of the things why the author want to experiment and do this. It is a big area in performance in php framework thats not covered.
-
+\newpage
 \section{Experiment Design} 
 
 \subsection{Investigated Question}
