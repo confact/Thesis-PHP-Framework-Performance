@@ -108,11 +108,11 @@ Model View Controller is a structure-think to have 3 different types of classes,
 Model will handle datahandling, like data from databases. 
 View is the one that handle how the data should be shown for the client. 
 Controller is the middle, collect data from model and making the data readable  and sending it to the view. 
-This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}, these are MVC frameworks in PHP.
+This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}.
 
 \subsection{PHP Framework}
 PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. 
-The Frameworks are built on MVC-thinking with add-ons, like form-helpers and database-controllers, in various languages, like PHP. 
+The Frameworks are based on MVC with add-ons, like form-helpers and database-controllers, in various languages, like PHP. 
 Frameworks are built to make it even more faster to develop a website. 
 The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
 
@@ -145,22 +145,20 @@ Of course can that be the issue, but not so often.
 \subsection{Performance}
 What performance can be different, to make it easy this paper will be about fast request, so network is very important. 
 It can also have big impact how the servers is, Like a big server park in a datacenter. 
-But that cost much money, which is a problem when doing this paper. 
+But that cost much money, which is a problem when doing this paper.
 That is why it will only test this on cloud with one server and see how the framework is changing the ms of a request. 
 This Server is running on Amazon EC2, a isolated server environment on the cloud. 
 A good thing with this setup is that it is more or less this real website is set-up nowadays, making it more trustworthy in the data. 
 The server specification can be seen on table \ref{table:serverSpecification}.
 
-\begin{comment}
-Been checked the text for spelling and grammar to here. The text under still needs to be checked.
-\end{comment}
+
 
 \newpage
 \section{Research}
 \subsection{Research Questions}
 \begin{description}
   \item[RQ1:] What web performance evaluations exist and how were they performed?
-  \item[RQ2:] What factors impact web performance?
+  \item[RQ2:] What factors impact web performance?\footnote{Because of the lack of data on php performance, it make it easier to find data about web performance in general.}
   \item[RQ3:] To what extent are open source php frameworks evaluated?
   \item[RQ4:] What performance are different between most commonly used open source php frameworks and how can it be evaluated?
 \end{description}
@@ -179,15 +177,14 @@ found 300 papers and 8 relevant because the others was talking about the evaluat
     RQ4 & Data from RQ1, RQ2 and RQ3 to design experiment \\
   \end{tabular}
 \subsection{Literature Survey}
-The literature is found in different stages. And these sources was used.
-\begin{description}
+The literature was found in different stages. And these sources was used.
+\begin{itemize}
   \item Google Scholar
   \item IEEE
   \item Google
-  \item 
-\end{description}
+\end{itemize}
 
-This strings was used, seeing in table \ref{table:literaturesearchstrings}.
+These strings were used, as seen in table \ref{table:literaturesearchstrings}.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{6cm}}
@@ -208,52 +205,53 @@ This strings was used, seeing in table \ref{table:literaturesearchstrings}.
 
 The selection was not so hard, Searched for some data that was doing something with evaluation in this area, and it was a few. 
 The important was a good how-to, how they made the research to find out the information in the data, this was often found in the abstract but sometimes in the background. 
-Often it was over 300 results in the search, but only 1-3 relevant pages, in every string, and the papers was often in many of the strings.
+Often it was over 300 results in the search, but only 1-3 relevant pages, in every string, and the same papers was often in many of the strings.
 
 \section{Literature review}
 \subsection{The Approach}
-The search was by the string presented in Table \ref{table:literaturesearchstrings}, found some hundreds of papers. 
-This comes to the approach to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area so was it hard to even find this. 
+The search was by the strings presented in Table \ref{table:literaturesearchstrings}, and byt them the search found some hundreds of papers. 
+This comes to the approach to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area it become very hard to find any papers about PHP performance at all. This made it easier to find papers in web performance in general.
 Took everything of value in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evalution types and hows. 
-The author have big experience in php development so the php framework was easy to find the little papers the author could found. 
-The rest of the finding approach was depending on the authors knowing, to find something that has a impact or anything that can be a important thing to bring up in this paper.
+The rest of the finding approach was depending on the authors knowledge, to find something that has a impact for a website or similar that can be a important thing to bring up in this paper.
 
 \subsection{The Papers}
-The information what the papers is and what they have in common.
+Information what the papers contains and what they have in common.
 \subsubsection{PHP Team Development}
-is about how the MVC idea and technique make a difference in the development. 
-This is a book about how the development in PHP is and what they do, as MVC is a big part of it. This book is from 2009. \cite{MVC:phpTeam}
+is about how the MVC idea and techniques make a difference in the development. 
+This is a book about how the development in PHP is and what it does with web development, as MVC is a big part of it. This book is from 2009. \cite{MVC:phpTeam}
 
 \subsubsection{Analysis of model-based mvc framework for php development CodeIgniter}
 is analysing how the mvc based framework Codeigniter is doing in the development in performance and in userability for developers. 
 this is a analysing paper from May 2009, it has kinda much in common with PHP Team Development, the book which have a chapter about MVC. \cite{MVC:codeigniter}
 
 \subsubsection{Ec2 faq: What is a ec2 compute unit}
-shows what EC2 is about and what a compute unit is, to how something to reference to for the server specification in the tests. 
+shows what EC2 is about and what a compute unit is. 
 This is a website FAQ, which was last visited april 2012. \cite{EC2:Amazon}
 
 \subsubsection{Understanding web performance}
-presents how performance can be used and it is importance in the web business, it also bring up how performance can be tested and what can be a impact for the tests. 
+presents how performance can be used and it is importance in the web business, it also bring up how performance can be tested and what can impact the tests. 
 It is a paper presented in a Business Communication Review October 2001. \cite{performance:Understanding}
 
 \subsubsection{A performance comparison of dynamic web technologies}
-describe the different impact in performance when they do a comparison in different performance types and how that can be done. Presented in ACM Sigmetrics December 2003. \cite{performance:dynweb}
+describe the different impact in performance when they do a comparison in different performance types and how it can be done. Presented in ACM Sigmetrics December 2003. \cite{performance:dynweb}
 
-\subsubsection{Web-based ide to create model and controller components for mvc-based web applications on cakephp}
+\subsubsection{Web-based IDE to create model and controller components for mvc-based web applications on cakephp}
 writes how the CakePHP is build and how to code in it and talk a little about how MVC is about. A normal paper from December 2010. 
 Has much in common with the other MVC framework Codeigniter and the book PHP Team Development. \cite{MVC:cakephp}
 
 
 \section{Literature Results}
 \subsection{Old Papers}
-The results are based on old papers. 
+The results below are based on old papers. 
 These papers are based on the general web performance and the web performance has not changed much in 10 years. 
 The papers about web performance that is not 10 years old was very hard to find. 
-They were mostly about java, a other programming language, that is not build up in the same way as php. Making them more or less useless. 
-The found papers is taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
+They were mostly about java, a other programming language, that is not build up in the same way as php. Making them more or less useless for this paper. 
+The papers bringed up in this paper are taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
+
+%Been checked the text for spelling and grammar to here. The text under still needs to be checked.
 
 \subsection{RQ1: What web performance evaluation exist and how were they performed?}
-Evaluation in web is mostly done in loads and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. 
+Evaluation in web is mostly done by load testing and counted in ms, but also by TPS (Tin how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. 
 This can be seen in table \ref{table:rq1evaluation}.
 \begin{table}[htbp]
 \centering
@@ -275,9 +273,9 @@ Sure, speed matters, but it is not a one-dimensional problem.
 And, despite what you have heard, just adding more bandwidth does not always make things go faster. \cite{performance:Understanding}
 \end{quote}
 High requests needs good cpu and network, but to understand \emph{Understanding Performance} speed matters but not always the only problem. 
-\emph{A Performance Comparison of Dynamic Web Technologies} talks about something how they do the tests with requests in ms:
+\emph{A Performance Comparison of Dynamic Web Technologies} talks about how they do the tests with requests in ms:
 \begin{quote}
-Consideration of over- load behaviour may be just as important as the peak request rate when Web site administrators are choosing dynamic Web content generation technologies. \cite{performance:dynweb} 
+Consideration of overload behaviour may be just as important as the peak request rate when Web site administrators are choosing dynamic Web content generation technologies. \cite{performance:dynweb} 
 \end{quote}
 They saw a important to consider how to choose technologies using dynamic web content, because of different peak of request in how big the request was. 
 They also show how good it can be to evaluate how the performance is by using requests per milliseconds, or seconds.
@@ -289,7 +287,7 @@ Under overload, Apache 2.0.45 is unable to accept TCP connections (and hence re-
 \end{quote}
 Making it important for cpu to work, but that does not mean that Apache itself make the CPU overload, it can be the network the cpu need to handle.
 
-{\bf On-page optimization} is about how to create less request to the server by removing or group images to one, because browsers loads the html first and then sending more request to get the images. 
+{\bf On-page optimization} is about how to create less requests to the server by removing or group images to one, because browsers loads the html first and then sending more request to get the images. 
 This does also have a thing with the size of the images as well, Bigger images make it longer time to download it. 
 \emph{A Performance Comparison of Dynamic Web Technologies} is testing with static content \cite{performance:dynweb} that can be images or normal html files. Showing it goes faster then dynamic content, but it is a request.
 
@@ -345,8 +343,8 @@ the following variables are controlled
   	\hline
   	Request size & constant\\
   	Server & see table \ref{table:serverSpecification}\\
-  	Framework & Compatible API, look at table \ref{table:classes} for info about the classes to use.\\
-  	Response size & constant
+  	Framework & Compatible API, look at table \ref{table:classes} for info about the classes.\\
+  	Response size & constant. See the size in table \ref{table:controlledvariables}.
 \end{tabular}
 \caption[Controlled variables in Experiment]{Controlled variables in Experiment}
 \label{table:controlledvariables}
@@ -370,9 +368,9 @@ The tests is as you can see in the list below, all 3 tests will be run for datab
 \caption{How the tests will make for the frameworks.}
 \label{table:testsforframework}
 \end{table}
-I choice 5 for the concurrency level, meaning to send 5 request each time. This to help to count the response time more exactly. You can see how the tests will be done in table \ref{table:testsforframework}.
+the tests are using 5 for the concurrency level, meaning to send 5 request each time, send so fast the previous requests are done. This to help to count the response time more exactly. You can see how the tests will be done in table \ref{table:testsforframework}.
 
-The total amount of request of 20,000 is to get okay amount of request to get average time from, not too much and not too less. 
+The total amount of request of 20,000 is to get amount of request to get average time from, not too much and not too less. 
 It does not need to be much more because the average will be the same $\pm$ 2 ms. 
 That make it not necessary to have more. But it took as much as 20,000 because it make it more secure to be right numbers in the results.
 
