@@ -74,34 +74,82 @@ showstringspaces=false}
 \setcounter{page}{1}
 \pagestyle {plain}
 \begin{abstract}
-{\bf [Context]} The new PHP Frameworks ideas has become popular for developers. It is important also to know how big impact they have on the performance. Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its grounds.  {\bf [Problem]} .... {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks. It can help to push people to the right decisions in future work in PHP Framework Performance. The lack of data in this area is also one of the decision to make this paper as well.
+{\bf [Context]} The new PHP Frameworks ideas has become popular for developers. 
+It is important also to know how big impact they have on the performance. 
+Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its grounds.  
+{\bf [Problem]} .... 
+{\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks.
+It can help to push people to the right decisions in future work in PHP Framework Performance. 
+The lack of data in this area is also one of the decision to make this paper as well.
 \end{abstract}
 \section{Intro}
-PHP Framework is a new thinking, making it faster to build a website. You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? We talk all the time about fast development, but performance is under the hood very important. People seems to forget the importance, except from few systems and new ideas, like CDN\footnote{CDN is Content Delivery Network, a network of servers, where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} makes it faster wherever you are in the world. But how is the performance in PHP framework? is it as fast as how fast it is to develop in it?
+PHP Framework is a new thinking, making it faster to build a website. 
+You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? 
+We talk all the time about fast development, but performance is under the hood very important. 
+People seems to forget the importance, except from few systems and new ideas, like CDN
+\footnote{CDN is Content Delivery Network, a network of servers, where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} 
+makes it faster wherever you are in the world. But how is the performance in PHP framework? is it as fast as how fast it is to develop in it?
 
 \section{The Background}
-Evaluation is all about the performance. Performance in this paper is about load\footnote{loads means how long a request take, in milliseconds.}, but it can be hardware, network and more. Evaluation in general is how you can test the performance and in which way. This is very important in the choice of products nowadays.
+Evaluation is all about the performance. Performance in this paper is about load\footnote{loads means how long a request take, in milliseconds.}, but it can be hardware, network and more. 
+Evaluation in general is how you can test the performance and in which way. 
+This is very important in the choice of products nowadays.
 
-The history starts when the PHP, PHP: Hypertext Preprocessor (recursive acronym), got born in 1995, Which only was a start. Now is PHP bigger and mainly a own ``programming language'', more called a script language \cite{php:faq}, for websites, inspired by java, C and PERL. \cite{php:faq} Developers using PHP has issues making good websites fast, so some developers started to developed PHP Framework to help to create better website faster. There are two frameworks that has biggest users, one is CodeIgniter \cite{MVC:codeigniter}, that was first released 28 February 2006 \cite{php:codeigniter}. It is focused to great clean, fast framework for developers. The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
+The history starts when the PHP, PHP: Hypertext Preprocessor (recursive acronym), got born in 1995, 
+Which only was a start. 
+Now is PHP bigger and mainly a own ``programming language'', more called a script language \cite{php:faq}, for websites, inspired by java, C and PERL. \cite{php:faq} 
+Developers using PHP has issues making good websites fast, so some developers started to developed PHP Framework to help to create better website faster. 
+There are two frameworks that has biggest users, one is CodeIgniter \cite{MVC:codeigniter}, that was first released 28 February 2006 \cite{php:codeigniter}. 
+It is focused to great clean, fast framework for developers. 
+The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
 
 \subsection{MVC}
-Model View Controller is a structure-think to have 3 different types of classes, types of what they will do. \cite{MVC:phpTeam} Model will handle datahandling, like data from databases. View is the one that handle how the data should be shown for the client. Controller is the middle, collect data from model and making the data readable  and sending it to the view. This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}, these are MVC frameworks in PHP.
+Model View Controller is a structure-think to have 3 different types of classes, types of what they will do. \cite{MVC:phpTeam} 
+Model will handle datahandling, like data from databases. 
+View is the one that handle how the data should be shown for the client. 
+Controller is the middle, collect data from model and making the data readable  and sending it to the view. 
+This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}, these are MVC frameworks in PHP.
 
 \subsection{PHP Framework}
-PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. The Frameworks are built on MVC-thinking with add-ons, like form-helpers and database-controllers, in various languages, like PHP. Frameworks are built to make it even more faster to develop a website. The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
+PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. 
+The Frameworks are built on MVC-thinking with add-ons, like form-helpers and database-controllers, in various languages, like PHP. 
+Frameworks are built to make it even more faster to develop a website. 
+The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
 
-Codeigniter and CakePHP has many libraries to help the developer. Codeigniter has no official inspiration but its goal is to make it faster for the developer to create good websites then creating them from scratch in raw PHP. CakePHP is inspired by Ruby on Rails and you can see that on the structure of how you call the functions in a library in CakePHP. Codeigniter strongest ability is the openness where the developers are publishing libraries and plugins to Codeigniter. CakePHP has this ability too, but doesn't have as many followers making requests for changes in the code as Codeigniter.\footnote{This can been shown on their git repositories on Github, \cite{github:codeigniter} and \cite{github:cakephp}. Seeing followers of the repository and how many pull requests each project has.}
+Codeigniter and CakePHP has many libraries to help the developer. 
+Codeigniter has no official inspiration but its goal is to make it faster for the developer to create good websites then creating them from scratch in raw PHP. 
+CakePHP is inspired by Ruby on Rails and you can see that on the structure of how you call the functions in a library in CakePHP. 
+Codeigniter strongest ability is the openness where the developers are publishing libraries and plugins to Codeigniter.
+ CakePHP has this ability too, but doesn't have as many followers making requests for changes in the code as Codeigniter.\footnote{This can been shown on their git repositories on Github, \cite{github:codeigniter} and \cite{github:cakephp}. 
+ Seeing followers of the repository and how many pull requests each project has.}
 
-The Difference is the structure but in the ground are both the same, they are based on MVC-thinking but over that, they both has difference structures and difference thinking how the libraries for databases and controllers, should behave and been called. The biggest difference was the handling the model. In CakePHP you only type the variables, which the model should handle from the database, normally. In Codeigniter you build the whole model with variables and own functions to get the data from the database. You can do that with CakePHP but by using the already implemented function to get, update, add and remove data from the table in the database.
+The Difference is the structure but in the ground are both the same, 
+they are based on MVC-thinking but over that, they both has difference structures and difference thinking how the libraries for databases and controllers, should behave and been called. 
+The biggest difference was the handling the model. In CakePHP you only type the variables, which the model should handle from the database, normally. 
+In Codeigniter you build the whole model with variables and own functions to get the data from the database. 
+You can do that with CakePHP but by using the already implemented function to get, update, add and remove data from the table in the database.
 
 \subsection{Client-side}
-Client-side means the browser and the scripts and other rendering happening by the visitor on the site. This does have a big impact in the performance on a server. \cite{performance:Understanding} If using many images, the browser first loads the page and then send request to get the image and scripts on the page, adding more load to the server, because it generates more requests making the server handle more load. \cite{performance:dynweb}
+Client-side means the browser and the scripts and other rendering happening by the visitor on the site. 
+This does have a big impact in the performance on a server. \cite{performance:Understanding} 
+If using many images, the browser first loads the page and then send request to get the image and scripts on the page, adding more load to the server, 
+because it generates more requests making the server handle more load. \cite{performance:dynweb}
 
 \subsection{Server-side}
-Server-side is the server. Here can the network, CPU and RAM be a impact in the performance for the visitor on the site. \cite{performance:dynweb} When Apache, the server software for web is getting many requests on the same time, more CPU and RAM will be used, making it to not handle all the requests when all RAM or CPU is used. Making the feeling of the website as slow. Often is the network that is stopping more load to the server, because the optimized server program such as Apache don not use so much of the CPU and RAM, making the CPU and RAM the less problem. Of course can that be the issue, but not so often.
+Server-side is the server. Here can the network, CPU and RAM be a impact in the performance for the visitor on the site. \cite{performance:dynweb} 
+When Apache, the server software for web is getting many requests on the same time, more CPU and RAM will be used, making it to not handle all the requests when all RAM or CPU is used. 
+Making the feeling of the website as slow. 
+Often is the network that is stopping more load to the server, because the optimized server program such as Apache don not use so much of the CPU and RAM, making the CPU and RAM the less problem. 
+Of course can that be the issue, but not so often.
 
 \subsection{Performance}
-What performance can be different, to make it easy this paper will be about fast request, so network is very important. It can also have big impact how the servers is, Like a big server park in a datacenter. But that cost much money, which is a problem when doing this paper. That is why it will only test this on cloud with one server and see how the framework is changing the ms of a request. This Server is running on Amazon EC2, a isolated server environment on the cloud. A good thing with this setup is that it is more or less this real website is set-up nowadays, making it more trustworthy in the data. The server specification can be seen on table \ref{table:serverSpecification}.
+What performance can be different, to make it easy this paper will be about fast request, so network is very important. 
+It can also have big impact how the servers is, Like a big server park in a datacenter. 
+But that cost much money, which is a problem when doing this paper. 
+That is why it will only test this on cloud with one server and see how the framework is changing the ms of a request. 
+This Server is running on Amazon EC2, a isolated server environment on the cloud. 
+A good thing with this setup is that it is more or less this real website is set-up nowadays, making it more trustworthy in the data. 
+The server specification can be seen on table \ref{table:serverSpecification}.
 
 \begin{comment}
 Been checked the text for spelling and grammar to here. The text under still needs to be checked.
@@ -116,7 +164,8 @@ Been checked the text for spelling and grammar to here. The text under still nee
   \item[RQ3:] To what extent are open source php frameworks evaluated?
   \item[RQ4:] What performance are different between most commonly used open source php frameworks and how can it be evaluated?
 \end{description}
-Searched more or less on different types of strings like ``web development evaluation'' and ``Web development performance''. found 300 papers and 8 relevant because the others was talking about the evaluation in general, not about performance in web development. 
+Searched more or less on different types of strings like ``web development evaluation'' and ``Web development performance''. 
+found 300 papers and 8 relevant because the others was talking about the evaluation in general, not about performance in web development. 
 
 
 \subsection{Research Methodology}
@@ -157,39 +206,55 @@ This strings was used, seeing in table \ref{table:literaturesearchstrings}.
 \label{table:literaturesearchstrings}
 \end{table}
 
-The selection was not so hard, Searched for some data that was doing something with evaluation in this area, and it was a few. The important was a good how-to, how they made the research to find out the information in the data, this was often found in the abstract but sometimes in the background. Often it was over 300 results in the search, but only 1-3 relevant pages, in every string, and the papers was often in many of the strings.
+The selection was not so hard, Searched for some data that was doing something with evaluation in this area, and it was a few. 
+The important was a good how-to, how they made the research to find out the information in the data, this was often found in the abstract but sometimes in the background. 
+Often it was over 300 results in the search, but only 1-3 relevant pages, in every string, and the papers was often in many of the strings.
 
 \section{Literature review}
 \subsection{The Approach}
-The search was by the string presented in Table \ref{table:literaturesearchstrings}, found some hundreds of papers. This comes to the approach to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area so was it hard to even find this. Took everything of value in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evalution types and hows. The author have big experience in php development so the php framework was easy to find the little papers the author could found. The rest of the finding approach was depending on the authors knowing, to find something that has a impact or anything that can be a important thing to bring up in this paper.
+The search was by the string presented in Table \ref{table:literaturesearchstrings}, found some hundreds of papers. 
+This comes to the approach to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area so was it hard to even find this. 
+Took everything of value in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evalution types and hows. 
+The author have big experience in php development so the php framework was easy to find the little papers the author could found. 
+The rest of the finding approach was depending on the authors knowing, to find something that has a impact or anything that can be a important thing to bring up in this paper.
 
 \subsection{The Papers}
 The information what the papers is and what they have in common.
 \subsubsection{PHP Team Development}
-is about how the MVC idea and technique make a difference in the development. This is a book about how the development in PHP is and what they do, as MVC is a big part of it. This book is from 2009. \cite{MVC:phpTeam}
+is about how the MVC idea and technique make a difference in the development. 
+This is a book about how the development in PHP is and what they do, as MVC is a big part of it. This book is from 2009. \cite{MVC:phpTeam}
 
 \subsubsection{Analysis of model-based mvc framework for php development CodeIgniter}
-is analysing how the mvc based framework Codeigniter is doing in the development in performance and in userability for developers. this is a analysing paper from May 2009, it has kinda much in common with PHP Team Development, the book which have a chapter about MVC. \cite{MVC:codeigniter}
+is analysing how the mvc based framework Codeigniter is doing in the development in performance and in userability for developers. 
+this is a analysing paper from May 2009, it has kinda much in common with PHP Team Development, the book which have a chapter about MVC. \cite{MVC:codeigniter}
 
 \subsubsection{Ec2 faq: What is a ec2 compute unit}
-shows what EC2 is about and what a compute unit is, to how something to reference to for the server specification in the tests. This is a website FAQ, which was last visited april 2012. \cite{EC2:Amazon}
+shows what EC2 is about and what a compute unit is, to how something to reference to for the server specification in the tests. 
+This is a website FAQ, which was last visited april 2012. \cite{EC2:Amazon}
 
 \subsubsection{Understanding web performance}
-presents how performance can be used and it is importance in the web business, it also bring up how performance can be tested and what can be a impact for the tests. It is a paper presented in a Business Communication Review October 2001. \cite{performance:Understanding}
+presents how performance can be used and it is importance in the web business, it also bring up how performance can be tested and what can be a impact for the tests. 
+It is a paper presented in a Business Communication Review October 2001. \cite{performance:Understanding}
 
 \subsubsection{A performance comparison of dynamic web technologies}
 describe the different impact in performance when they do a comparison in different performance types and how that can be done. Presented in ACM Sigmetrics December 2003. \cite{performance:dynweb}
 
 \subsubsection{Web-based ide to create model and controller components for mvc-based web applications on cakephp}
-writes how the CakePHP is build and how to code in it and talk a little about how MVC is about. A normal paper from December 2010. Has much in common with the other MVC framework Codeigniter and the book PHP Team Development. \cite{MVC:cakephp}
+writes how the CakePHP is build and how to code in it and talk a little about how MVC is about. A normal paper from December 2010. 
+Has much in common with the other MVC framework Codeigniter and the book PHP Team Development. \cite{MVC:cakephp}
 
 
 \section{Literature Results}
 \subsection{Old Papers}
-The results are based on old papers. These papers are based on the general web performance and the web performance has not changed much in 10 years. The papers about web performance that is not 10 years old was very hard to find. They were mostly about java, a other programming language, that is not build up in the same way as php. Making them more or less useless. The found papers is taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
+The results are based on old papers. 
+These papers are based on the general web performance and the web performance has not changed much in 10 years. 
+The papers about web performance that is not 10 years old was very hard to find. 
+They were mostly about java, a other programming language, that is not build up in the same way as php. Making them more or less useless. 
+The found papers is taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
 
 \subsection{RQ1: What web performance evaluation exist and how were they performed?}
-Evaluation in web is mostly done in loads and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. This can be seen in table \ref{table:rq1evaluation}.
+Evaluation in web is mostly done in loads and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. 
+This can be seen in table \ref{table:rq1evaluation}.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{4cm} p{3cm} p{2cm} }
@@ -203,23 +268,30 @@ Evaluation in web is mostly done in loads and counted in ms, but also in how to 
 \label{table:rq1evaluation}
 \end{table}
 
-{\bf request/ms} is the most used to evaluate performance of web applications. Got two different papers talking about two different things, \emph{Understanding Performance} adds this comment:
+{\bf request/ms} is the most used to evaluate performance of web applications. 
+Got two different papers talking about two different things, \emph{Understanding Performance} adds this comment:
 \begin{quote}
-Sure, speed matters, but it is not a one-dimensional problem. And, despite what you have heard, just adding more bandwidth does not always make things go faster. \cite{performance:Understanding}
+Sure, speed matters, but it is not a one-dimensional problem. 
+And, despite what you have heard, just adding more bandwidth does not always make things go faster. \cite{performance:Understanding}
 \end{quote}
-High requests needs good cpu and network, but to understand \emph{Understanding Performance} speed matters but not always the only problem. \emph{A Performance Comparison of Dynamic Web Technologies} talks about something how they do the tests with requests in ms:
+High requests needs good cpu and network, but to understand \emph{Understanding Performance} speed matters but not always the only problem. 
+\emph{A Performance Comparison of Dynamic Web Technologies} talks about something how they do the tests with requests in ms:
 \begin{quote}
 Consideration of over- load behaviour may be just as important as the peak request rate when Web site administrators are choosing dynamic Web content generation technologies. \cite{performance:dynweb} 
 \end{quote}
-They saw a important to consider how to choose technologies using dynamic web content, because of different peak of request in how big the request was. They also show how good it can be to evaluate how the performance is by using requests per milliseconds, or seconds.
+They saw a important to consider how to choose technologies using dynamic web content, because of different peak of request in how big the request was. 
+They also show how good it can be to evaluate how the performance is by using requests per milliseconds, or seconds.
 
 {\bf server/cpu} is important when the server need to handle many request in the same time. \emph{A Performance Comparison of Dynamic Web Technologies} tells that: 
 \begin{quote}
-Once the servers become overloaded, the CPU utilization of Apache 2.0.45 is lower than that of Apache 1.3.27. Under overload, Apache 2.0.45 is unable to accept TCP connections (and hence re- quests) as quickly as Apache 1.3.27. \cite{performance:dynweb}
+Once the servers become overloaded, the CPU utilization of Apache 2.0.45 is lower than that of Apache 1.3.27. 
+Under overload, Apache 2.0.45 is unable to accept TCP connections (and hence re- quests) as quickly as Apache 1.3.27. \cite{performance:dynweb}
 \end{quote}
 Making it important for cpu to work, but that does not mean that Apache itself make the CPU overload, it can be the network the cpu need to handle.
 
-{\bf On-page optimization} is about how to create less request to the server by removing or group images to one, because browsers loads the html first and then sending more request to get the images. This does also have a thing with the size of the images as well, Bigger images make it longer time to download it. \emph{A Performance Comparison of Dynamic Web Technologies} is testing with static content \cite{performance:dynweb} that can be images or normal html files. Showing it goes faster then dynamic content, but it is a request.
+{\bf On-page optimization} is about how to create less request to the server by removing or group images to one, because browsers loads the html first and then sending more request to get the images. 
+This does also have a thing with the size of the images as well, Bigger images make it longer time to download it. 
+\emph{A Performance Comparison of Dynamic Web Technologies} is testing with static content \cite{performance:dynweb} that can be images or normal html files. Showing it goes faster then dynamic content, but it is a request.
 
 \subsection{RQ2: What factors impact web performance?}
 There are things that can be a impact of the performance while testing. The impact is listed in table \ref{table:rq2evaluation}.
@@ -232,20 +304,29 @@ There are things that can be a impact of the performance while testing. The impa
   	\hline
   	Network & speed & if the author will do a request/ms load simulation, the network can be maximized without the server being touched to the performance limit that have been set.\\
   	\hline
-  	Wrong config & slowness, bad performance & wrong config on the server can make it extra slow, but that will not be a problem. The default settings will be used. Change configuration for optimization is not a part of this paper.
+  	Wrong config & slowness, bad performance & wrong config on the server can make it extra slow, but that will not be a problem. 
+  	The default settings will be used. 
+  	Change configuration for optimization is not a part of this paper.
 \end{tabular}
 \caption{Different types of evaluation of a web performance}
 \label{table:rq2evaluation}
 \end{table}
 
-{\bf The server} can have big impact of the performance because the cpu and RAM can be to less to handle the big amount of request tested. Small CPU and RAM can make it to overload in power and deny new request. Making it impossible to connect when that amount of request is full.
+{\bf The server} can have big impact of the performance because the cpu and RAM can be to less to handle the big amount of request tested. 
+Small CPU and RAM can make it to overload in power and deny new request. 
+Making it impossible to connect when that amount of request is full.
 
-{\bf The Network} is not very important but the network should be stabile and workable for the amount of request sending to the server. Normal speed would be at least 10mbit down and 10mbit up to send and receive in good speed. The only problem with the network in my home is the stability, making it hard to trust the speed, making the ms higher then it should be. as example, the internet conenctio nwhere the tests was tested can have 100mbit up and 100mbit down, but only getting 34 mbit of both because of the share of the internet connection, with 60 other people, this can be a big impact if all people is using the network, but that is not a big risk.
+{\bf The Network} is not very important but the network should be stabile and workable for the amount of request sending to the server. 
+Normal speed would be at least 10mbit down and 10mbit up to send and receive in good speed. 
+The only problem with the network in my home is the stability, making it hard to trust the speed, making the ms higher then it should be. 
+as example, the internet connection nowhere the tests was tested can have 100mbit up and 100mbit down, but only getting 34 mbit of both because of the share of the internet connection, with 60 other people, this can be a big impact if all people is using the network, but that is not a big risk.
 
-{\bf Wrong config} is almost the thing that can be spooky and many people do not know that it can be a default config or a wrong setup config that make the server to overload or not accept requests. The tests will use defaults just to make it so not touchable as possible, because of how many people that actually is using the defaults in the configs.
+{\bf Wrong config} is almost the thing that can be spooky and many people do not know that it can be a default config or a wrong setup config that make the server to overload or not accept requests. 
+The tests will use defaults just to make it so not touchable as possible, because of how many people that actually is using the defaults in the configs.
 
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
-It was nothing about how performance in php framework what could be found, this is one of the things why the author want to experiment and do this. It is a big area in performance in php framework thats not covered.
+It was nothing about how performance in php framework what could be found, this is one of the things why the author want to experiment and do this. 
+It is a big area in performance in php framework thats not covered.
 \newpage
 \section{Experiment Design} 
 
@@ -291,7 +372,9 @@ The tests is as you can see in the list below, all 3 tests will be run for datab
 \end{table}
 I choice 5 for the concurrency level, meaning to send 5 request each time. This to help to count the response time more exactly. You can see how the tests will be done in table \ref{table:testsforframework}.
 
-The total amount of request of 20,000 is to get okay amount of request to get average time from, not too much and not too less. It does not need to be much more because the average will be the same $\pm$ 2 ms. That make it not necessary to have more. But it took as much as 20,000 because it make it more secure to be right numbers in the results.
+The total amount of request of 20,000 is to get okay amount of request to get average time from, not too much and not too less. 
+It does not need to be much more because the average will be the same $\pm$ 2 ms. 
+That make it not necessary to have more. But it took as much as 20,000 because it make it more secure to be right numbers in the results.
 
 A good thing to know is how the server will be setup, here is the table of the specification of the server that will be used for the experiment, on the Amazon cloud.
 \begin{table}[htbp]
@@ -334,7 +417,8 @@ Manipulated variables
   \item[Response Type] HTML without database, HTML with database
 \end{description}
 
-Response Type is the only thing that will be changed. It is the support of the database that will be removed or added, making it possible to see the difference in performance for the core of the framework and for just the database controller.
+Response Type is the only thing that will be changed. 
+It is the support of the database that will be removed or added, making it possible to see the difference in performance for the core of the framework and for just the database controller.
 
 \subsubsection{Experiment Artifact}
 \begin{description}
@@ -343,18 +427,27 @@ Response Type is the only thing that will be changed. It is the support of the d
   \item[Environment] the server is mostly already set, see table \ref{table:serverSpecification}.
 \end{description}
 
-{\bf Blog} is first a simple blog, with posts list on the startpage and with a own page for single post. The most important with the blog is the index page in the experiment, because it is there the requests will be send. Focusing to make a decent list of posts with title, body and created date at the blog. Both frameworks use same database making it simple and less chance for the database to make a bad impact in the performance. You can see the code in Appendix A1 and A2.
+{\bf Blog} is first a simple blog, with posts list on the startpage and with a own page for single post. 
+The most important with the blog is the index page in the experiment, because it is there the requests will be send. 
+Focusing to make a decent list of posts with title, body and created date at the blog. 
+Both frameworks use same database making it simple and less chance for the database to make a bad impact in the performance. 
+You can see the code in Appendix A1 and A2.
 
-{\bf Apache benchmark} is doing as All tools for performance for a web application is doing. It is same idea, to send a amount of request to the server and count how long it took to get a response back. Apache benchmark is the one that is been in while and has a reputation to do fair tests.
+{\bf Apache benchmark} is doing as All tools for performance for a web application is doing. 
+It is same idea, to send a amount of request to the server and count how long it took to get a response back. 
+Apache benchmark is the one that is been in while and has a reputation to do fair tests.
 
 \section{Experiment}
 \subsection{How it was made}
 
-Used Apache benchmark to send request on 20,000 request on a currency on 5 request per time to a server. the test was made with a database on the night randomly picked which framework to test. The tests without database was made on the day, making it more sense why the ms is higher on the tests there, it is more traffic on the internet on the day.
+Used Apache benchmark to send request on 20,000 request on a currency on 5 request per time to a server. 
+the test was made with a database on the night randomly picked which framework to test. 
+The tests without database was made on the day, making it more sense why the ms is higher on the tests there, it is more traffic on the internet on the day.
 
 I used ab -wn 20000 -c 5 http://11.11.11.11\footnote[5]{the ip is typed as 11.11.11.11 to make it clear that the server is not up no more}/framework to send the load request, randomly from my own computer to the test server, on the Amazon cloud on Ireland.
 
-The variables controlled was response size, amount of request and currency of requests. see the data for the variables in table \ref{table:thedatafortests}.
+The variables controlled was response size, amount of request and currency of requests. 
+see the data for the variables in table \ref{table:thedatafortests}.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{2cm} p{2,5cm}  p{2,5cm}  p{2,5cm}  p{2,5cm} }
@@ -373,7 +466,8 @@ The variables controlled was response size, amount of request and currency of re
 \subsection{The results}
 The experiment was made randomly on a night in different times, picked randomly. You can see how the tests was done in Table \ref{table:testsforframework}. The results of the tests can you see in Appendix A3.
 
-The result can you see in figure \ref{fig:experimentwithdb}. It was almost same results on both, but a small gap between the two framework on just a few Millie seconds, to be exact, it was a gap on 5,34 ms in a average.
+The result can you see in figure \ref{fig:experimentwithdb}. 
+It was almost same results on both, but a small gap between the two framework on just a few Millie seconds, to be exact, it was a gap on 5,34 ms in a average.
 \begin{figure}[h]
 \includegraphics[scale=0.55]{charts-tests-database.png}
 \caption{The tests with database average request/connection times in ms.}
@@ -389,34 +483,58 @@ This was with database, with show that if we will focus to the ms total average,
 
 The test without database shows that they are almost equally fast. only 1,3 ms gap between them, CakePHP was faster here too, showing CakePHP has faster structure in its core.
 \subsection{Data analysis and discuss}
-This was good to  see how the different the performance is between the framework. This is also a very good way to evaluate the performance on any web service or application, the load of request can show how fast the request can be handled by the framework and show the fastness of it.
+This was good to  see how the different the performance is between the framework. 
+This is also a very good way to evaluate the performance on any web service or application, the load of request can show how fast the request can be handled by the framework and show the fastness of it.
 
-The biggest difference of the performance was when using a database, The difference was {\bf 5,34 ms}. it sounds little but in big sites just few ms does matter. The difference when using no database, only controller and view was kinda different, there was the difference {\bf 1,3 ms}. very little. and if we bring the size in the thought, the gap is even lesser. Maybe is Codeigniter faster, if they was in same size? That can be true. The default template in CakePHP and Codeigniter was used, making the page in different sizes and could make a difference in the performance of the tests and request.
+The biggest difference of the performance was when using a database, The difference was {\bf 5,34 ms}. it sounds little but in big sites just few ms does matter. 
+The difference when using no database, only controller and view was kinda different, there was the difference {\bf 1,3 ms}. very little. 
+and if we bring the size in the thought, the gap is even lesser. 
+Maybe is Codeigniter faster, if they was in same size? That can be true. 
+The default template in CakePHP and Codeigniter was used, making the page in different sizes and could make a difference in the performance of the tests and request.
 
-{\bf The difference in milliseconds} is so small without database because the frameworks seems to have good structure in their core of controllers and support for views, which we used in the tests without database for both framework. The difference in milliseconds for the tests with a database is bigger, 5.34 ms. Smaller then a thought but it is a difference. making it noticeable when having a database and the PHP framework on a big website with many visitors. Creating a big queue of requests, making the small difference bigger, 5.34 ms can feel like the double, 10,68 ms or more. That is why a small difference can be important.
+{\bf The difference in milliseconds} is so small without database because the frameworks seems to have good structure in their core of controllers and support for views, which we used in the tests without database for both framework. 
+The difference in milliseconds for the tests with a database is bigger, 5.34 ms. Smaller then a thought but it is a difference. 
+making it noticeable when having a database and the PHP framework on a big website with many visitors. 
+Creating a big queue of requests, making the small difference bigger, 5.34 ms can feel like the double, 10,68 ms or more. 
+That is why a small difference can be important.
 
-A thing to think about is the size difference, which was around {\bf 80,000 bytes}, for both the test with and without the database. This can make gap between the framework understandable with db, but without the db was the tests very close to each others. If the size was the same, Codeigniter could be faster. 
+A thing to think about is the size difference, which was around {\bf 80,000 bytes}, for both the test with and without the database. 
+This can make gap between the framework understandable with db, but without the db was the tests very close to each others. 
+If the size was the same, Codeigniter could be faster. 
 
-The difference in the size is because the use of the default in CakePHP and Codeigniter, CakePHP has more style and a usable template as default for the application, Codeigniter do not have it making it confused of the bigger size of the response. But the size is not a problem because of the choice to use the default of each framework, making the difference in the size.
+The difference in the size is because the use of the default in CakePHP and Codeigniter, CakePHP has more style and a usable template as default for the application, Codeigniter do not have it making it confused of the bigger size of the response. 
+But the size is not a problem because of the choice to use the default of each framework, making the difference in the size.
 
-This seems as no problem, used the default tools in both framework to make a very simple blog webpage. The size should in other word be different, it would be weird if it was not. But the thought that the size can make a difference is of course in the mind. It is request time in ms, and it does have a very big impact by the size.
+This seems as no problem, used the default tools in both framework to make a very simple blog webpage. The size should in other word be different, it would be weird if it was not. 
+But the thought that the size can make a difference is of course in the mind. 
+It is request time in ms, and it does have a very big impact by the size.
 
 Would love to see any {\bf future work} on different sizes for the PHP framework, which tests how the size does matter of the performance, with same size of both.
 
 \subsection{Validity Threats}
 \subsubsection{Tests are not isolated}
-making the tests to be disturb by something from outside, can be the traffic of the line on Amazon cloud or something else that can make the response time longer or not trusted. This was tried to be reduced by been testing in the night. But you can see in the tests without, that was made more on the morning that the response time is already higher. This should not change the gap between the frameworks because all the tests was tested in the same time, making it having all around same response time in general. 
+making the tests to be disturb by something from outside, can be the traffic of the line on Amazon cloud or something else that can make the response time longer or not trusted. 
+This was tried to be reduced by been testing in the night. 
+But you can see in the tests without, that was made more on the morning that the response time is already higher. 
+This should not change the gap between the frameworks because all the tests was tested in the same time, making it having all around same response time in general. 
 
 \subsubsection{Concurrency level}
 
 
 \subsubsection{Client's impact}
-could be a problem. The tests was running Apache benchmark, but Apache benchmark is ignoring stylesheet and pictures (The blog in the test did not have pictures). It is just getting the generated html page, after php have generated it with the use of the code of PHP Framework. making the impact smaller then a normal browser, that is getting the stylesheet and pictures too.
+could be a problem. The tests was running Apache benchmark, but Apache benchmark is ignoring stylesheet and pictures (The blog in the test did not have pictures). 
+It is just getting the generated html page, after php have generated it with the use of the code of PHP Framework. 
+making the impact smaller then a normal browser, that is getting the stylesheet and pictures too.
 
 \section{Conclusion}
-The frameworks performance has big difference, but mostly just if in used of database, the classes fro using database can in other words be more effective. CakePHP was fastest in both tests, with and without a database. But the size was different on 80,000 bytes. This could be something that could make CakePHP a winner. But my conclusion is that used default template, very simple html page. So it does not have a big impact.
+The frameworks performance has big difference, but mostly just if in used of database, the classes fro using database can in other words be more effective. 
+CakePHP was fastest in both tests, with and without a database. 
+But the size was different on 80,000 bytes. 
+This could be something that could make CakePHP a winner. 
+But my conclusion is that used default template, very simple html page. So it does not have a big impact.
 
-The fastest framework, according to the data is CakePHP, with just 1,3 ms without database and with 5,34 ms with database. This is something that is a big impact in the PHP performance and it can be fixed in newer versions. 
+The fastest framework, according to the data is CakePHP, with just 1,3 ms without database and with 5,34 ms with database. 
+This is something that is a big impact in the PHP performance and it can be fixed in newer versions. 
 
 The experiment shows that the evaluation can be done it milliseconds for websites and web applications. 
 With this data is the difference of evaluation between PHP framework not big at all, but it is a difference, even if it is a small one. 
