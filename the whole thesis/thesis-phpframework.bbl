@@ -1,9 +1,20 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{MVC:phpTeam}
 S.~Abeysinghe.
 \newblock {\em PHP Team Development}.
 \newblock Packt Publishing, 2009.
+
+\bibitem{EC2:Amazon}
+{Amazon Web Services LLC}.
+\newblock Ec2 faq: What is a ec2 compute unit.
+\newblock \url{http://aws.amazon.com/ec2/faqs/}, April 2012.
+
+\bibitem{php:cakephp}
+{Cake Software Foundation}.
+\newblock Intro to cakephp, what is cakephp.
+\newblock \url{http://book.cakephp.org/1.1/view/307/Introduction-to-CakePHP},
+  June 2012.
 
 \bibitem{MVC:codeigniter}
 G.~Da-gang.
@@ -11,31 +22,35 @@ G.~Da-gang.
   codeigniter.
 \newblock May 2009.
 
-\bibitem{php:cakephp}
-C.~S. Foundation.
-\newblock Intro to cakephp, what is cakephp.
-\newblock \url{http://book.cakephp.org/1.1/view/307/Introduction-to-CakePHP},
-  June 2012.
-
-\bibitem{php:faq}
-T.~P. Group.
-\newblock Php faq what is php and what does it stand for.
-\newblock \url{http://php.net/manual/en/faq.general.php}, June 2012.
-
-\bibitem{EC2:Amazon}
-A.~W.~S. LLC.
-\newblock Ec2 faq: What is a ec2 compute unit, April 2012.
-\newblock \texttt{http://aws.amazon.com/ec2/faqs/}.
-
 \bibitem{php:codeigniter}
-E.~LLC.
+{EllisLab LLC}.
 \newblock Codeigniter changelog and releasedates.
 \newblock \url{http://codeigniter.com/user_guide/changelog.html}, June 2012.
+
+\bibitem{github:cakephp}
+{GitHub Inc.}
+\newblock Git repository for cakephp.
+\newblock \url{https://github.com/cakephp/cakephp}, July 2012.
+
+\bibitem{github:codeigniter}
+{GitHub Inc.}
+\newblock Git repository for codeigniter.
+\newblock \url{https://github.com/EllisLab/CodeIgniter}, July 2012.
 
 \bibitem{performance:Understanding}
 P.~Sevcik and J.~Bartlett.
 \newblock Understanding web performance.
 \newblock {\em Business Communications Review}, 31(10):28, October 2001.
+
+\bibitem{apache:benchmark}
+{The Apache Software Foundation}.
+\newblock ab: Apache benchmark specification and information.
+\newblock \url{http://httpd.apache.org/docs/2.2/programs/ab.html}, July 2012.
+
+\bibitem{php:faq}
+{The PHP Group}.
+\newblock Php faq what is php and what does it stand for.
+\newblock \url{http://php.net/manual/en/faq.general.php}, June 2012.
 
 \bibitem{performance:dynweb}
 L.~Titchkosky, M.~Arlitt, and C.~Williamson.
