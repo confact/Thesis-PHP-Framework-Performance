@@ -1,4 +1,5 @@
 \documentclass{llncs}
+\usepackage{fixmetodonotes}
 \usepackage[T1]{fontenc}
 \usepackage[swedish]{babel}
 \usepackage{graphicx}
@@ -8,7 +9,7 @@
 \usepackage{textcomp}
 \usepackage{verbatim} 
 \usepackage{minted}
-\usepackage{todonotes}
+
 \definecolor{javared}{rgb}{0.6,0,0} % for strings
 \definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
 \definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
@@ -78,13 +79,13 @@ showstringspaces=false}
 {\bf [Context]} The new PHP Frameworks ideas has become popular for developers. 
 It is important also to know how big impact they have on the performance. 
 Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its grounds.  
-{\bf [Problem]} .... \todo{this need to be written.}
+{\bf [Problem]} .... \TODO{this need to be written.}
 {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks.
 It can help to push people to the right decisions in future work in PHP Framework Performance. 
 The lack of data in this area is also one of the decision to make this paper as well.
 \end{abstract}
 \section{Intro}
-\todo{Need to rewrite this to take up the context and more like that, also the connection to other work in the same area, which doesn't exist. but need to tell that.}
+\TODO{Need to rewrite this to take up the context and more like that, also the connection to other work in the same area, which doesn't exist. but need to tell that.}
 PHP Framework is a new thinking, making it faster to build a website. 
 You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? 
 We talk all the time about fast development, but performance is under the hood very important. 
@@ -106,7 +107,7 @@ It is focused to great clean, fast framework for developers.
 The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
 
 \subsection{MVC}
-\todo[inline]{need to write more in detail about MVC here.}Model View Controller is a structure-think to have 3 different types of classes, types of what they will do. \cite{MVC:phpTeam} 
+\TODO{need to write more in detail about MVC here.}Model View Controller is a structure-think to have 3 different types of classes, types of what they will do. \cite{MVC:phpTeam} 
 Model will handle datahandling, like data from databases. 
 View is the one that handle how the data should be shown for the client. 
 Controller is the middle, collect data from model and making the data readable  and sending it to the view. 
@@ -325,7 +326,7 @@ as example, the internet connection where the tests was tested can have 100mbit 
 The tests will use defaults just to make it so not touchable as possible, because of how many people that actually is using the defaults in the configs.
 
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
-\todo{Need to rewrite this, adding more data why this is not covered.}
+\TODO{Need to rewrite this, adding more data why this is not covered.}
 It was nothing about how performance in php framework what could be found, this is one of the things why the author want to experiment and do this. 
 It is a big area in performance in php framework thats not covered.
 \newpage
@@ -544,7 +545,7 @@ The relevance and contribution of this paper is big because of the lack of paper
 
 Let the war begin between the php frameworks in performance.
 \newpage
-\listoftodos
+\listofnote
 \renewcommand\refname{References}
 \bibliographystyle{abbrv}
 \bibliography{sigproc} 
