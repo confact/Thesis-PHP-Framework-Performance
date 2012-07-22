@@ -251,7 +251,7 @@ The papers about web performance that is not 10 years old was very hard to find.
 They were mostly about java, a other programming language, that is not build up in the same way as php. Making them more or less useless for this paper. 
 The papers bringed up in this paper are taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
 
-%Been checked the text for spelling and grammar to here. The text under still needs to be checked.
+
 
 \subsection{RQ1: What web performance evaluation exist and how were they performed?}
 Evaluation in web is mostly done by load testing and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. 
@@ -323,7 +323,9 @@ The only problem with the network in my home is the stability, making it hard to
 as example, the internet connection where the tests was tested can have 100mbit up and 100mbit down, but only getting 34 mbit of both because of the share of the internet connection, with 60 other people, this can be a big impact if all people is using the network, but that is not a big risk.
 
 {\bf Wrong config} is the thing that can be spooky and many people do not know that it can be a default config or a wrong setup config that make the server to overload or not accept requests. 
-The tests will use defaults just to make it so not touchable as possible, because of how many people that actually is using the defaults in the configs.
+The tests will use defaults just to make it so clean as possible, because that is how many people actually are using the defaults in the configs.
+
+%Been checked the text for spelling and grammar to here. The text under still needs to be checked.
 
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
 \TODO{Need to rewrite this, adding more data why this is not covered.}
@@ -432,32 +434,35 @@ It is the support of the database that will be removed or added, making it possi
 {\bf Blog} is first a simple blog, with posts list on the startpage and with a own page for single post. 
 The most important with the blog is the index page in the experiment, because it is there the requests will be send. 
 Focusing to make a decent list of posts with title, body and created date at the blog. 
-Both frameworks use same database making it simple and less chance for the database to make a bad impact in the performance. 
+Both frameworks used the same database making it simple and less chance for the database to make a bad impact in the performance. 
 You can see the code in Appendix A1 and A2.
 
 {\bf Apache benchmark} is doing as All tools for performance for a web application is doing. 
 It is same idea, to send a amount of request to the server and count how long it took to get a response back. 
-Apache benchmark is the one that is been in while and has a reputation to do fair tests.
+Apache benchmark is the one that is been in while and has a reputation to do fair tests.\TODO{add reference to Apache benchmark}
 
 \section{Experiment}
 \subsection{How it was made}
-
-Used Apache benchmark to send request on 20,000 request on a currency on 5 request per time to a server. 
+\TODO{Fixed so the night/day is picked right here and in The Results section}
+Used Apache benchmark to 20,000 requests on a currency of 5 request per time frame to a server. 
 the test was made with a database on the night randomly picked which framework to test. 
 The tests without database was made on the day, making it more sense why the ms is higher on the tests there, it is more traffic on the internet on the day.
 
-I used ab -wn 20000 -c 5 http://11.11.11.11\footnote[5]{the ip is typed as 11.11.11.11 to make it clear that the server is not up no more}/framework to send the load request, randomly from my own computer to the test server, on the Amazon cloud on Ireland.
+I used the commandline below to send the load request, randomly to specific ip-address\footnote[5]{the ip is typed as 11.11.11.11 to make it clear that the server is not running no more} on the day and night from my own computer to the test server, on the Amazon cloud on Ireland.
+\begin{verbatim}
+ab -wn 20000 -c 5 http://11.11.11.11/framework
+\end{verbatim}
 
 The variables controlled was response size, amount of request and currency of requests. 
 see the data for the variables in table \ref{table:thedatafortests}.
 \begin{table}[htbp]
 \centering
-\begin{tabular}{ p{2cm} p{2,5cm}  p{2,5cm}  p{2,5cm}  p{2,5cm} }
-  Variable & Codeigniter db\footnotemark[6] & Codeigniter & cakephp db\footnotemark[6] & cakephp \\
+\begin{tabular}{ p{2,6cm} p{2,5cm}  p{2,5cm}  p{2,3cm}  p{2,3cm} }
+  {\bf Variable} & Codeigniter db\footnotemark[6] & Codeigniter & cakephp db\footnotemark[6] & cakephp \\
   \hline
-  ResponseSize\footnotemark[7] & 6440000 bytes & 6440000 bytes & 6360000 bytes & 6360000 bytes \\
-  Requests & 20,000 & 20,000 & 20,000 & 20,000 \\
-  Currency & 5 & 5 & 5 & 5 \\
+  {\bf ResponseSize}\footnotemark[7] & 6440000 bytes & 6440000 bytes & 6360000 bytes & 6360000 bytes \\
+  {\bf Requests} & 20,000 & 20,000 & 20,000 & 20,000 \\
+  {\bf Currency} & 5 & 5 & 5 & 5 \\
 \end{tabular}
 \caption{The tests with database average request/connection times in ms.}
 \label{table:thedatafortests}
@@ -466,7 +471,7 @@ see the data for the variables in table \ref{table:thedatafortests}.
 \footnotetext[7]{ResponseSize is total bytes of html sent from the server in one test, on every interval.}
 \newpage
 \subsection{The results}
-The experiment was made randomly on a night in different times, picked randomly. You can see how the tests was done in Table \ref{table:testsforframework}. The results of the tests can you see in Appendix A3.
+\TODO{Fixed so the night/day is picked right here and in How it was made section}The experiment was made randomly on a night in different times, picked randomly. You can see how the tests was done in Table \ref{table:testsforframework}. The results of the tests can you see in Appendix A3.
 
 The result can you see in figure \ref{fig:experimentwithdb}. 
 It was almost same results on both, but a small gap between the two framework on just a few Millie seconds, to be exact, it was a gap on 5,34 ms in a average.
@@ -489,7 +494,7 @@ This was good to  see how the different the performance is between the framework
 This is also a very good way to evaluate the performance on any web service or application, the load of request can show how fast the request can be handled by the framework and show the fastness of it.
 
 The biggest difference of the performance was when using a database, The difference was {\bf 5,34 ms}. it sounds little but in big sites just few ms does matter. 
-The difference when using no database, only controller and view was kinda different, there was the difference {\bf 1,3 ms}. very little. 
+The difference when using no database, only controller and view was no different, there was the difference {\bf 1,3 ms}. very little. 
 and if we bring the size in the thought, the gap is even lesser. 
 Maybe is Codeigniter faster, if they was in same size? That can be true. 
 The default template in CakePHP and Codeigniter was used, making the page in different sizes and could make a difference in the performance of the tests and request.
@@ -520,7 +525,8 @@ This was tried to be reduced by been testing in the night.
 But you can see in the tests without, that was made more on the morning that the response time is already higher. 
 This should not change the gap between the frameworks because all the tests was tested in the same time, making it having all around same response time in general. 
 
-\subsubsection{Concurrency level}
+\subsubsection{Concurrency level} 
+\TODO{the threat of small/big concurrency level need to be written}
 
 
 \subsubsection{Client's impact}
