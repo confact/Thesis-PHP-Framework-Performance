@@ -84,14 +84,26 @@ Bringing two top frameworks against each others can bring up some light how perf
 It can help to push people to the right decisions in future work in PHP Framework Performance. 
 The lack of data in this area is also one of the decision to make this paper as well.
 \end{abstract}
-\section{Intro}
-\TODO{Need to rewrite this to take up the context and more like that, also the connection to other work in the same area, which doesn't exist. but need to tell that.}
-PHP Framework is a new thinking, making it faster to build a website. 
-You can have a good structure and found things faster, You can add new features more quickly. But, does it have good performance? 
-We talk all the time about fast development, but performance is under the hood very important. 
-People seems to forget the importance, except from few systems and new ideas, like CDN
-\footnote{CDN is Content Delivery Network, a network of servers, where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} 
-makes it faster wherever you are in the world. But how is the performance in PHP framework? is it as fast as how fast it is to develop in it?
+\section{Introduction}
+The World Wide Web, the internet started to be popular in the beginning of the 90s. 
+The face towards the users was different websites, running on HTTP-servers, based on the official HTML language. 
+The websites exploded in amount and it started to be some request to save information and to do something more then show static pages and files for the user. 
+You could use several languages to do so, The Founder of PHP made PHP because of the massive amount of code you needed to code in PERL, a language PHP is based on,\cite{php:faq} to do a specific thing. 
+He created PHP just as it could handle the quest he needed to handle on his page. 
+He released it just for fun and it become famous as a good idea to a simpler language for web development. 
+Many join the project and it is now a big project, a script language that more and more become a more object oriented script language, if not already.
+
+The web is nowadays different. Many are talking about speed, speed and performance. 
+For a website you have many different approaches to make the website faster, or you will lose visitors if the pageload is too slow. 
+A new service, that came famous when cloud came the thing everyone should use, is CDN\footnote{CDN is Content Delivery Network, a network of servers. 
+where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} and also different performance approaches, like the web-server, the server in general or the page. 
+This could mean configuration or tweaks making the page load faster.
+
+PHP Framework is mostly focused on fast development, with libraries and helpers, it can make the development of a website faster. 
+This make it very popular among developers wanting to make a fast demo page for a new project. 
+When the page is then up for production on a website, everyone can reach it.
+This stage make it important to think about performance, because users is not waiting long to a page to load, like mostly did on the 90s because of the slow internet connection. 
+PHP Framework make it fast for the developer but the point of the visitor is missing.
 
 \section{The Background}
 Evaluation is all about the performance. Performance in this paper is about load\footnote{loads means how long a request take, in milliseconds.}, but it can be hardware, network and more. 
@@ -155,8 +167,6 @@ A good thing with this setup is that it is more or less this real website is set
 The server specification can be seen on table \ref{table:serverSpecification}.
 
 
-
-\newpage
 \section{Research}
 \subsection{Research Questions}
 \begin{description}
