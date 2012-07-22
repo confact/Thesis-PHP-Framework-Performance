@@ -97,8 +97,6 @@
 \def\listfigurename{List of Figures}
 \def\listtablename{List of Tables}
 \def\mailname{{\it Correspondence to\/}:}
-\def\noteaddname{Note added in proof}
-\def\notename{Note}
 \def\partname{Part}
 \def\problemname{Problem}
 \def\proofname{Proof}
@@ -138,8 +136,6 @@
  \def\listfigurename{Liste des figures}%
  \def\listtablename{Liste des tables}%
  \def\mailname{{\it Correspondence to\/}:}
- \def\noteaddname{Note ajout\'ee \`a l'\'epreuve}%
- \def\notename{Remarque}%
  \def\partname{Partie}%
  \def\problemname{Probl\`eme}%
  \def\proofname{Preuve}%
@@ -177,8 +173,6 @@
  \def\listfigurename{Abbildungsverzeichnis}%
  \def\listtablename{Tabellenverzeichnis}%
  \def\mailname{{\it Correspondence to\/}:}
- \def\noteaddname{Nachtrag}%
- \def\notename{Anmerkung}%
  \def\partname{Teil}%
 %\def\problemname{Problem}%
  \def\proofname{Beweis}%
@@ -1114,7 +1108,6 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 \spn@wtheorem{example}{Example}{\itshape}{\rmfamily}
 \spn@wtheorem{exercise}{Exercise}{\itshape}{\rmfamily}
 \spn@wtheorem{lemma}{Lemma}{\bfseries}{\itshape}
-\spn@wtheorem{note}{Note}{\itshape}{\rmfamily}
 \spn@wtheorem{problem}{Problem}{\itshape}{\rmfamily}
 \spn@wtheorem{property}{Property}{\itshape}{\rmfamily}
 \spn@wtheorem{proposition}{Proposition}{\bfseries}{\itshape}
