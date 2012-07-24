@@ -30,7 +30,7 @@ tabsize=4,
  breaklines=true,
 showspaces=false,
 showstringspaces=false}
-\usepackage[pdftex,bookmarks=true]{hyperref}
+\usepackage[pdftex,bookmarks=true,bookmarksopen,bookmarksdepth=2]{hyperref}
 \begin{document}
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
@@ -46,15 +46,14 @@ showstringspaces=false}
 \renewcommand\listtablename{Tables}
 \pagenumbering{arabic}
 \title{PHP Framework Performance for Web Development}
-\toctitle{}
-\titlerunning{PHP Framework Performance}  
+%\titlerunning{PHP Framework Performance}  
 % abbreviated title (for running head)
 %                                     also used for the TOC unless
 %                                     \toctitle is used
 %
 \author{Håkan Nylén}
 %
-\authorrunning{Håkan Nylén}   % abbreviated author list (for running head)
+%\authorrunning{Håkan Nylén}   % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
 %\tocauthor{Håkan Nylén}
@@ -72,14 +71,12 @@ showstringspaces=false}
 
 %\terms{Theory}
 \renewcommand{\abstractname}{Abstract.}
-\setcounter{tocdepth}{2}
-\setcounter{page}{1}
 \pagestyle {plain}
 \begin{abstract}
 {\bf [Context]} The new PHP Frameworks ideas has become popular for developers. 
 It is important also to know how big impact they have on the performance. 
 Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its grounds.  
-{\bf [Problem]} .... \TODO{this need to be written.}
+{\bf [Problem]} Visitors nowadays has less thought to wait for a web page to load. Same time has PHP Framework become popular among developers, except they have not thought about performance. Making it a good idea to try to discovery how the performance is for PHP Framework for a visitor.
 {\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks.
 It can help to push people to the right decisions in future work in PHP Framework Performance. 
 The lack of data in this area is also one of the decision to make this paper as well.
@@ -228,9 +225,9 @@ Often it was over 300 results in the search, but only 1-3 relevant pages, in eve
 
 \section{Literature review}
 \subsection{The Approach}
-The search was by the strings presented in Table \ref{table:literaturesearchstrings}, and byt them the search found some hundreds of papers. 
+The search was by the strings presented in Table \ref{table:literaturesearchstrings}, and by them the search found some hundreds of papers. 
 This comes to the approach to found some with text such as impact in performance or was something about performance in PHP, because of the lack of papers in this area it become very hard to find any papers about PHP performance at all. This made it easier to find papers in web performance in general.
-Took everything of value in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evalution types and hows. 
+Took everything of value in this area, that have something that could be used for the questions to be answered such as impact in evaluation tests, php frameworks, different evaluation types and hows. 
 The rest of the finding approach was depending on the authors knowledge, to find something that has an impact for a website or similar that can be an important thing to bring up in this paper.
 
 \subsection{The Papers}
@@ -317,7 +314,7 @@ There are things that can be an impact of the performance while testing. The imp
 \begin{tabular}{ p{2cm} p{3cm} p{7cm} }
   Factor & How it impact & comment\\
   \hline
-  	Server & network, cpu, ram & This can be fixed with a large server or a datacenter, something that can not be tested here.\\
+  	Server & network, cpu, ram & This can be fixed with a large server or a data center, something that can not be tested here.\\
   	\hline
   	Network & speed & if the test will do a request/ms load simulation, the network can be maximized without the server being touched to the performance limit which been set.\\
   	\hline
@@ -333,7 +330,7 @@ There are things that can be an impact of the performance while testing. The imp
 Small CPU and RAM can make it to overload in power and deny new request. 
 Making it impossible to connect when that amount of request is full.
 
-{\bf The Network} is not very important but the network should be stabile for the amount of request sending to the server. 
+{\bf The Network} is not very important but the network should be stable for the amount of request sending to the server. 
 Normal speed would be at least 10mbit down and 10mbit up to send and receive in good speed. 
 The only problem with the network in my home is the stability, making it hard to trust the speed, making the ms higher than it should be. 
 As example, the internet connection where the tests was tested can have 100mbit up and 100mbit down, but only getting 34 mbit of both because of the share of the internet connection, with 60 other people, this can be a big impact if all people is using the network, but that is not a big risk.
@@ -346,7 +343,7 @@ The tests will use defaults just to make it so clean as possible, because that i
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
 \TODO{Need to rewrite this, adding more data why this is not covered.}
 It was nothing about how performance in php framework what could be found, this is one of the things why the author want to experiment and do this. 
-It is a big area in performance in php framework thats not covered.
+It is a big area in performance in php framework that is not covered.
 \newpage
 \section{Experiment Design} 
 
@@ -447,7 +444,7 @@ It is the support of the database that will be removed or added, making it possi
   \item[Environment] the server is mostly already set, see table \ref{table:serverSpecification}.
 \end{description}
 
-{\bf Blog} is first a simple blog, with posts list on the startpage and with an own page for single post. 
+{\bf Blog} is first a simple blog, with posts list on the start-page and with an own page for single post. 
 The most important with the blog is the index page in the experiment, because it is there the requests will be send. 
 Focusing to make a decent list of posts with title, body and created date at the blog. 
 Both frameworks used the same database making it simple and less chance for the database to make a bad impact in the performance. 
@@ -540,6 +537,8 @@ making the tests to be disturb by something from outside, can be the traffic of 
 This was tried to be reduced by been testing in the night. 
 But you can see in the tests without, that was made more on the morning that the response time is already higher. 
 This should not change the gap between the frameworks because all the tests was tested in the same time, making it having all around same response time in general. 
+
+On other hand, a good thought would be that a good performance tests in a web perspective would be to have the webserver and the client on different locations, simulate real production website. Making it a more real data collected.
 
 \subsubsection{Concurrency level} 
 \TODO{the threat of small/big concurrency level need to be written}
