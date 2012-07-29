@@ -120,19 +120,27 @@ Developers using PHP has issues making good websites fast, so some developers st
 There are two frameworks that has biggest users, one is CodeIgniter \cite{MVC:codeigniter}, that was first released 28 February 2006 \cite{php:codeigniter}. 
 It is focused to great clean, fast framework for developers. 
 The other one is CakePHP \cite{MVC:cakephp}, which was released in 2005. CakePHP is mainly inspired by Ruby on Rails. \cite{php:cakephp} 
-
+\newpage
 \subsection{MVC}
-\TODO{need to write more in detail about MVC here.}Model View Controller is a structure-think to have 3 different types of classes, types of what they will do. \cite{MVC:phpTeam} 
+Model View Controller is a pattern to have 3 different types of classes, telling what they will do. \cite{MVC:phpTeam} 
 Model will handle datahandling, like data from databases. 
 View is the one that handle how the data should be shown for the client. 
 Controller is the middle, collect data from model and making the data readable  and sending it to the view. 
-This paper will be about testing the performance of CodeIgniter \cite{MVC:codeigniter} and CakePHP \cite{MVC:cakephp}.
+This paper will be about testing the performance of CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
+
+A Example could be a news page. A user use a web browser to access the website, which connects to the controller, seeing as point 1, in figure \ref{fig:mvcmodel}. Controller needs data from the database so it call a function in the model-class, seeing in point 2. The model is connecting the database and is handling the queries and is returning the data to the controller, as been seen on point 3. The controller is then getting the view, that is mostly contain the HTML and only use PHP to loop out the data, and gives the view the data to been shown, and return it to the user, seeing on point 4.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.75]{mvc-diagram.eps}
+\caption{A simple example how the structure for mvc could look like}
+\label{fig:mvcmodel}
+\end{figure}
 
 \subsection{PHP Framework}
 PHP is a server-side programming language famous to make it simple to develop in agile methods in web development. 
 The Frameworks are based on MVC with add-ons, like form-helpers and database-controllers, in various languages, like PHP. 
 Frameworks are built to make it even faster to develop a website. 
-The biggest PHP Frameworks with MVC-thinking are CodeIgniter\cite{MVC:codeigniter} and CakePHP\cite{MVC:cakephp}.
+The biggest PHP Frameworks with MVC-thinking are CodeIgniter and CakePHP.
 
 Codeigniter and CakePHP has many libraries to help the developer. 
 Codeigniter has no official inspiration but its goal is to make it faster for the developer to create good websites then creating them from scratch in raw PHP. 
@@ -157,8 +165,7 @@ because it generates more requests making the server handle more load. \cite{per
 Server-side is the server. Here can the network, CPU and RAM be an impact in the performance for the visitor on the site. \cite{performance:dynweb} 
 When Apache, the server software for web is getting many requests on the same time, more CPU and RAM will be used, making it to not handle all the requests when all RAM or CPU is used. 
 Making the feeling of the website as slow. 
-Often is the network that is stopping more load to the server, because the optimized server program such as Apache don not use so much of the CPU and RAM, making the CPU and RAM the less problem. 
-Of course can that be the issue, but not so often.
+Often is the network that is stopping more load to the server, because the optimized server program such as Apache don not use so much of the CPU and RAM, making the CPU and RAM the less problem.
 
 \subsection{Performance}
 What performance can be different, to make it easy this paper will be about fast request, so network is very important. 
