@@ -271,8 +271,6 @@ The papers about web performance that is not 10 years old was very hard to find.
 They were mostly about java, an other programming language, that is not built up in the same way as php. Making them more or less useless for this paper. 
 The papers bringed up in this paper are taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
 
-
-
 \subsection{RQ1: What web performance evaluation exist and how were they performed?}
 Evaluation in web is mostly done by load testing and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. 
 This can be seen in table \ref{table:rq1evaluation}.
@@ -314,6 +312,9 @@ Making it important for cpu to work, but that does not mean that Apache itself m
 This does also have a thing with the size of the images as well, Bigger images makes longer time to download. 
 \emph{A Performance Comparison of Dynamic Web Technologies} is testing with static content \cite{performance:dynweb} that can be images or normal html files. Showing it goes faster than dynamic content, but it is a request.
 
+\subsubsection{The pick}
+will be to do request per ms in the tests, because the amount of papers already doing so, making it more trustworthy. The tests is to see any difference in the performance from visitors perspective, making it less important to evaluate server hardware and on-page optimization, even if the last one is interesting, we need to focus on one thing.
+\newpage
 \subsection{RQ2: What factors impact web performance?}
 There are things that can be an impact of the performance while testing. The impacts are listed in table \ref{table:rq2evaluation}.
 \begin{table}[htbp]
@@ -345,13 +346,18 @@ As example, the internet connection where the tests was tested can have 100mbit 
 {\bf Wrong config} is the thing that can be spooky and many people do not know that it can be a default config or a wrong setup config that make the server to overload or not accept requests. 
 The tests will use defaults just to make it so clean as possible, because that is how many people actually are using the defaults in the configs.
 
-%Been checked the text for spelling and grammar to here. The text under still needs to be checked.
+\subsubsection{The pick}
+will be to trying to make it more realistic by using server on the cloud with good internet and good hardware.
 
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
 \TODO{Need to rewrite this, adding more data why this is not covered.}
 It was nothing about how performance in php framework what could be found, this is one of the things why the author want to experiment and do this. 
 It is a big area in performance in php framework that is not covered.
-\newpage
+
+\subsubsection{The pick}
+will be to do this as a first step trying to perform a evaluation on PHP Framework, because of the lack of data.
+
+
 \section{Experiment Design} 
 
 \subsection{Investigated Question}
@@ -391,7 +397,7 @@ The tests is as you can see in the list below, all 3 tests will be run for datab
  Test 2 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
  Test 3 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
 \end{tabular}
-\caption{How the tests will make for the frameworks.}
+\caption{How the tests will de done.}
 \label{table:testsforframework}
 \end{table}
 the tests are using 5 for the concurrency level, meaning to send 5 requests each time, send so fast the previous requests are done. This to help to count the response time more exactly. You can see how the tests will be done in table \ref{table:testsforframework}.
