@@ -469,12 +469,11 @@ Apache benchmark is the one that is been in while and has a reputation to do fai
 
 \section{Experiment}
 \subsection{How it was made}
-\TODO{Fixed so the night/day is picked right here and in The Results section}
 Used Apache benchmark to 20,000 requests on a currency of 5 request per time frame to a server. 
-The test was made with a database on the night randomly picked which framework to test. 
-The tests without database was made on the day, making it more sense why the ms is higher on the tests there, it is more traffic on the internet on the day.
+The test was made with a database randomly picked which framework to test. 
+The tests without database other time, creating the difference on the ms.
 
-I used the commandline below to send the load request, randomly to specific ip-address\footnote[5]{the ip is typed as 11.11.11.11 to make it clear that the server is not running no more} on the day and night from my own computer to the test server, on the Amazon cloud on Ireland.
+I used the command line below to send the load request, randomly to specific ip-address\footnote[5]{the ip is typed as 11.11.11.11 to make it clear that the server is not running no more} on the day and night from my own computer to the test server, on the Amazon cloud on Ireland.
 \begin{verbatim}
 ab -wn 20000 -c 5 http://11.11.11.11/framework
 \end{verbatim}
@@ -497,7 +496,7 @@ see the data for the variables in table \ref{table:thedatafortests}.
 \footnotetext[7]{ResponseSize is total bytes of html sent from the server in one test, on every interval.}
 \newpage
 \subsection{The results}
-\TODO{Fixed so the night/day is picked right here and in How it was made section}The experiment was made randomly on a night in different times, picked randomly. You can see how the tests was done in Table \ref{table:testsforframework}. The results of the tests can you see in Appendix A3.
+The experiment was made randomly in different times, picked randomly. You can see how the tests was done in Table \ref{table:testsforframework}. The results of the tests can you see in Appendix A3.
 
 The result can you see in figure \ref{fig:experimentwithdb}. 
 It was almost same results on both, but a small gap between the two framework on just a few Millie seconds, to be exact, it was a gap on 5,34 ms in a average.
@@ -583,7 +582,7 @@ Let the war begin between the php frameworks in performance.
 \renewcommand\refname{References}
 \bibliographystyle{abbrv}
 \bibliography{sigproc} 
-
+\listofnote
 \listoffigures
 \listoftables
 \newpage
