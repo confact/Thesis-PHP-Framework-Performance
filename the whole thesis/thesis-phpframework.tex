@@ -348,11 +348,16 @@ The tests will use defaults just to make it so clean as possible, because that i
 
 \subsubsection{The pick}
 will be to trying to make it more realistic by using server on the cloud with good internet and good hardware.
-
+\newpage
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
-\TODO{Need to rewrite this, adding more data why this is not covered.}
-It was nothing about how performance in php framework what could be found, this is one of the things why the author want to experiment and do this. 
-It is a big area in performance in php framework that is not covered.
+Nothing was found that were about how performance in php framework evaluates. This could be as example that other authors probably think that this area is covered because of the performance papers in web generally. 
+They are also outdated but it has not been any new invention in http performance neither. 
+PHP is a script language making it totally different from normal web performance because of the compiling on hit, as we can call it. 
+Meaning it runs through the PHP code when the file is called. 
+Making a different in response, even if it is a little difference, almost not noticeable at all. 
+And then add a PHP Framework on that. 
+A difference in how you use php with libraries in a MVC maybe change the response time. 
+This is why and what we will do in this paper.
 
 \subsubsection{The pick}
 will be to do this as a first step trying to perform a evaluation on PHP Framework, because of the lack of data.
@@ -553,7 +558,11 @@ This should not change the gap between the frameworks because all the tests was 
 On other hand, a good thought would be that a good performance tests in a web perspective would be to have the webserver and the client on different locations, simulate real production website. Making it a more real data collected.
 
 \subsubsection{Concurrency level} 
-\TODO{the threat of small/big concurrency level need to be written}
+could be misunderstood which the low level, at 5.
+A good thought is that the tests is meant to just test how the framework and PHP is handling in normally.
+normally mean in this case 5 visitors at the same time.
+This could be bigger or smaller. 
+But these tests was not meant to see how the frameworks are handling the requests in high visitor numbers.
 
 
 \subsubsection{Client's impact}
