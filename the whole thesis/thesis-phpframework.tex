@@ -73,40 +73,40 @@ showstringspaces=false}
 \renewcommand{\abstractname}{Abstract.}
 \pagestyle {plain}
 \begin{abstract}
-{\bf [Context]} The new PHP Frameworks ideas has become popular for developers. 
-It is also important to know how big impact they have on the performance. 
-Bringing two top frameworks against each others can bring up some light how performance do look like today on the web with PHP as its grounds.  
-{\bf [Problem]} Visitors have nowadays less energy to wait for a website to load. Meanwhile, PHP Framework has become known among developers, but you have been missing piece of performance that makes the load time to be reduced even more. so visitors can surf without any problems. Making it a good idea to try to discovery how the performance is on PHP Framework can change for a visitor.
-{\bf [Contribution]} This paper is one of the first trying to perform performance experiments on PHP Frameworks.
-It can help to push people to the right decisions in future work in PHP Framework Performance. 
+{\bf [Context]} The new PHP Framework ideas have become popular among developers. 
+It is also important to know how big an impact they have on the performance of the website. 
+Comparing the two top frameworks with each other can shed some light on what the performance looks like today on the web with PHP as its base.  
+{\bf [Problem]} Visitors nowadays have less patience to wait for a website to load. Meanwhile, PHP Framework has become known among developers, but the part of the performance that reduces the load time even more, so visitors can surf without any problems as be missing. Therefore it is a good idea to try to discovery how the performance of the PHP Framework can change and improve the visitor experience.
+{\bf [Contribution]} In this paper is a description of one of the first performance experiment on PHP Frameworks.
+It can help people make the right decisions regarding PHP Framework in future. 
 The lack of data in this area is also one of the decision to make this paper as well.
 \end{abstract}
 \section{Introduction}
-The World Wide Web, the internet started to be popular in the beginning of the 90s. 
-The face towards the users was different websites, running on HTTP-servers, based on the official HTML language. 
-And it began to be discussion about being able to store and perform calculations on data on websites, this was not possible to deal with static files like HTML was.
-You could use several languages to do so, The Founder of PHP, Rasmus Lerdorf made PHP because of the massive amount of code you needed to code in PERL, a language PHP is based on,\cite{php:faq} to do a specific thing. It was as first only small PERL codes to make the coding more easier then before to code a website.
-He created PHP just as it could handle the quest he needed to handle on his page. 
-He released it just for fun and it became famous as a good idea to a simpler language for web development. 
-Many join the project and it is now a big project, a script language that more and more become a more object-oriented script language. If not already.
+The internet became popular in the beginning of the 90s. 
+Different websites, running on HTTP-servers and based on the official HTML language, were the face outwardly seen by visitors. 
+And there were discussion about the ability to store and perform calculations on data on websites, but it was not possible to do such with static files like HTML.
+However, you could use several languages to do so. The Founder of PHP, Rasmus Lerdorf, used PERL to create PHP because of the massive amount of code you needed to code in PERL.\cite{php:faq} At first there were only small PERL codes in order to make coding a website easier than before.
+He created PHP for his own personal need in his quest for the best possible webpage. 
+He released it just for fun and it became famous as a good idea to a simplify web development. 
+His idea has become and is still today a popular project, a script language that increasingly is becoming object-oriented, if not already.
 
-The web is nowadays different. Many are talking about speed, speed and performance. 
-For a website you have many different approaches to make the website faster, or you will lose visitors if the page load is too slow. 
-A new service that came famous when cloud came the thing everyone should use, is CDN\footnote{CDN is Content Delivery Network, a network of servers. 
+The web is different nowadays. Many are talking about speed and performance. 
+There are different ways to make the website faster, because when the page loading is to slow you will lose visitors. 
+A new service, by the name of cloud, has become famous and everyone want to use it, for example CDN\footnote{CDN is Content Delivery Network, a network of servers. 
 Where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} and also different performance approaches, like the web-server, the server in general or the page. 
 This could mean configuration or tweaks making the page load faster.
 
-PHP Framework is mostly focused on fast development, with libraries and helpers, it can make the development of a website faster. 
-This make it very popular among developers wanting to make a fast demo page for a new project. 
-When the page is then up for production on a website, everyone can reach it.
-This stage make it important to think about performance, because users is not waiting long to a page to load, like mostly did on the 90s because of the slow internet connection. 
-PHP Framework make it fast for the developer but the point of the visitor is missing.
+PHP Framework, i.e. libraries and helpers, mainly focuses on making the development of websites faster. 
+This makes it very popular among developers wanting to make a fast demo page for a new project. 
+When the page later is up for production on a website, everyone can reach it.
+At this stage it is important to think about performance, because users do not wait long for a page to load, like most did in the 90s because of the slow internet connection. 
+PHP Framework has help the development of websites but the important point which is faster websites for the visitors is still missing.
 
-{\bf The research focus} will be to see how other evaluate web performance in general and to test the most used tool in those papers to evaluate two of the biggest PHP Frameworks, CodeIgniter and CakePHP.
+{\bf The research focus} is an evaluations of web performances in general and on testing the most used and scientifically researched tool to evaluate two of the biggest PHP Frameworks, CodeIgniter and CakePHP.
 
-{\bf The nature} of this thesis is define a good start how to think about performance of PHP Frameworks performance in specific and Web performance in general.
+{\bf The goal} of this thesis is to specifically define a way to start thinking about the performance of PHP Frameworks and Web performance in general.
 
-{\bf The expected outcome} of this thesis is to point to right direction when evaluate PHP Frameworks, the tests can been seen as a guideline for future work and as first attribution to get any real data of performance for PHP Frameworks. 
+{\bf The expected outcome} of this thesis is to be able to point the developer in the right direction when evaluating PHP Frameworks, and the tests can been seen as guidelines for future work and an initial contribution to get any real data on the performance for PHP Frameworks. 
 
 \section{The Background}
 Evaluation is all about the performance. Performance in this paper is about load\footnote{loads means how long a request take, in milliseconds.}, but it can be hardware, network and more. 
