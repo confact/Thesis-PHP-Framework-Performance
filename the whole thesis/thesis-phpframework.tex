@@ -94,7 +94,7 @@ The web is different nowadays. Many are talking about speed and performance.
 There are different ways to make the website faster, because when the page loading is to slow you will lose visitors. 
 % FIX!
 A new service, by the name of cloud, has become famous and everyone want to use it, for example CDN\footnote{CDN is Content Delivery Network, a network of servers. 
-Where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} and also different performance approaches, like the web-server, the server in general or the page. 
+Where static data for websites and more can be stored, a CDN is spread all over the world, making the request faster.} shows have cloud can be used. Except CDN there are also other different performance approaches, like the web-server, the server in general or the page. 
 This could mean configuration or tweaks making the page load faster.
 % END FIX!
 
@@ -182,7 +182,7 @@ The server specification can be seen in Table \ref{table:serverSpecification}.
 \section{Research}
 \subsection{Research Questions}
 \begin{description}
-  \item[RQ1:] What web performance evaluations exist and how were they performed?
+  \item[RQ1:] What kind of web performance evaluations exist and how were they performed?
   \item[RQ2:] What factors impact web performance?\footnote{There is a lack of data on php performance. However there is some data about web performance in general.}
   \item[RQ3:] To what extent are open source php frameworks evaluated?
   \item[RQ4:] What are differences in the performance between the most commonly used open source php frameworks and how can they be evaluated?
@@ -230,7 +230,7 @@ These strings were used, as seen in Table \ref{table:literaturesearchstrings}.
 
 The search for data was about performance evaluation and the selection of literature research in this field was not plentiful but easy to find.
 % FIX!
-The important was a good how-to, 
+The important is a good way on  
 % END FIX
 how they did the research to find out the information in the data, and this was often found in the abstract but sometimes in the background. 
 There were often over 300 results in the search, but only up to 1-3 relevant pages, in each string, and the same papers were often found in many of the strings.
@@ -243,117 +243,115 @@ I took everything of value in this area, that had something that could be used f
 The rest of the finding approach depended on the author's ability to find something that had made an impact for a website or something similar that could be an important thing to bring up in this research.
 
 \subsection{The Papers}
-Information on the contents of the papers contains and what they have in common.
+In this section there are several papers listed along with descriptions of their contains and what these papers have in common.
 \subsubsection{PHP Team Development}
-is about how the MVC idea and techniques make a difference in the development. 
-This is a book about how the development in PHP is and what it does with web development, as MVC is a big part of it. This book is from 2009. \cite{MVC:phpTeam}
+is a book that has its focus on how the MVC idea and techniques make a difference in the development. 
+This book has MVC as a big part of PHP development and is about what it does for web development. This book was published in 2009. \cite{MVC:phpTeam}
 
-\subsubsection{Analysis of model-based mvc framework for php development CodeIgniter}
-is analysing how the mvc based framework Codeigniter is doing in the development in performance and in userability for developers. 
-this is an analysing paper from May 2009, it has kinda much in common with PHP Team Development, the book which have a chapter about MVC. \cite{MVC:codeigniter}
+\subsubsection{Analysis Of Model-based MVC Framework For PHP Development CodeIgniter}
+is an analysis of how the MVC based framework Codeigniter is doing in the development of performance and of user ability for developers. 
+This is a paper from May 2009 which has much in common with \emph{PHP Team Development}, the book which has a chapter about MVC. \cite{MVC:codeigniter}
 
-\subsubsection{Ec2 faq: What is an ec2 compute unit}
-shows what EC2 is about and what a compute unit is. 
-This is a website FAQ, which was last visited april 2012. \cite{EC2:Amazon}
+\subsubsection{EC2 FAQ: What Is An EC2 Compute Unit}
+is a website where the user will find frequently asked questions (FAQ) and answers about EC2 and what a compute unit is. 
+This website was last visited in april 2012. \cite{EC2:Amazon}
 
-\subsubsection{Understanding web performance}
-presents how performance can be used and it is importance in the web business, it also bring up how performance can be tested and what can impact the tests. 
-It is a paper presented in a Business Communication Review October 2001. \cite{performance:Understanding}
+\subsubsection{Understanding Web Performance}
+presents how performance can be used and its importance in the web business. It also brings up how performance can be tested and what can impact the tests. 
+It is a paper presented in the Business Communication Review, October 2001. \cite{performance:Understanding}
 
-\subsubsection{A performance comparison of dynamic web technologies}
-describe the different impact in performance when they do a comparison in different performance types and how it can be done. Presented in ACM Sigmetrics December 2003. \cite{performance:dynweb}
+\subsubsection{A Performance Comparison Of Dynamic Web Technologies}
+is paper in which there is a description of the different impacts on performance, comparative analyses of different performance types and how they can be done. Presented in ACM Sigmetrics, December 2003. \cite{performance:dynweb}
 
-\subsubsection{Web-based IDE to create model and controller components for mvc-based web applications on cakephp}
-writes how the CakePHP is build and how to code in it and talk a little about how MVC is about. A normal paper from December 2010. 
-Has much in common with the other MVC framework Codeigniter and the book PHP Team Development. \cite{MVC:cakephp}
+\subsubsection{Web-based IDE To Create Model And Controller Components For MVC-Based Web Applications On CakePHP}
+is a paper about how the CakePHP is built and how to use it for coding and a little about how MVC works. The paper was published in December 2010. 
+It has much in common with the other paper about MVC framework Codeigniter and the book \emph{PHP Team Development.} \cite{MVC:cakephp}
 
 
 \section{Literature Results}
 \subsection{Old Papers}
 The results below are based on old papers. 
 These papers are based on the general web performance and the web performance has not changed much in 10 years. 
-The papers about web performance that is not 10 years old was very hard to find. 
-They were mostly about java, an other programming language, that is not built up in the same way as php. Making them more or less useless for this paper. 
-The papers bringed up in this paper are taking up impacts and other subject for the answers of the RQ, that has same impact and importance today. So the relevance has not changed.
+The papers about web performance, less then 10 years old, were difficult to find. 
+They were mostly about Java, another programming language, that is not built up in the same way as PHP, making them more or less useless for this paper. 
+Impacts and other topics are described in the reviewed papers to help answer the research questions (RQ). This same papers are as important today as when they were published, so the relevance has not changed.
 
-\subsection{RQ1: What web performance evaluation exist and how were they performed?}
-Evaluation in web is mostly done by load testing and counted in ms, but also in how to optimize the page itself to minimize request to server, like less pictures, or move them to another server. 
-This can be seen in table \ref{table:rq1evaluation}.
+\subsection{RQ1: What kind of web performance evaluations exist and how were they performed?}
+Evaluation of the web is mostly done by load testing and counted in ms, but also by  optimizing the page itself to minimize requests to the server, for example by reducing the amount of pictures, or by moving them to another server. 
+This can be seen in Table \ref{table:rq1evaluation}.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{4cm} p{3cm} p{2cm} }
-  Evaluation topic & How & year\\
+  Evaluation Topic & How & Year\\
   \hline
-  	requests/ms & Experiment & 2001\cite{performance:Understanding}\cite{performance:dynweb}\\
-  	server/cpu & Experiment & 2003 \cite{performance:dynweb} \\
-  	on-page optimization & Experiment & 2003\cite{performance:dynweb}\\
+  	requests/ms & experiment & 2001\cite{performance:Understanding}\cite{performance:dynweb}\\
+  	server/CPU & experiment & 2003 \cite{performance:dynweb} \\
+  	on-page optimization & experiment & 2003\cite{performance:dynweb}\\
 \end{tabular}
 \caption[Different types of evaluation of a web performance]{Different types of evaluation of a web performance}
 \label{table:rq1evaluation}
 \end{table}
 
-{\bf request/ms} is mostly used to evaluate performance of web applications. 
-Got two different papers talking about two different things, \emph{Understanding Performance} adds this comment:
+{\bf Request/ms} is mostly used to evaluate performance of web applications. 
+There is mention of two different things in two different papers. Firstly,  \emph{Understanding Performance} contains the following comment:
 \begin{quote}
 Sure, speed matters, but it is not a one-dimensional problem. 
 And, despite what you have heard, just adding more bandwidth does not always make things go faster. \cite{performance:Understanding}
 \end{quote}
-Large and many requests needs good cpu and network, but to understand \emph{Understanding Performance} speed matters but not always the only problem. 
-\emph{A Performance Comparison of Dynamic Web Technologies} talks about how they do the tests with requests in ms:
+Large and many requests need a good Central Processing Unit (CPU) and network, but according to the article \emph{Understanding Performance} speed also matters but is not always the only problem. 
+Secondly, in \emph{A Performance Comparison of Dynamic Web Technologies} tests are done with requests in ms:
 \begin{quote}
 Consideration of overload behaviour may be just as important as the peak request rate when website administrators are choosing dynamic Web content generation technologies. \cite{performance:dynweb} 
 \end{quote}
-They saw an important to consider how to choose technologies using dynamic web content, because of different peak of request, making a need to handling the overload right. Something that can be changed in how many and how the size is on the requests. 
-They also show how good it can be to evaluate how the performance is by using requests per milliseconds, or seconds.
+The researchers understood the importance of choosing the right technologies when using dynamic web content, because of different peaks of requests, creating a need for handling the overload right. The amount and size of requests can change. 
+They also show how good it can be to evaluate the performance by using requests per milliseconds or seconds.
 
-{\bf server/cpu} is important when the server need to handle many requests at the same time. \emph{A Performance Comparison of Dynamic Web Technologies} tells that: 
+{\bf Server/CPU} is important when the server needs to handle many requests at the same time. In \emph{A Performance Comparison of Dynamic Web Technologies} the following explanation can be found:
 \begin{quote}
 Once the servers become overloaded, the CPU utilization of Apache 2.0.45 is lower than that of Apache 1.3.27. 
 Under overload, Apache 2.0.45 is unable to accept TCP connections (and hence requests) as quickly as Apache 1.3.27. \cite{performance:dynweb}
 \end{quote}
-Making it important for cpu to work, but that does not mean that Apache itself make the CPU overload, it can be the network the cpu need to handle.
+This is important for the CPU to function, but does not mean that Apache itself causes the CPU overload. It can be the network the CPU need to handle, that can causes the CPU overload.
 
-{\bf On-page optimization} is about how to create less requests to the server by removing or group images to one, because browsers loads the html first and then sending more request to get the images. 
-This does also have a thing with the size of the images as well, Bigger images makes longer time to download. 
-\emph{A Performance Comparison of Dynamic Web Technologies} is testing with static content \cite{performance:dynweb} that can be images or normal html files. Showing it goes faster than dynamic content, but it is a request.
+{\bf On-page optimization} is about how to create less requests to the server by removing or grouping several images in one, because browsers load the HTML first and then sends more requests to get the images. 
+This also does have something to do with the size of the images, bigger images take more time to download. 
+In \emph{A Performance Comparison of Dynamic Web Technologies} there are tests done with static content \cite{performance:dynweb} that can be images or normal HTML files. It shows it goes faster than dynamic content, but it is on request.
 
-\subsubsection{The pick}
-will be to do request per ms in the tests, because the amount of papers already doing so, making it more trustworthy. The tests is to see any difference in the performance from visitors perspective, making it less important to evaluate server hardware and on-page optimization, even if the last one is interesting, we need to focus on one thing.
-\newpage
+\subsubsection{The Choice}
+will be to use request per ms in the tests, often used in other research experiments and therefore more trustworthy. The tests are to see if it are any difference in the performance from the visitor's perspective, making it less important to evaluate server hardware and on-page optimization, even if the last one is interesting. We need to focus on one thing.
 \subsection{RQ2: What factors impact web performance?}
-There are things that can be an impact of the performance while testing. The impacts are listed in table \ref{table:rq2evaluation}.
+There are things that can have an impact on the performance while testing. The impacts are listed in Table \ref{table:rq2evaluation}.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{2cm} p{3cm} p{7cm} }
-  Factor & How it impact & comment\\
+  Factor & How It Impacts & Comment\\
   \hline
-  	Server & network, cpu, ram & This can be fixed with a large server or a data center, something that can not be tested here.\\
+  	server & network, CPU, RAM & This can be fixed with a large server or a data center, something that can not be tested here.\\
   	\hline
-  	Network & speed & if the test will do a request/ms load simulation, the network can be maximized without the server being touched to the performance limit which been set.\\
+  	network & speed & If the test will perform a request/ms load simulation, the network can be maximized without the server being reaching the performance limit, which has been set already.\\
   	\hline
-  	Wrong config & slowness, bad performance & wrong config on the server, resulting in less performance, but that will not be a problem. 
-  	The default settings will be used. 
-  	Change configuration for optimization is not a part of this paper.
+  	wrong configuration & slowness, bad performance & Wrong configuration on the server, which can result in lower performance, will not be a problem because default configurations will be used, meaning no focus on optimization configurations in this paper.
 \end{tabular}
 \caption{Different types of evaluation of a web performance}
 \label{table:rq2evaluation}
 \end{table}
 
-{\bf The server} can have big impact on performance because the cpu and RAM can be too less to handle the big amount of request tested. 
-Small CPU and RAM can make it to overload in power and deny new request. 
-Making it impossible to connect when that amount of request is full.
+{\bf The server} can have a big impact on performance because the CPU and RAM might not have the ability to handle the big amount of requests tested. 
+Small CPU and RAM can make it overload and deny new requests,  
+making it impossible to connect when that amount of requests are full.
 
-{\bf The Network} is not very important but the network should be stable for the amount of request sending to the server. 
-Normal speed would be at least 10mbit down and 10mbit up to send and receive in good speed. 
+{\bf The Network} is not very important, but the network should be stable for the amount of requests sent to the server. 
+Normal speed would be at least 10mbit down and 10mbit up to send and receive at good speed. 
 The only problem with the network in my home is the stability, making it hard to trust the speed, making the ms higher than it should be. 
-As example, the internet connection where the tests was tested can have 100mbit up and 100mbit down, but only getting 34 mbit of both because of the share of the internet connection, with 60 other people, this can be a big impact if all people is using the network, but that is not a big risk.
+For example, the internet connection where the tests were run can have 100 mbit up and 100 mbit down, but only getting 34 mbit of both because of sharing the internet connection with 60 other people. this can have a big impact if alot of people are using the network, but the risk for that is small.
 
-{\bf Wrong config} is the thing that can be spooky and many people do not know that it can be a default config or a wrong setup config that make the server to overload or not accept requests. 
-The tests will use defaults just to make it so clean as possible, because that is how many people actually are using the defaults in the configs.
+{\bf Wrong configuration} is the thing that can present a problem because many people might not know that it can be a default or a wrong setup configuration that make the server to overload or not accept as many requests as it should. 
+The tests will use defaults just to make it as clean as possible, because that is how many people actually are using the defaults in the configurations.
 
-\subsubsection{The pick}
-will be to trying to make it more realistic by using server on the cloud with good internet and good hardware.
+\subsubsection{The Choice}
+will be to try to make it more realistic by using server on the cloud with good internet, good hardware, and default configurations.
 \newpage
+% hilighta fel till the results
 \subsection{RQ3: To what extent are open source php frameworks evaluated?}
 Nothing was found that were about how performance in php framework evaluates. This could be as example that other authors probably think that this area is covered because of the performance papers in web generally. 
 They are also outdated but it has not been any new invention in http performance neither. 
@@ -364,7 +362,7 @@ And then add a PHP Framework on that.
 A difference in how you use php with libraries in a MVC maybe change the response time. 
 This is why and what we will do in this paper.
 
-\subsubsection{The pick}
+\subsubsection{The Choice}
 will be to do this as a first step trying to perform a evaluation on PHP Framework, because of the lack of data.
 
 
