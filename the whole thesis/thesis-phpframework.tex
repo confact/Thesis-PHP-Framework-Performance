@@ -352,45 +352,44 @@ The tests will use defaults just to make it as clean as possible, because that i
 will be to try to make it more realistic by using server on the cloud with good internet, good hardware, and default configurations.
 \newpage
 % hilighta fel till the results
-\subsection{RQ3: To what extent are open source php frameworks evaluated?}
-Nothing was found that were about how performance in php framework evaluates. This could be as example that other authors probably think that this area is covered because of the performance papers in web generally. 
-They are also outdated but it has not been any new invention in http performance neither. 
-PHP is a script language making it totally different from normal web performance because of the compiling on hit, as we can call it. 
-Meaning it runs through the PHP code when the file is called. 
-Making a different in response, even if it is a little difference, almost not noticeable at all. 
-And then add a PHP Framework on that. 
-A difference in how you use php with libraries in a MVC maybe change the response time. 
-This is why and what we will do in this paper.
+\subsection{RQ3: To what extent are open source PHP frameworks evaluated?}
+No data were to be found regarding the performance of PHP framework and evaluations thereof. For example other authors could think that this area is covered because the papers on web performance already exist. 
+The Papers are also outdated but there have not been any new inventions in HTML performance either. 
+PHP is a script language making it totally different from normal web performance because of the compiling on run, as we can call it.
+It means it runs through the PHP code when the file is called. 
+It creates a difference in response, 
+and then you need to put a PHP Framework over that.
+A difference in how you use PHP with libraries in a MVC-pattern could change the response time. 
+This is why we will do what we will do in this paper.
 
 \subsubsection{The Choice}
-will be to do this as a first step trying to perform a evaluation on PHP Framework, because of the lack of data.
-
+will be to create this paper as a first step in how to do a performance evaluation on PHP Framework2 because of the lack of data in this area.
 
 \section{Experiment Design} 
 
 \subsection{Investigated Question}
-Which of the following php framework provide better performance measured in terms at: page speed in ms.
+Which of the following PHP frameworks provide better performance measured in terms of {\bf page speed in ms}.
 
 \subsection{Experiment artifacts and variables}
 
 
-\subsubsection{Controlled Variables}
-the following variables are controlled
+\subsubsection{Controlled Variables,}
+the following variables are controlled:
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{3cm} p{7cm} }
   	Variable & Description\\
   	\hline
-  	Request size & constant\\
-  	Server & see table \ref{table:serverSpecification}\\
-  	Framework & Compatible API, look at table \ref{table:classes} for info about the classes.\\
-  	Response size & constant. See the size in table \ref{table:thedatafortests}.
+  	request size & Constant\\
+  	server & See table \ref{table:serverSpecification}\\
+  	framework & Compatible API, look at table \ref{table:classes} for info about the classes.\\
+  	response size & Constant. See the size in table \ref{table:thedatafortests}.
 \end{tabular}
 \caption[Controlled variables in Experiment]{Controlled variables in Experiment}
 \label{table:controlledvariables}
 \end{table}
 
-The tests is as you can see in the list below, all 3 tests will be run for database and without database, for each framework. Making it 6 tests total for a framework, with and without database.
+The tests are as you can see listed below, and 3 tests will be run on database and 3 tests without database for each framework. It makes 6 tests total for one framework, with and without database.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{l l l l l l}
@@ -401,20 +400,20 @@ The tests is as you can see in the list below, all 3 tests will be run for datab
  Test 2 & 5 & 20,000 & 5 & 20,000 & with database\\
  Test 3 & 5 & 20,000 & 5 & 20,000 & with database\\
  \hline
- Test 1 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
- Test 2 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
- Test 3 & 5 & 20,000 & 5 & 20,000 & withOUT database\\
+ Test 1 & 5 & 20,000 & 5 & 20,000 & without database\\
+ Test 2 & 5 & 20,000 & 5 & 20,000 & without database\\
+ Test 3 & 5 & 20,000 & 5 & 20,000 & without database\\
 \end{tabular}
 \caption{How the tests will de done.}
 \label{table:testsforframework}
 \end{table}
-the tests are using 5 for the concurrency level, meaning to send 5 requests each time, send so fast the previous requests are done. This to help to count the response time more exactly. You can see how the tests will be done in table \ref{table:testsforframework}.
+the tests are run on concurrency level 5, i.e. sending 5 requests each time, to be sent as fast as the previous requests are done. This is to help count the response time more exactly. You can see how the tests will be done in Table \ref{table:testsforframework}.
 
-The total amount of request of 20,000 is to get amount of request to get average time from, not too much and not too less. 
+The total amount of the request of 20,000 is to have something to base the average time on, not too much and not too little. 
 It does not need to be much more because the average will be the same $\pm$ 2 ms. 
-That make it not necessary to have more. But it took as much as 20,000 because it make it more secure to be right numbers in the results.
+That makes unnecessary to have more. But, it took as many as 20,000 requests in order to show the  right response time in the test results.
 
-A good thing to know is how the server will be setup, here is the table of the specification of the server that will be used for the experiment, on the Amazon cloud.
+A good thing to know is how the server will be setup, and below is the table of the specification of the server that will be used for the experiment on the Amazon cloud.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{4cm}	 p{4cm} }
@@ -448,7 +447,7 @@ This is how the Framework classes will be used in the experiment.
 \label{table:classes}
 \end{table}
 \subsubsection{Manipulated variables}
-Server load measured in terms of amount of request.
+Server load measured in terms of {\bf amount of request}.
 
 Manipulated variables
 \begin{description}
@@ -456,72 +455,68 @@ Manipulated variables
 \end{description}
 
 Response Type is the only thing that will be changed. 
-It is the support of the database that will be removed or added, making it possible to see the difference in performance for the core of the framework and for just the database controller.
+The database support will be removed or added based on the type of test, making it possible to see the difference in the performance of the core of the framework and the database controller.
 
 \subsubsection{Experiment Artifact}
-\begin{description}
-  \item[blog] the blog will have normal features, or more likely very simple. It will have a normal list with pagination on the startpage, every post will have its own page. You can see the code in Appendix A1 and A3.
-  \item[apache benchmark] will use Apaches own benchmark to simulate server load. 
-  \item[Environment] the server is mostly already set, see table \ref{table:serverSpecification}.
-\end{description}
+ {\bf Environment} the server is mostly already set, see Table \ref{table:serverSpecification}.
 
-{\bf Blog} is first a simple blog, with posts list on the start-page and with an own page for single post. 
-The most important with the blog is the index page in the experiment, because it is there the requests will be send. 
-Focusing to make a decent list of posts with title, body and created date at the blog. 
-Both frameworks used the same database making it simple and less chance for the database to make a bad impact in the performance. 
+{\bf Blog} is a simple website with post list on the start page and with its own page for each single post. 
+The most important thing about the blog is the index page in the experiment, because it is there the requests will be sent. 
+The focus will be on making a decent list of posts on the blog with title, text body, and date of creation. 
+Both frameworks are using the same database making it simple and thereby lessening the chance for the database to make a bad impact on the performance. 
 You can see the code in Appendix A1 and A2.
 
-{\bf Apache benchmark} is doing as All tools for performance for a web application is doing. 
-It is same idea, to send an amount of request to the server and count how long it took to get a response back. 
-Apache benchmark is the one that is been in while and has a reputation to do fair tests.\cite{apache:benchmark}
+{\bf Apache benchmark} does the same as all tools for performance for a web application does. 
+It is the same idea as sending an amount of requests to the server and counting how long it takes to get the response back. 
+Apache benchmark is an tool for benchmarking and has a reputation to do fair tests.\cite{apache:benchmark}
 
 \section{Experiment}
 \subsection{How it was made}
-Used Apache benchmark to 20,000 requests on a currency of 5 request per time frame to a server. 
-The test was made with a database randomly picked which framework to test. 
-The tests without database other time, creating the difference on the ms.
+Apache benchmark was used to make 20,000 requests on a currency level of 5 to a server. 
+The tests were made with a database and randomly picked which framework to test. 
+The tests without database were run at different times, creating the difference in the ms in the results.
 
-I used the command line below to send the load request, randomly to specific ip-address\footnote[5]{the ip is typed as 11.11.11.11 to make it clear that the server is not running no more} on the day and night from my own computer to the test server, on the Amazon cloud on Ireland.
+I used the command line below to send the load request to a randomly picked ip-address\footnote[5]{The ip is typed as 11.11.11.11 to make it clear that the server is not running.} to the test server on the Amazon cloud on Ireland, both day and night.
 \begin{verbatim}
 ab -wn 20000 -c 5 http://11.11.11.11/framework
 \end{verbatim}
 
-The variables controlled was response size, amount of request and currency of requests. 
-see the data for the variables in table \ref{table:thedatafortests}.
+The variables controlled were response size, amount of request, and currency of requests. 
+See the data for the variables in Table \ref{table:thedatafortests}.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{2,6cm} p{2,5cm}  p{2,5cm}  p{2,3cm}  p{2,3cm} }
-  {\bf Variable} & Codeigniter db\footnotemark[6] & Codeigniter & cakephp db\footnotemark[6] & cakephp \\
+  {\bf Variable} & Codeigniter db\footnotemark[6] & Codeigniter & CakePHP db\footnotemark[6] & CakePHP \\
   \hline
-  {\bf ResponseSize}\footnotemark[7] & 6440000 bytes & 6440000 bytes & 6360000 bytes & 6360000 bytes \\
+  {\bf Response size}\footnotemark[7] & 6440000 bytes & 6440000 bytes & 6360000 bytes & 6360000 bytes \\
   {\bf Requests} & 20,000 & 20,000 & 20,000 & 20,000 \\
   {\bf Currency} & 5 & 5 & 5 & 5 \\
 \end{tabular}
 \caption{The tests with database average request/connection times in ms.}
 \label{table:thedatafortests}
 \end{table}
-\footnotetext[6]{with db it means database. In other meanings the framework with the database, the database was used with models for posts, without db it was just plain html in view with controller used.}
-\footnotetext[7]{ResponseSize is total bytes of html sent from the server in one test, on every interval.}
+\footnotetext[6]{Db means database. i.e. the framework with the database. The database was used with models for posts and without db it was just plain html in view with controller used.}
+\footnotetext[7]{Response size is total bytes of data sent from the server in one test on every interval.}
 \newpage
 \subsection{The results}
-The experiment was made randomly in different times, picked randomly. You can see how the tests was done in Table \ref{table:testsforframework}. The results of the tests can you see in Appendix A3.
+The experiment was made randomly at different times. You can see how the tests were done in Table \ref{table:testsforframework}. The results of the tests you can see in Appendix A3.
 
-The result can you see in figure \ref{fig:experimentwithdb}. 
-It was almost same results on both, but a small gap between the two framework on just a few Millie seconds, to be exact, it was a gap on 5,34 ms in a average.
+The results you can see in Figure \ref{fig:experimentwithdb}. 
+The results were almost the same on both, but a small gap between the two frameworks of just a few ms, to be exact it was a gap of 5,34 ms on a average.
 \begin{figure}[h]
 \includegraphics[scale=0.55]{charts-tests-database.png}
-\caption{The tests with database average request/connection times in ms.}
+\caption{The average test results with database per request/connection times in ms.}
 \label{fig:experimentwithdb}
 \end{figure}
 \newpage
-This was with database, with show that if we will focus to the ms total average, is CakePHP faster. This need to be tested without a database too, You can see the result in figure \ref{fig:experimentwithoutdb}.
+This was with database, which show if we will focus to the ms total average, are the tests run with CakePHP faster. This need to be tested without a database too, You can see the result in figure \ref{fig:experimentwithoutdb}.
 \begin{figure}[h]
 \includegraphics[scale=0.55]{charts-tests.png}
 \caption{The tests without database average request/connection times in ms.}
 \label{fig:experimentwithoutdb}
 \end{figure}
 
-The test without database shows that they are almost equally fast. Only 1,3 ms gap between them, CakePHP was faster here too, showing CakePHP has faster structure in its core.
+The tests without database shows that they are almost equally fast, only 1,3 ms gap between them making CakePHP the fastest here, showing CakePHP has faster structure on its core.
 \subsection{Data analysis and discuss}
 This was good to see how different the performance is between the frameworks. 
 This is also a very good way to evaluate the performance on any web service or application, the load of request can show how fast the request can be handled by the framework and show the speed of it.
