@@ -73,9 +73,10 @@ showstringspaces=false}
 \renewcommand{\abstractname}{Abstract.}
 \pagestyle {plain}
 \begin{abstract}
-{\bf [Context]} The new PHP Framework ideas have become popular among developers. 
-It is also important to know how big an impact they have on the performance of the website. 
+{\bf [Context]} PHP Frameworks, such as CakePHP and Codeignite, have become popular among developers since they offer ease of development save time and provide already made libraries to use. 
+Considering that more and more websites are built using these frameworks it is important to know how big an impact they have on the performance of the website. 
 Comparing the two top frameworks with each other can shed some light on what the performance looks like today on the web with PHP as its base.  
+% FIX! The Problem needs to have better english:
 {\bf [Problem]} Visitors nowadays have less patience to wait for a website to load. Meanwhile, PHP Framework has become known among developers, but the part of the performance that reduces the load time even more, so visitors can surf without any problems as be missing. Therefore it is a good idea to try to discovery how the performance of the PHP Framework can change and improve the visitor experience.
 {\bf [Contribution]} In this paper is a description of one of the first performance experiment on PHP Frameworks.
 It can help people make the right decisions regarding PHP Framework in future. 
@@ -106,7 +107,7 @@ PHP Framework has help the development of websites but the important point which
 
 {\bf The research focus} is an evaluations of web performances in general and on testing the most used and scientifically researched tool to evaluate two of the biggest PHP Frameworks, CodeIgniter and CakePHP.
 
-{\bf The goal} of this thesis is to specifically define a way to start thinking about the performance of PHP Frameworks and Web performance in general.
+{\bf The goal} of this thesis is to specifically define a way to start thinking about the performance of PHP Frameworks and web performance in general.
 
 {\bf The expected outcome} of this thesis is to be able to point the developer in the right direction when evaluating PHP Frameworks, and the tests can been seen as guidelines for future work and an initial contribution to get any real data on the performance for PHP Frameworks. 
 
@@ -284,7 +285,7 @@ This can be seen in Table \ref{table:rq1evaluation}.
 \begin{tabular}{ p{4cm} p{3cm} p{2cm} }
   Evaluation Topic & How & Year\\
   \hline
-  	requests/ms & experiment & 2001\cite{performance:Understanding}\cite{performance:dynweb}\\
+  	requests/ms & experiment & 2001\cite{performance:Understanding,performance:dynweb}\\
   	server/CPU & experiment & 2003 \cite{performance:dynweb} \\
   	on-page optimization & experiment & 2003\cite{performance:dynweb}\\
 \end{tabular}
@@ -363,12 +364,12 @@ A difference in how you use PHP with libraries in a MVC-pattern could change the
 This is why we will do what we will do in this paper.
 
 \subsubsection{The Choice}
-will be to create this paper as a first step in how to do a performance evaluation on PHP Framework2 because of the lack of data in this area.
+will be to create this paper as a first step in how to do a performance evaluation on PHP Frameworks because of the lack of data in this area.
 
 \section{Experiment Design} 
 
 \subsection{Investigated Question}
-Which of the following PHP frameworks provide better performance measured in terms of {\bf page speed in ms}.
+Which of CakePHP and Codeigniter provide better performance measured in terms of {\bf page load speed in ms}.
 
 \subsection{Experiment artifacts and variables}
 
@@ -413,7 +414,7 @@ The total amount of the request of 20,000 is to have something to base the avera
 It does not need to be much more because the average will be the same $\pm$ 2 ms. 
 That makes unnecessary to have more. But, it took as many as 20,000 requests in order to show the  right response time in the test results.
 
-A good thing to know is how the server will be setup, and below is the table of the specification of the server that will be used for the experiment on the Amazon cloud.
+A good thing to know is how the server will be setup, and Table \ref{table:serverSpecification} contains the specification of the server that will be used for the experiment on the Amazon cloud.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{4cm}	 p{4cm} }
@@ -431,7 +432,7 @@ A good thing to know is how the server will be setup, and below is the table of 
 \caption{The server specification where the test will be done on.}
 \label{table:serverSpecification}
 \end{table}
-This is how the Framework classes will be used in the experiment.
+In Table \ref{table:classes} can you see how the Framework classes will be used in the experiment.
 \footnotetext[4]{One EC2 Compute Unit provides the equivalent CPU capacity of a 1.0-1.2 GHz 2007 Opteron or 2007 Xeon processor. \cite{EC2:Amazon}}
 \begin{table}[htbp]
 \centering
@@ -509,83 +510,79 @@ The results were almost the same on both, but a small gap between the two framew
 \label{fig:experimentwithdb}
 \end{figure}
 \newpage
-This was with database, which show if we will focus to the ms total average, are the tests run with CakePHP faster. This need to be tested without a database too, You can see the result in figure \ref{fig:experimentwithoutdb}.
+This tests with database, show if we will focus on the ms total average, the tests run faster with CakePHP. These also need to be tested without database, You can see the result in Figure \ref{fig:experimentwithoutdb}.
 \begin{figure}[h]
 \includegraphics[scale=0.55]{charts-tests.png}
-\caption{The tests without database average request/connection times in ms.}
+\caption{The test results without database show the average per request in ms.}
 \label{fig:experimentwithoutdb}
 \end{figure}
 
-The tests without database shows that they are almost equally fast, only 1,3 ms gap between them making CakePHP the fastest here, showing CakePHP has faster structure on its core.
+The tests without database show that they are almost equally fast, only 1,3 ms gap between them. This makes CakePHP the fastest in the tests, showing that CakePHP has faster structure on its core.
 \subsection{Data analysis and discuss}
-This was good to see how different the performance is between the frameworks. 
-This is also a very good way to evaluate the performance on any web service or application, the load of request can show how fast the request can be handled by the framework and show the speed of it.
+It was good to see how different the performance is between the frameworks. 
+This is also a good way to evaluate the performance on any web service or application, and the load of request can show how fast the request can be handled by the framework and show the speed it can handle.
 
-The biggest difference of the performance was when using a database, The difference was {\bf 5,34 ms}. It sounds little but in big sites just few ms does matter. 
-When using no database, it was static files of the page generated by the database-version of the blog, with all the posts.
-The time had the difference of {\bf 1,3 ms}. 
-Almost not noticeable at all.
-And If we take the size in the reflection, is the gap even smaller.
-Maybe is Codeigniter faster, if they was in same size? That can be true. 
-The default template in CakePHP and Codeigniter was used, making the page in different sizes and could make a difference in the performance of the tests and request.
+The biggest difference in the performance was while using a database. The difference was {\bf 5,34 ms}. It sounds small, but on big sites a few ms do matter. 
+When using without database, static files of page were generated from the database-version of the blog with all the posts.
+The time difference was {\bf 1,3 ms}, 
+almost not noticeable at all.
+And, if we take the size into reflection, the gap is even smaller.
+Codeigniter might be faster, if the tests were the same size? That could be true. 
+The default templates in CakePHP and Codeigniter were used, making the page in different sizes, and could be a difference in the performance of the tests and requests. This was to use the defaults so the human impact would not influence the tests. It is more secure to use the defaults then trying to have the same sizes. It would be strange to try to have the same sizes because it actually is two different frameworks, making it understandable that there are difference in size.
 
-{\bf The difference in milliseconds} is so small without database because the frameworks seems to have good structure in their core of controllers and support for views, which we used in the tests without database for both framework. 
-The difference in milliseconds for the tests with a database is bigger, 5.34 ms. Smaller than a thought but it is a difference. 
-Making it noticeable when having a database and the PHP framework on a big website with many visitors. 
-Creating a big queue of requests, making the small difference bigger, 5.34 ms can feel like the double, 10,68 ms or more. 
+{\bf The difference in milliseconds} is very small without database because the frameworks seems to have good structure in their core of controllers and support for views, which we did use in the tests without database for both frameworks. 
+The difference in ms between the tests using a database is bigger than the difference between the tests using no database, the difference with database was 5.34 ms. It was smaller then anticipated but there was a difference. 
+it is noticeable when having a database and the PHP framework on a big website with many visitors. 
+In the IT industry, even the small gaps in ms make a big impact because the demand of faster and faster load of the page for a web company. The new user does not have the patience to wait. But it is still a ongoing strategy for websites.
 That is why a small difference can be important.
 
-A thing to think about is the size difference, which was around {\bf 80,000 bytes}, for both the test with and without the database. 
-This can make gap between the framework understandable with db, but without the db was the tests very close to each others. 
+Something to think about is the difference in size, which was around {\bf 80,000 bytes}, for both the tests with and without the database. 
+This can create a gap between the frameworks, understandable with db, but without the db the tests were very close to each other. 
 If the size was the same, Codeigniter could be faster. 
 
-The difference in the size is because the use of the default in CakePHP and Codeigniter, CakePHP has more style and a usable template as default for the application, Codeigniter do not have it making it confused of the bigger size of the response. 
-But the size is not a problem because of the choice to use the default of each framework, making the difference in the size.
+The difference in the size is because of the use of the default in CakePHP and Codeigniter. CakePHP has more style and a more usable template as default for the application then Codeigniter, and the bigger size of the response can be confusing. 
+But the size is not a problem because of the choice to use the default of each framework, which makes the difference in the size. The thinking while doing this tests were to use the defaults because many real websites do the same, making the tests more real. The website of these tests was made to reflect a real website. It creates a more understandable reason to still have the difference in size. The defaults make it more secure and more realistic in the tests. if we try to have the same size for both frameworks we miss the big point which is to have the tests and artifacts as standardized as possible. We decided to focus on the default rather than size, which is why there are size differences in the tests.
 
-This does not seem to be the problem, used the default tools in both framework to make a very simple blog webpage. The size should in other word be different, it would be weird if it was not. 
-But the thought that the size can make a difference is of course in the mind. 
-It is request time in ms, and it does have a very big impact by the size.
+The difference in size does not seem to be the problem, and the default tools were used in both frameworks to make a very simple blog website. The size should in other words be different, it would be strange if it was not. 
+But have in mind that the size can make difference, of course.
 
-Would love to see any {\bf future work} on different sizes for the PHP framework, which tests how the size does matter of the performance, with same size of both.
+Hopefully there will be {\bf future work} done on different and same sizes of the PHP frameworks to see how and if size matters in the performance.
 
 \subsection{Validity Threats}
 \subsubsection{Tests are not isolated}
-making the tests to be disturb by something from outside, can be the traffic of the line on Amazon cloud or something else that can make the response time longer or not trusted. 
-This was tried to be reduced by been testing in the night. 
-But you can see in the tests without, that was made more on the morning that the response time is already higher. 
-This should not change the gap between the frameworks because all the tests was tested in the same time, making it having all around same response time in general. 
+and therefore be disturbed by something from outside. It can be traffic on the Amazon cloud internet connection or something else that can make the response time longer or not trusted. 
 
-On other hand, a good thought would be that a good performance tests in a web perspective would be to have the webserver and the client on different locations, simulate real production website. Making it a more real data collected.
+But a good thought would be to test the good performance in the real world from a web perspective, to have a web server and a client in various locations to provide realistic data. The goal of this paper is to create as real data as possible, which isolated tests do not give. Isolated tests would, of course, be a dream situation compared to reality.
 
 \subsubsection{Concurrency level} 
-could be misunderstood which the low level, at 5.
-A good thought is that the tests is meant to just test how the framework and PHP is handling in normally.
-normally mean in this case 5 visitors at the same time.
-This could be bigger or smaller. 
-But these tests was not meant to see how the frameworks are handling the requests in high visitor numbers.
+could be misunderstood on the low level of 5.
+A good thought is that the tests are meant to test how the framework and PHP are handling the requests normally.
+Normally it means that 5 users visit the website at the same time.
+This number could be bigger or smaller. 
+The tests were meant to give a glimpse of how php frameworks act with ``normal'' numbers of visitors, which can, of course, be different for different websites. Therefore, the tests had the exact figure of 5 for the concurrency level to give a sense of several visitors at once.
 
 
-\subsubsection{Client's impact}
-could be a problem. The tests were running Apache benchmark, but Apache benchmark is ignoring stylesheet and pictures (The blog in the test did not have pictures). 
-It is just getting the generated html page, after php have generated it with the use of the code of PHP Framework. 
-making the impact smaller than a normal browser, that is getting the stylesheet and pictures too.
+\subsubsection{Client impact}
+could be a problem. The tests were done by Apache benchmark, but Apache benchmark ignores stylesheet and pictures. (The blog in the test did not have pictures.) 
+It only gets the generated HTML page after PHP has generate it with the use of the code of a PHP Framework, 
+making the impact smaller than a normal browser, which downloads the stylesheets and pictures too.
 
 \section{Conclusion}
-The frameworks performance has big difference, but mostly just if in used of database, the classes for using database can in other words be more effective. 
-CakePHP was fastest in both tests, with and without a database. 
-But the size was different on 80,000 bytes. 
-This could be something that could make CakePHP a winner. 
-But my conclusion is that used default template, very simple html page. So it does not have a big impact.
+There are big differences between the php frameworks, but when databases are used the classes using databases could in other words be more effective. 
+CakePHP was the fastest in both tests, with and without database, 
+but the difference of the size was 80,000 bytes. 
+This could be something that could make CakePHP a winner, 
+but my conclusion is that using default settings on the artifacts give a more realistic test environment rather then focusing on getting the same size on both frameworks.
 
-The fastest framework, according to the data is CakePHP, with just 1,3 ms in average without database and with 5,34 ms in average with database. 
-This is something that is a big impact in the PHP performance and it can be fixed in newer versions. 
+The fastest framework according to the data is CakePHP with just 1,3 ms on average without database and with 5,34 ms on average with database. 
+This is something that has a big impact on the PHP performance and can be fixed in future versions. 
 
-The experiment shows that the evaluation can be done in milliseconds for websites and web applications. 
-With these data is the difference of evaluation between PHP framework not big at all, but it is a difference, even if it is a small one. 
+The experiment shows that the evaluation can be done in ms for websites and web applications. 
+These data show that the difference of evaluation between PHP frameworks is not big at all, but there is a difference, even if it is a small one. 
 
-The relevance and contribution of this paper is big because of the lack of papers and experiment made on PHP Frameworks. This is one of a new area of technology to test in performance.
+The relevance and contribution of this paper is significant because of the lack of information about and experiments made on PHP frameworks. The PHP framework performance is a new area in the field of technology to hopefully be tested in the future.
 
-Let the war begin between the php frameworks in performance.
+Let the war begin between the PHP frameworks.
 \newpage
 \listofnote
 \renewcommand\refname{References}
