@@ -51,25 +51,26 @@ showstringspaces=false}
 %                                     also used for the TOC unless
 %                                     \toctitle is used
 %
-\author{Håkan Nylén}
+%\author{Håkan Nylén}
 %
 %\authorrunning{Håkan Nylén}   % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
 %\tocauthor{Håkan Nylén}
 %
-\institute{Blekinge Institute of Technology, Karlskrona, Sweden,\\
-\email{hakan@dun.se}}
+%\institute{Blekinge Institute of Technology, Karlskrona, Sweden,\\
+%\email{hakan@dun.se}}
 
-\date{21 March, 2012}
+%\date{21 March, 2012}
 
-\maketitle
+%\maketitle
 % A category with the (minimum) three required fields
 %\category{H.4}{Information Systems Applications}{Miscellaneous}
 %A category including the fourth, optional field follows...
 %\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
 
 %\terms{Theory}
+\includepdf[pages=-]{thesis_coverpage.pdf} 
 \renewcommand{\abstractname}{Abstract.}
 \pagestyle {plain}
 \begin{abstract}
@@ -171,9 +172,9 @@ The network is often what stops more load to the server, because when Apache is 
 
 \subsection{Performance}
 Performances means different things, to keep it simple this paper will be about fast requests.
-Performance can also have a big impact on servers, for example a big server park in a data center. 
+Powerful servers can also have a impact on performance, for example a big server park in a data center. 
 But, the data center cost a lot of money, which is a problem when experimenting in general.
-That is why there will only be tests on cloud with one server in order to see how the framework changes the ms of a request. 
+That is why there will only be tests on cloud with one server in order to see how the framework changes the milliseconds (ms) of a request. 
 This server is running on Amazon EC2, an isolated server environment on the cloud. 
 A good thing with this set-up is that it is more or less how a real website is set-up nowadays, making it more trustworthy in the data. 
 The server specification can be seen in Table \ref{table:serverSpecification}.
@@ -187,8 +188,6 @@ The server specification can be seen in Table \ref{table:serverSpecification}.
   \item[RQ3:] To what extent are open source php frameworks evaluated?
   \item[RQ4:] What are differences in the performance between the most commonly used open source php frameworks and how can they be evaluated?
 \end{description}
-My search included more or less different types of strings like ``web development evaluation'' and ``web development performance''. 
-In the findings there where 300 papers and of those 8 were relevant because the others were written about the evaluation in general, not about performance in web development. 
 
 
 \subsection{Research Methodology}
@@ -209,7 +208,10 @@ The literature was found in different stages. And the following sources were use
   \item Google.
 \end{itemize}
 
-These strings were used, as seen in Table \ref{table:literaturesearchstrings}.
+My search included more or less different types of strings like ``web development evaluation'' and ``web development performance''. 
+In the findings there where 300 papers and of those 8 were relevant because the others were written about the evaluation in general, not about performance in web development. 
+
+The used strings can be seen in Table \ref{table:literaturesearchstrings}.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{ p{6cm}}
@@ -349,7 +351,7 @@ For example, the internet connection where the tests were run can have 100 mbit 
 The tests will use defaults just to make it as clean as possible, because that is how many people actually are using the defaults in the configurations.
 
 \subsubsection{The Choice}
-will be to try to make it more realistic by using server on the cloud with good internet, good hardware, and default configurations.
+will be to try to make it more realistic by using server on the cloud with good internet, good hardware, and default configurations. The specification of the server is described in Table \ref{table:serverSpecification}.
 \newpage
 % hilighta fel till the results
 \subsection{RQ3: To what extent are open source PHP frameworks evaluated?}
@@ -566,17 +568,16 @@ It only gets the generated HTML page after PHP has generate it with the use of t
 making the impact smaller than a normal browser, which downloads the stylesheets and pictures too.
 
 \section{Conclusion}
-There are big differences between the PHP frameworks, but when databases are used the classes using databases could in other words be more effective. 
 CakePHP was the fastest in both tests, with and without database, 
-but the difference of the size was {\bf 80,000 bytes}. 
-This could be something that could make CakePHP a winner, 
-but my conclusion is that using default settings on the artifacts give a more realistic test environment rather then focusing on getting the same size on both frameworks.
+but the difference of the size of the page was {\bf 80,000 bytes} between the PHP frameworks. 
+This could make CakePHP a winner, 
+but as in my analysis my conclusion is that using default settings on the artifacts give a more realistic test environment rather then focusing on getting the same size of the pages for both frameworks.
 
 The fastest framework according to the data is CakePHP with just {\bf 1,3 ms} on average without database and with {\bf 5,34 ms} on average with database. 
-This is something that has a big impact on the PHP performance and can be fixed in future versions. 
+This is something that has a big impact in how people will choose between the PHP frameworks, because of the PHP performance and can be fixed in future versions. 
 
 The experiment shows that the evaluation can be done in ms for websites and web applications. 
-These data show that the difference of evaluation between PHP frameworks is not big at all, but there is a difference, even if it is a small one. 
+These data show that the difference of evaluation between PHP frameworks is not a big score in ms at all, but there is a difference, even if it is a small one. 
 
 The relevance and contribution of this paper is significant because of the lack of information about and experiments made on PHP frameworks. The PHP framework performance is a new area in the field of technology to hopefully be tested in the future.
 
